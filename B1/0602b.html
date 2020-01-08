@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+</head>
+
+<body>
+
+	<section id="chapter0602b" data-role="page">
+		<script>
+			$(function () {
+				var countP = $(".passageAudio").length;
+				$(".passageAudio").each(function (passage_no) {
+					if (passage_no < countP) {
+						this.addEventListener("play", function () {
+							if (currentAudio != "none") {
+								$("#" + currentAudio)[0].pause();
+							}
+							currentAudio = $(this).attr('id');
+						});
+						this.addEventListener("ended", function () {
+							console.log("audio ended");
+							currentAudio = "none";
+						});
+						this.addEventListener("pause", function () {
+							console.log("audio paused");
+							currentAudio = "none";
+						});
+					}
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle ch06img" role="main">
+			<h1 class="as1">الدرس الثاني أولاً: النص - مدينة عمان... مدينة حديثة وعريقة</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+				<audio class="passageAudio" id="chapter0602b01" controls>
+					<source src="audio/06/texts/02/060201.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+				<audio class="passageAudio" id="chapter0602b02" controls>
+					<source src="audio/06/texts/02/060202.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+				<audio class="passageAudio" id="chapter0602b03" controls>
+					<source src="audio/06/texts/02/060203.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+				<audio class="passageAudio" id="chapter0602b04" controls>
+					<source src="audio/06/texts/02/060204.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+				<audio class="passageAudio" id="chapter0602b05" controls>
+					<source src="audio/06/texts/02/060205.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٦</h3>
+				<audio class="passageAudio" id="chapter0602b06" controls>
+					<source src="audio/06/texts/02/060206.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٧</h3>
+				<audio class="passageAudio" id="chapter0602b07" controls>
+					<source src="audio/06/texts/02/060207.mp3" type="audio/mp3"></audio>
+				<div class="as2">
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

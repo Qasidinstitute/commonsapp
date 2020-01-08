@@ -1,0 +1,360 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Qasid Commons</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css?id=5" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+      
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #8c0c04;">
+      <a class="navbar-brand" href="#">Qasid Commons</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>      
+      
+    <main role="main" class="container">    
+        
+      <div class="my-3 p-3 bg-white rounded box-shadow" id="loginContainer">
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 rounded box-shadow" style="background-color: #8c0c04;">
+        <img class="mr-3" src="https://www.qasid.com/wp-content/themes/qasid/images/qasid_header_logo.png" alt="">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Digital Learning Resources</h6>
+          <small>Enhance your Arabic Learning</small>
+        </div>
+      </div>          
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in to see your classes</h1>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <div class="checkbox mb-3">
+            <label>
+              <a href="https://portal.qasid.com/#/user/resetpass" target="_blank">Forgot your password?</a>
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" id="loginBtn">Sign in</button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>         
+      </div>        
+
+      <div class="my-3 p-3 bg-white rounded box-shadow" id="classesContainer">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Your Current Classes</h6>
+        <div class="list-group" id="classList">
+        </div>          
+      </div>
+      <div class="my-3 p-3 bg-white rounded box-shadow" id="assignmentsBox">
+          <span class="oi oi-chevron-left" id="backBtn1"></span>
+          <div id="assignmentsContainer">
+          </div>
+      </div>
+      <div class="my-3 p-3 bg-white rounded box-shadow" id="submitBox">
+          <span class="oi oi-chevron-left" id="backBtn2"></span>
+          <div id="detailContainer">
+          </div>
+      </div>  
+      <div class="my-3 p-3 bg-white rounded box-shadow" id="mediaBox">
+          <span class="oi oi-chevron-left" id="backBtn3"></span>
+          <div id="mediaHolder">
+          </div>
+      </div>         
+    
+    </main> 
+      
+    <!-- Modal -->
+    <div class="modal fade" id="loadingModalCenter" tabindex="-1" role="dialog" aria-labelledby="loadingModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loadingModalTitle">Loading</h5>
+          </div>
+          <div class="modal-body">
+            <div class="loader"></div>
+          </div>
+        </div>
+      </div>
+    </div>      
+      
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>      
+    <script>window.jQuery || document.write('<script src="jquery-slim.min.js"><\/script>')</script>
+    <script src="holder.min.js"></script>
+    <script src="offcanvas.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+ <script>
+     $(function(){
+      // Initialize Firebase
+      const config = {
+        apiKey: "AIzaSyC0ar8hVQtuww0DgLssIHCBdnDYt6CEpkk",
+        authDomain: "qasid-commons.firebaseapp.com",
+        databaseURL: "https://qasid-commons.firebaseio.com",
+        projectId: "qasid-commons",
+        storageBucket: "qasid-commons.appspot.com",
+        messagingSenderId: "788246222415"
+      };
+     
+     let userData = new Object();
+     let subjectsArray = new Array();
+     let tableAPIKey = "";
+     let assignments = new Object();
+     let apis = new Array();
+     
+     firebase.initializeApp(config); 
+     getAPIs();
+        
+        $("#loginBtn").on("click", function() {
+            checkLogin();
+        });
+        
+        $("#backBtn1").on("click", function() {
+            showSection(2);
+        });
+     
+        $("#backBtn2").on("click", function() {
+            showSection(2);
+        });
+     
+        $("#backBtn3").on("click", function() {
+            showSection(3);
+        });
+        
+     function getAPIs() {
+         firebase.database().ref("/assignments/tables").once("value").then(function(snapshot) {
+             apis = snapshot.val();
+             showSection(1);
+         });
+     }
+     
+     function showLoading(status) {
+         
+         if (status == true) {
+             $('#loadingModalCenter').modal('show');
+         } else {
+             $('#loadingModalCenter').modal('hide');
+         }
+         
+     }
+     
+        function showSection(section) {
+            if (section == 1) {
+                $("#loginContainer").css("display","block");
+                $("#classesContainer").css("display","none");
+                $("#assignmentsBox").css("display","none");   
+                $("#submitBox").css("display","none");
+                $("#mediaBox").css("display","none");
+            } else if (section == 2) {
+                $("#loginContainer").css("display","none");
+                $("#classesContainer").css("display","block");
+                $("#assignmentsBox").css("display","none");
+                $("#submitBox").css("display","none");
+                $("#mediaBox").css("display","none");
+            } else if (section == 3) {
+                $("#loginContainer").css("display","none");
+                $("#classesContainer").css("display","none");
+                $("#assignmentsBox").css("display","block"); 
+                $("#submitBox").css("display","none");
+                $("#mediaBox").css("display","none");
+            } else if (section == 4) {
+                $("#loginContainer").css("display","none");
+                $("#classesContainer").css("display","none");
+                $("#assignmentsBox").css("display","none");        
+                $("#submitBox").css("display","block");
+                $("#mediaBox").css("display","none");
+            } else if (section == 5) {
+                $("#loginContainer").css("display","none");
+                $("#classesContainer").css("display","none");
+                $("#assignmentsBox").css("display","none");        
+                $("#submitBox").css("display","none");
+                $("#mediaBox").css("display","block");
+            }
+        }
+
+        function checkLogin() {
+            showLoading(true);
+            let request = new XMLHttpRequest();
+
+            request.open('POST', 'https://dataportal.qasid.com/rest/user/session/');
+
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.setRequestHeader('X-DreamFactory-Application-Name', 'qasidata');
+
+            request.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    userData = JSON.parse(this.responseText);
+                    //console.log(this.responseText);
+                    showSection(2);
+                    getClasses();
+                } else {
+                    console.log("error");
+                }
+            };
+
+            let loginData = JSON.stringify({
+                "email": "ismael@qasid.com",
+                "password": "Qasid123"
+            });
+
+            request.send(loginData);
+        }
+        
+        function getClasses() {
+            let request = new XMLHttpRequest();
+            let listText = "";
+            request.open('GET', "https://qute.qasid.com/QUTE/json/student_schedule_html?email="+userData.email+"&fterm=CUR_SEMESTER&subjects_list=true");
+
+            request.setRequestHeader('Authorization', userData.session_id);
+
+            request.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    subjectsArray = JSON.parse(this.responseText).subjects;
+                    $.each(subjectsArray, function(index, value) {
+                        let tableAPI = getTableAPI(value);
+                        subjectsArray[index] = {"subject":value,"id":tableAPI.id};                  
+                        listText += "<div class='list-group-item list-group-item-action'>"+value+" <button type='button' class='classSubmit' id='item_"+index+"'>Submit Assignment</button><button type='button' class='classItems' id='item_"+index+"'>View Assignments</button></div>";
+                    });
+                    //console.log(subjectsArray);
+                    //console.log(userData);
+                    $("#classList").html(listText);
+                    $(".classItems").on("click", function() {
+                        let thisIdStr = $(this).attr('id');
+                        let thisId = Number(thisIdStr.substring(thisIdStr.lastIndexOf("_")+1,thisIdStr.length));
+                        getTableData(userData.email,subjectsArray[thisId].id,subjectsArray[thisId].subject);
+                    });
+                    $(".classSubmit").on("click", function() {
+                        let thisIdStr = $(this).attr('id');
+                        let thisId = Number(thisIdStr.substring(thisIdStr.lastIndexOf("_")+1,thisIdStr.length));
+                        showSubmitAssignment(subjectsArray[thisId].subject);
+                    });
+                    showLoading(false);
+                }
+            };
+
+            request.send();
+        }
+        
+        function getTableAPI(subject) {
+            //For security, we will obtain the above 2 from an external firebase based on the subject name
+            tableAPIKey = apis[subject].key;
+            let tableID = apis[subject].id;
+            return {id:tableID};
+        }
+        
+        function getTableData(email,id,_subject) {
+
+            let request = new XMLHttpRequest();
+            let uriemail = encodeURIComponent("'"+userData.email+"'");
+            request.open("GET", "https://api.airtable.com/v0/app8fdksEw6vupZ3n/Spring%202018?view=web&filterByFormula=Email%3D"+uriemail);
+            request.setRequestHeader('Content-Type', 'application/json');
+            request.setRequestHeader('Authorization', 'Bearer '+tableAPIKey);
+
+            request.onreadystatechange = function() {
+                if ((this.readyState === 4) && (this.status == 200)) {
+                    showAssignments(JSON.parse(this.responseText),_subject);
+                    showSection(3);
+                } else {
+                    console.log("error connecting to source");
+                }
+            };
+            request.send();
+        }        
+        
+        function showAssignments(_assignments,_class) {
+            assignments = _assignments;
+            let assignmentText = "<h6>Submitted Assignments: "+_class+"</h6><div class='row'>";
+            $.each(assignments.records, function(index, value) {
+                console.log(value.fields);  
+                let textFeedback = "N/A";
+                if (value.fields["Text Feedback"]) {
+                    textFeedback = "";
+                    $.each(value.fields["Text Feedback"], function (i,v) {
+                        textFeedback += v;
+                    });
+                }
+                let fileFeedback = "N/A";
+                if (value.fields["File Feedback"]) {
+                    fileFeedback = new Array();
+                    $.each(value.fields["File Feedback"], function (i,v) {
+                        fileFeedback.push(v);
+                    });
+                }
+                if (fileFeedback == "N/A") {
+                    assignmentText += "<div class='col-sm-6'><div class='card'><div class='card-body'><h5 class='card-title'>"+value.fields["Assignment Type"]+" Assignment</h5><h6 class='card-subtitle mb-2 text-muted'>Week "+value.fields.Week+"</h6><p class='card-text'>Feedback: "+textFeedback+"</p><a href='#' class='btn btn-outline-secondary btn-sm sbBtn' id='sb_"+index+"'>Submission</a></div></div></div>";        
+                } else {
+                    assignmentText += "<div class='col-sm-6'><div class='card'><div class='card-body'><h5 class='card-title'>"+value.fields["Assignment Type"]+" Assignment</h5><h6 class='card-subtitle mb-2 text-muted'>Week "+value.fields.Week+"</h6><p class='card-text'>Feedback: "+textFeedback+"</p><a href='#' class='btn btn-outline-secondary btn-sm sbBtn' id='sb_"+index+"'>Submission</a><a href='#' class='btn btn-outline-secondary btn-sm fbBtn' id='fb_"+index+"'>Feedback</a></div></div></div>";
+                }                 
+            });
+            assignmentText+= "</div>";           
+            $("#assignmentsContainer").html(assignmentText);
+            $(".sbBtn").on("click", function() {
+                let thisIdStr = $(this).attr('id');
+                let thisId = Number(thisIdStr.substring(thisIdStr.lastIndexOf("_")+1,thisIdStr.length));
+                $("#mediaHolder").html("");
+                showSection(5);
+                $.each(assignments.records[thisId].fields["Upload Assigment"], function(i, v) {
+                    getFile(i,v.url);                   
+                })  
+            });  
+            $(".fbBtn").on("click", function() {
+                let thisIdStr = $(this).attr('id');
+                let thisId = Number(thisIdStr.substring(thisIdStr.lastIndexOf("_")+1,thisIdStr.length));
+                $("#mediaHolder").html("");
+                showSection(5);
+                $.each(assignments.records[thisId].fields["File Feedback"], function(i, v) {
+                    getFile(i,v.url);
+                })                 
+            });   
+        }
+        
+        function getFile(i,url) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.responseType = "blob";
+            xhr.onload = function () {
+                let blob = new Blob([xhr.response], {type: this.response.type});
+                let objectUrl = URL.createObjectURL(blob);
+                if (this.response.type.includes("image")) {
+                    $("#mediaHolder").append("<img id='imageAttach_"+i.toString()+"' class='mediaImg' src='"+objectUrl+"'>");
+                } else if (this.response.type.includes("video")) {
+                    $("#mediaHolder").append("<video id='videoAttach_"+i.toString()+"' controls><source src='"+objectUrl+"'></video>");
+                } else if (this.response.type.includes("audio")) {
+                    $("#mediaHolder").append("<audio id='audioAttach_"+i.toString()+"' controls><source src='"+objectUrl+"'></audio>");
+                } else if (this.response.type.includes("application")) {
+                    $("#mediaHolder").append("<button class='btn btn-lg btn-primary btn-block' id='fileAttach_"+i.toString()+"'>Download File Attachment</button>");
+                    $("#fileAttach_"+i.toString()).on("click", function() {
+                        window.open(objectUrl);
+                    });
+                }
+            };
+            xhr.send();
+            
+            //return thisHtml;
+        }
+        
+        function showSubmitAssignment(subject) {
+            showSection(4);
+            let uriemail = encodeURIComponent(userData.email);
+            let uriSubject = encodeURIComponent(subject);
+            $("#detailContainer").html("<iframe class='airtable-embed' src='https://airtable.com/embed/shr7LIkUuEtk5KcpW?backgroundColor=yellow&prefill_Student%20Name="+userData.display_name+"&prefill_Email="+uriemail+"&prefill_Class%20Name="+uriSubject+"' frameborder='0' onmousewheel='' width='100%' height='500' style='background: transparent; border: 1px solid #ccc;'></iframe>");
+        }    
+     });
+        
+    </script>        
+  </body>
+</html>

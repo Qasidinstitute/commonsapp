@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0901a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة العاشرة - العطلة عالباب</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id='allwords_audio'>
+			<source src='audio/10/10.mp3' type='audio/mp3'></audio>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='1001a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نَوى بِنْوي نِيِّة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نَوى بِنْوي نِيِّة</div><audio id='word1001a01_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100101.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To intend </p>
+					<p class='wordContext'>Context:أخوي نوى يكمل دراسته بالجامعة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ناوي/ ـة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ناوي/ ـة</div><audio id='word1001a02_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100102.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To have the intention </p>
+					<p class='wordContext'>Context:سَعيد ناوي يسافر على بريطانياعشان يدرس ماجستير .</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دافي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دافي</div><audio id='word1001a03_audio' class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100103.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Warm </p>
+					<p class='wordContext'>Context:اليوم كان الجو دافي مع إنه الدنيا شتا.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اِسْتَأْجَر بِسْتَأْجِر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اِسْتَأْجَر بِسْتَأْجِر</div><audio id='word1001a04_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100104.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To rent </p>
+					<p class='wordContext'>Context:أحمد استأجر بيت قريب من شارع الجامعة، وسعره كان منيح.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ساعَد بِساعِد مُساعَدِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ساعَد بِساعِد مُساعَدِة</div><audio id='word1001a05_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100105.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To help </p>
+					<p class='wordContext'>Context:أخوي ساعدني بترتيب الغرفة اليوم.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سَريع/ــة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سَريع/ــة</div><audio id='word1001a06_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100106.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Fast/ quick </p>
+					<p class='wordContext'>Context:المشي السريع بساعد على تنزيل الوزن.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ميزانيِّة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ميزانيِّة</div><audio id='word1001a07_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100107.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Budget </p>
+					<p class='wordContext'>Context:الميزانية ما بتسمحلي أشتري أشياء زيادة هاد الشهر.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>طَفْران/ـــة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>طَفْران/ـــة</div><audio id='word1001a08_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100108.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>cash-strapped/ penniless </p>
+					<p class='wordContext'>Context:أنا طفران ما رح أطلع اليوم مع اِصحابي.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مِحْتار/ ة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مِحْتار/ ة</div><audio id='word1001a09_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100109.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Perplexed/ in two minds</p>
+					<p class='wordContext'>Context:سامر محتار يدرس فرنسي وِلّا إيطالي.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شَقّة مَفْروشِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شَقّة مَفْروشِة</div><audio id='word1001a10_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100110.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Furnished apartment </p>
+					<p class='wordContext'>Context:بدي شقة مفروشة بعمان و سعرها منيح.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مَعْرَض (ج. مَعارِض)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مَعْرَض (ج. مَعارِض)</div><audio id='word1001a11_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100111.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Exhibition </p>
+					<p class='wordContext'>Context:في معرض كتب هاد الأسبوع بالجامعة الأردنية.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مُواصَفات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مُواصَفات</div><audio id='word1001a12_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100112.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Specifications </p>
+					<p class='wordContext'>Context:شو مواصفات الشقة اللي بدك تشتريها؟</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فَضَّل بِفَضِّل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فَضَّل بِفَضِّل</div><audio id='word1001a13_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100113.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To prefer </p>
+					<p class='wordContext'>Context:بفضل أطلع مع صحابي بالنهار مش بالليل.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حَلّ بِحِلّ حَلّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حَلّ بِحِلّ حَلّ</div><audio id='word1001a14_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100114.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To solve </p>
+					<p class='wordContext'>Context:أنا بمشكلة كبيرة ومش عارف أحلها.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صَرَف بُصْرُف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صَرَف بُصْرُف</div><audio id='word1001a15_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100115.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To spend</p>
+					<p class='wordContext'>Context:أنا بصرف بالشهر تقريبا 200 دينار</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نوع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نوع</div><audio id='word1001a16_audio' class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100116.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Kind/ type/ brand</p>
+					<p class='wordContext'>Context:شو نوع العطر اللي بتحبه؟</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1001a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مُسْتَحيل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1001a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1001a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مُسْتَحيل</div><audio id='word1001a17_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/10/vocab/01/100117.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Impossible</p>
+					<p class='wordContext'>Context:مستحيل أشتغل بهاي الشركة؛ المدير كتير لئيم.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

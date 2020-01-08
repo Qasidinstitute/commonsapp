@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0302a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch03img" role="main">
+	   <h1 class="as1">الدرس الثاني: مفردات النص</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+			<div data-role='collapsible' id='0302a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مِعيار (ج) معايير</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a01_btn'></div><div class='as1 ui-bar vocabPos'>مِعيار (ج) معايير</div><audio id='word0302a01_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030201.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Standard(s)</p></div></div>
+				<div data-role='collapsible' id='0302a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الجودة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a02_btn'></div><div class='as1 ui-bar vocabPos'>الجودة</div><audio id='word0302a02_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030202.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Quality</p></div></div>
+				<div data-role='collapsible' id='0302a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ضَبَط – يضبط /الضَبْط</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a03_btn'></div><div class='as1 ui-bar vocabPos'>ضَبَط – يضبط /الضَبْط</div><audio id='word0302a03_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030203.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To control</p></div></div>
+				<div data-role='collapsible' id='0302a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مؤسسة (ج) مؤسسات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a04_btn'></div><div class='as1 ui-bar vocabPos'>مؤسسة (ج) مؤسسات</div><audio id='word0302a04_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030204.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Institution(s)</p></div></div>
+				<div data-role='collapsible' id='0302a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التربوية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a05_btn'></div><div class='as1 ui-bar vocabPos'>التربوية</div><audio id='word0302a05_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030205.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Educational</p></div></div>
+				<div data-role='collapsible' id='0302a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تكلفة (ج) تكلفات/تكاليف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a06_btn'></div><div class='as1 ui-bar vocabPos'>تكلفة (ج) تكلفات/تكاليف</div><audio id='word0302a06_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030206.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cost</p></div></div>
+				<div data-role='collapsible' id='0302a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نوعية (ج) نوعيات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a07_btn'></div><div class='as1 ui-bar vocabPos'>نوعية (ج) نوعيات</div><audio id='word0302a07_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030207.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Quality</p></div></div>
+				<div data-role='collapsible' id='0302a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المُخرَج (ج) المُخرَجات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a08_btn'></div><div class='as1 ui-bar vocabPos'>المُخرَج (ج) المُخرَجات</div><audio id='word0302a08_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030208.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Outcome(s)</p></div></div>
+				<div data-role='collapsible' id='0302a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سلبي≠ إيجابي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a09_btn'></div><div class='as1 ui-bar vocabPos'>سلبي≠ إيجابي</div><audio id='word0302a09_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030209.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Postive/Negative</p></div></div>
+				<div data-role='collapsible' id='0302a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التنمية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a10_btn'></div><div class='as1 ui-bar vocabPos'>التنمية</div><audio id='word0302a10_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030210.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Development</p></div></div>
+				<div data-role='collapsible' id='0302a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أسلوب (ج) أساليب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a11_btn'></div><div class='as1 ui-bar vocabPos'>أسلوب (ج) أساليب</div><audio id='word0302a11_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030211.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Style</p></div></div>
+				<div data-role='collapsible' id='0302a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تكامَلَ – يتكاملُ / التكامُل← متكامِل</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a12_btn'></div><div class='as1 ui-bar vocabPos'>تكامَلَ – يتكاملُ / التكامُل← متكامِل</div><audio id='word0302a12_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030212.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To integrate / integration</p></div></div>
+				<div data-role='collapsible' id='0302a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حقَّق – يُحقِّق / التحقيق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a13_btn'></div><div class='as1 ui-bar vocabPos'>حقَّق – يُحقِّق / التحقيق</div><audio id='word0302a13_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030213.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: To realize / realization</p></div></div>
+				<div data-role='collapsible' id='0302a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشاملة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a14_btn'></div><div class='as1 ui-bar vocabPos'>الشاملة</div><audio id='word0302a14_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030214.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Comprehensive</p></div></div>
+				<div data-role='collapsible' id='0302a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أصلح – يُصلِح / الإصلاح( للمحسوس والمجرد)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a15_btn'></div><div class='as1 ui-bar vocabPos'>أصلح – يُصلِح / الإصلاح( للمحسوس والمجرد)</div><audio id='word0302a15_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030215.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: To Reform/Fix / reformation</p></div></div>
+				<div data-role='collapsible' id='0302a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خصيصة (ج) خصائص</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a16_btn'></div><div class='as1 ui-bar vocabPos'>خصيصة (ج) خصائص</div><audio id='word0302a16_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030216.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Characteristic(s)</p></div></div>
+				<div data-role='collapsible' id='0302a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أدّى – يؤدي / التأدية (الأداء)</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a17_btn'></div><div class='as1 ui-bar vocabPos'>أدّى – يؤدي / التأدية (الأداء)</div><audio id='word0302a17_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030217.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: to perform | performance</p></div></div>
+				<div data-role='collapsible' id='0302a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الابتكاري</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a18_btn'></div><div class='as1 ui-bar vocabPos'>الابتكاري</div><audio id='word0302a18_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030218.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Innovative</p></div></div>
+				<div data-role='collapsible' id='0302a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فعَّال</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a19_btn'></div><div class='as1 ui-bar vocabPos'>فعَّال</div><audio id='word0302a19_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030219.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Effective</p></div></div>
+				<div data-role='collapsible' id='0302a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قيَّم – يُقيِّم / التقييم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a20'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a20_btn'></div><div class='as1 ui-bar vocabPos'>قيَّم – يُقيِّم / التقييم</div><audio id='word0302a20_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030220.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb and Verbal Noun</p><p class='wordMearning'>Meaning: Evaluate</p></div></div>
+				<div data-role='collapsible' id='0302a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فكري/ـة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a21'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a21_btn'></div><div class='as1 ui-bar vocabPos'>فكري/ـة</div><audio id='word0302a21_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030221.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Intellectual</p></div></div>
+				<div data-role='collapsible' id='0302a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ذات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a22'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a22_btn'></div><div class='as1 ui-bar vocabPos'>ذات</div><audio id='word0302a22_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030222.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: That contains (used to describe the thing before to have what comes after it)</p></div></div>
+				<div data-role='collapsible' id='0302a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خدمة (ج) خدمات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a23'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a23_btn'></div><div class='as1 ui-bar vocabPos'>خدمة (ج) خدمات</div><audio id='word0302a23_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030223.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Service(s)</p></div></div>
+				<div data-role='collapsible' id='0302a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قيمة (ج) قِيَم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a24'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a24_btn'></div><div class='as1 ui-bar vocabPos'>قيمة (ج) قِيَم</div><audio id='word0302a24_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030224.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Value(s)</p></div></div>
+				<div data-role='collapsible' id='0302a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فائدة (ج) فوائد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a25'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a25_btn'></div><div class='as1 ui-bar vocabPos'>فائدة (ج) فوائد</div><audio id='word0302a25_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030225.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Benefit(s)</p></div></div>
+				<div data-role='collapsible' id='0302a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُتعة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a26'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a26_btn'></div><div class='as1 ui-bar vocabPos'>مُتعة</div><audio id='word0302a26_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030226.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: enjoyment</p></div></div>
+				<div data-role='collapsible' id='0302a27_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المادة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0302a27'><div class='audio-play-pause audio-paused ui-block-a' id='word0302a27_btn'></div><div class='as1 ui-bar vocabPos'>المادة</div><audio id='word0302a27_audio' class='vocabAudioSrc'><source src='audio/03/vocab/02/030227.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Educational Material</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0801a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة الثامنة - الحمدلله على السلامة</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id='allwords_audio'>
+			<source src='audio/08/08.mp3' type='audio/mp3'></audio>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0801a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دَوا (ج. أدوية)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دَوا (ج. أدوية)</div><audio id='word0801a01_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080101.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Medicine </p>
+					<p class='wordContext'>Context:جبت الدوا هاد من أمريكا لأنه ما في متله بالأردن.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مَرَض (ج. أمراض)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مَرَض (ج. أمراض)</div><audio id='word0801a02_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080102.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Disease/ illness </p>
+					<p class='wordContext'>Context:عمي بالمستشفى من 5 أيام و لهلأ الدكاترة ما بعرفوا شو مرضه.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اِتعالَج بِتْعالج </h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اِتعالَج بِتْعالج </div><audio id='word0801a03_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080103.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To be treated </p>
+					<p class='wordContext'>Context:صاحبي عُمر بتعالج بمستشفى الأمل.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عِلاج</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عِلاج</div><audio id='word0801a04_audio' class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080104.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Treatment </p>
+					<p class='wordContext'>Context:العلاج بالمستشفيات الخاصة أغلى من المستشفيات الحكومية.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مُسَكِّن</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مُسَكِّن</div><audio id='word0801a05_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080105.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Painkiller </p>
+					<p class='wordContext'>Context:المسكنات منيحة بس مش لازم نتعود عليها.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>وَجَع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>وَجَع</div><audio id='word0801a06_audio' class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080106.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Pain</p>
+					<p class='wordContext'>Context:لما أشتغل عالكمبيوتر لساعات طويلة بصير عندي وجع بعيوني.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>وَجَّع بِوَجِّع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>وَجَّع بِوَجِّع</div><audio id='word0801a07_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080107.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To hurt </p>
+					<p class='wordContext'>Context:راسي وجعني لإني درست 6 ساعات بدون استراحة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مركَز صِحّي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مركَز صِحّي</div><audio id='word0801a08_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080108.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Health center </p>
+					<p class='wordContext'>Context:ما في مستشفى بمنطقتي بس في مركز صحي صغير.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مُمَرّض/ ـة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مُمَرّض/ ـة</div><audio id='word0801a09_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080109.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Nurse </p>
+					<p class='wordContext'>Context:أختي بتشتغل ممرضة في مستشفى الأردن.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>إسْعاف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>إسْعاف</div><audio id='word0801a10_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080110.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Ambulance </p>
+					<p class='wordContext'>Context:رقم الإسعاف في الأردن هو 911.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>طَوارئ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>طَوارئ</div><audio id='word0801a11_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080111.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Emergency </p>
+					<p class='wordContext'>Context:قسم الطوارئ من أحسن الأقسام بهاد المستشفى.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نِفِع بِنْفَع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نِفِع بِنْفَع</div><audio id='word0801a12_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080112.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To be helpful/useful </p>
+					<p class='wordContext'>Context:هاد الدوا كويس بس ما بنفع لعلاج كل الأمراض.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>جُرُح (ج.جروح)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>جُرُح (ج.جروح)</div><audio id='word0801a13_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080113.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Wound/ cut </p>
+					<p class='wordContext'>Context:خالد عندو جروح خطيرة بسبب الحادث اللي صار معو اليوم.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>انْجَرَح بِنْجَرَح</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>انْجَرَح بِنْجَرَح</div><audio id='word0801a14_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080114.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To be wounded </p>
+					<p class='wordContext'>Context:بحب أنتقد الناس بأسلوب لطيف عشان ما تنجرح مشاعرهم.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>إصابِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>إصابِة</div><audio id='word0801a15_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080115.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Injury </p>
+					<p class='wordContext'>Context:اللاعب عامر المصري ما شارك اليوم بالمباراة لإنو عندو إصابة خطيرة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حَساسِيِّة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حَساسِيِّة</div><audio id='word0801a16_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080116.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Allergy </p>
+					<p class='wordContext'>Context:عندي حساسية من الورد في الربيع.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>رَشِح | اِمْرَشِّح/ـة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>رَشِح | اِمْرَشِّح/ـة</div><audio id='word0801a17_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080117.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Cold |Having a cold</p>
+					<p class='wordContext'>Context:ما رح أروح عالجامعة اليوم لإني امرشح و تعبان.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فَلَوَنْزا | اِمْفَلْوِز/ـة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فَلَوَنْزا | اِمْفَلْوِز/ـة</div><audio id='word0801a18_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080118.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Flu | Having a flu</p>
+					<p class='wordContext'>Context:فلونزا الطيور قتلت آلاف الناس في العالم.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دَم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دَم</div><audio id='word0801a19_audio' class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080119.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Blood </p>
+					<p class='wordContext'>Context:عندي ضُعُف دم و الدكتور حكالي لازم آكل أكِل فيه فيتامينات.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>طاب بِطيب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>طاب بِطيب</div><audio id='word0801a20_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080120.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To be healed </p>
+					<p class='wordContext'>Context:الشهر الماضي أخدت إجازة من الشغل لأني مريض بس هلأ بقدر أرجع لإني طبت
+						الحمد لله.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اِتْحَسَّن بِتْحَسَّن</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اِتْحَسَّن بِتْحَسَّن</div><audio id='word0801a21_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080121.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To get better </p>
+					<p class='wordContext'>Context:اتحسنت كتير بعد زيارة الطبيب.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عَمَلِيِّة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عَمَلِيِّة</div><audio id='word0801a22_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080122.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Operation/ surgery </p>
+					<p class='wordContext'>Context:إمي عملت عملية خطيرة الشهر الماضي بس نجحت الحمد لله.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فَحَص بِفْحَض فَحِص</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فَحَص بِفْحَض فَحِص</div><audio id='word0801a23_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080123.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To examine </p>
+					<p class='wordContext'>Context:فحص الدم قبل الزواج مهم لإنه بقلل من الأمراض.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a24_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صَيْدَلِيِّة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a24'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a24_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صَيْدَلِيِّة</div><audio id='word0801a24_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080124.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Pharmacy </p>
+					<p class='wordContext'>Context:الصيدلية اللي جنب بيتنا بتفتح 24 ساعة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a25_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>وِقِع بِوْقَع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a25'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a25_btn'></div>
+						<div class='as1 ui-bar vocabPos'>وِقِع بِوْقَع</div><audio id='word0801a25_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080125.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To fall </p>
+					<p class='wordContext'>Context:تلفوني وقع اليوم على الأرض بس الحمد لله ما انكسر.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a26_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ضَرَب بضرُب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a26'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a26_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ضَرَب بضرُب</div><audio id='word0801a26_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080126.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To hit </p>
+					<p class='wordContext'>Context:الضرب ممنوع في المدارس في الأردن.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a27_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حَسّ بِحِسّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a27'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a27_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حَسّ بِحِسّ</div><audio id='word0801a27_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080127.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To feel </p>
+					<p class='wordContext'>Context:أحيانا بحس إنو لازم أغير تخصصي في الجامعة لإنو صعب.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a28_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تَأمين</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a28'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a28_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تَأمين</div><audio id='word0801a28_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080128.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Insurance </p>
+					<p class='wordContext'>Context:عندي تأمين صحي ممتاز بالشركة اللي بشتغل فيها.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a29_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عِيادة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a29'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a29_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عِيادة</div><audio id='word0801a29_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080129.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Clinic </p>
+					<p class='wordContext'>Context:عيادة الدكتور رمزي بالطابق التالت بهاي البناية.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0801a30_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ضَغْط الدَّم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0801a30'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0801a30_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ضَغْط الدَّم</div><audio id='word0801a30_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/08/vocab/01/080130.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Blood pressure </p>
+					<p class='wordContext'>Context:ضغط دمي نازل ولازم أشوف الدكتور.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

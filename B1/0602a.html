@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+</head>
+
+<body>
+
+	<section id="chapter0602a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$("#" + currentvocab + "_vocab").collapsible('expand');
+					});
+				}
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle ch06img" role="main">
+			<h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0602a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حديث</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حديث</div><audio id='word0602a01_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060201.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Modern</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عريق</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عريق</div><audio id='word0602a02_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060202.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Ancient</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تميّز – يتميز/ التميز</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تميّز – يتميز/ التميز</div><audio id='word0602a03_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060203.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To be characterize</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عصريّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عصريّ</div><audio id='word0602a04_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060204.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Modern</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الأصالة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الأصالة</div><audio id='word0602a05_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060205.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Originality</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ناحية (ج) نواحي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ناحية (ج) نواحي</div><audio id='word0602a06_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060206.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Aspect(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مزَج – يمزِج/ المزج</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مزَج – يمزِج/ المزج</div><audio id='word0602a07_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060207.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: To mix / mix</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>احتكّ – يحتكّ/ الاحتكاك (بـ )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>احتكّ – يحتكّ/ الاحتكاك (بـ )</div><audio
+							id='word0602a08_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060208.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To interact | Interaction</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الحداثة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الحداثة</div><audio id='word0602a09_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060209.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Modernity</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بالتحديد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بالتحديد</div><audio id='word0602a10_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060210.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Precisely</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سَفْح (ج) سُفوح</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سَفْح (ج) سُفوح</div><audio id='word0602a11_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060211.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Foot of the mountain</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تلة (ج) تلال</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تلة (ج) تلال</div><audio id='word0602a12_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060212.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Hill(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قلعة (ج) قلاع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قلعة (ج) قلاع</div><audio id='word0602a13_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060213.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Fort(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ساحة (ج) ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ساحة (ج) ات</div><audio id='word0602a14_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060214.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Courtyard(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بلغ – يبلُغ/ البلوغ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بلغ – يبلُغ/ البلوغ</div><audio id='word0602a15_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060215.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To reach</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>المُدرَّج (ج) ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>المُدرَّج (ج) ات</div><audio id='word0602a16_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060216.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: amphitheatre(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>متفرّج/ون</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>متفرّج/ون</div><audio id='word0602a17_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060217.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Spectator(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شعبيَ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شعبيَ</div><audio id='word0602a18_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060218.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Popular</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>زِيّ (ج) أزياء</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>زِيّ (ج) أزياء</div><audio id='word0602a19_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060219.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Fashion(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أثاث</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أثاث</div><audio id='word0602a20_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060220.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Furniture</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الريف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الريف</div><audio id='word0602a21_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060221.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Countryside</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>البادية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>البادية</div><audio id='word0602a22_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060222.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Where Bedoins Live</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تقليديّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تقليديّ</div><audio id='word0602a23_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060223.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Traditional</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a24_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فتْرة/ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a24'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a24_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فتْرة/ات</div><audio id='word0602a24_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060224.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Time period(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a25_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دائريّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a25'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a25_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دائريّ</div><audio id='word0602a25_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060225.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Circular</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a26_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>واجهة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a26'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a26_btn'></div>
+						<div class='as1 ui-bar vocabPos'>واجهة</div><audio id='word0602a26_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060226.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Interface</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a27_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>غطّى – يغطّي/ التغطية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a27'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a27_btn'></div>
+						<div class='as1 ui-bar vocabPos'>غطّى – يغطّي/ التغطية</div><audio id='word0602a27_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060227.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: To cover | coverage</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a28_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الرخام</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a28'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a28_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الرخام</div><audio id='word0602a28_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060228.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: marble</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a29_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>امتدّ – يمتدّ/ الامتداد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a29'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a29_btn'></div>
+						<div class='as1 ui-bar vocabPos'>امتدّ – يمتدّ/ الامتداد</div><audio id='word0602a29_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060229.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To extend</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a30_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عمود (ج) أعمدة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a30'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a30_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عمود (ج) أعمدة</div><audio id='word0602a30_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060230.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Column(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a31_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تبقّى – يتبقّى</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a31'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a31_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تبقّى – يتبقّى</div><audio id='word0602a31_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060231.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To remain</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a32_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سطح البحر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a32'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a32_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سطح البحر</div><audio id='word0602a32_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060232.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Sea Surface</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a33_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قصْر (ج) قصور</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a33'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a33_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قصْر (ج) قصور</div><audio id='word0602a33_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060233.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Castle(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a34_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>جدار (ج) جدران</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a34'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a34_btn'></div>
+						<div class='as1 ui-bar vocabPos'>جدار (ج) جدران</div><audio id='word0602a34_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060234.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Wall(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a35_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بِئر (ج) آبار</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a35'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a35_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بِئر (ج) آبار</div><audio id='word0602a35_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060235.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Well(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a36_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عثَر – يعثُر/ العثور (على )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a36'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a36_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عثَر – يعثُر/ العثور (على )</div><audio id='word0602a36_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060236.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To find</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a37_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تمثال (ج) تماثيل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a37'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a37_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تمثال (ج) تماثيل</div><audio id='word0602a37_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060237.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Statue(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a38_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>معبد (ج) معابد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a38'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a38_btn'></div>
+						<div class='as1 ui-bar vocabPos'>معبد (ج) معابد</div><audio id='word0602a38_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060238.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Temple(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a39_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مدخل (ج) مداخل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a39'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a39_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مدخل (ج) مداخل</div><audio id='word0602a39_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060239.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Entrance</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a40_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نَقْش (ج) نقوش</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a40'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a40_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نَقْش (ج) نقوش</div><audio id='word0602a40_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060240.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Engraving(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0602a41_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قمّة (ج) قمم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0602a41'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0602a41_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قمّة (ج) قمم</div><audio id='word0602a41_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/02/060241.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Peak(s)</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

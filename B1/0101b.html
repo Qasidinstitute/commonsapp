@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0101b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch01img" role="main">
+	   <h1 class="as1">الدرس الأول: النص - الدبلوماسية والدبلوماسيين</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter0101b01" controls><source src="audio/01/texts/01/010101.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>         الدبلوماسيّة هي الطريقة الأساسية للتفاوض بين الأمم المختلفة، والتي تشتمل على السياسات المتبعة من قبل بلدان للتأثير على بلدان أخرى، والفشل في عملية التفاوض هذه والجهود الدبلوماسية التي بُذلت، يعني فشل العلاقات السياسية وبالتالي قد تحدث على الأغلب حرب بين الطرفين.
+					</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter0101b02" controls><source src="audio/01/texts/01/010102.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>         والدبلوماسيون المرسلون من قبل بعض البلدان إلى أخرى، هم ممثلون عن تلك البلاد للمساعدة في استمرارية العلاقة بين بلادهم والبلاد المرسلين إليها، وجلّ عملهم من أجل مكاسب اقتصادية وسياسية، وأيضاً لتحسين التعاون الدولي.
+					</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter0101b03" controls><source src="audio/01/texts/01/010103.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>          ومَهمّة الدبلومسي هي جمع المعلومات القيمة التي تهم بلاده، وإرسال تقارير رسمية عن هذه المعلومات، وهدف هذه التقارير هو المحافظة على حقوق مواطنيهم خارج البلاد، والموجودين في البلاد الموفدين إليها.
+					</p>
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter0101b04" controls><source src="audio/01/texts/01/010104.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>مقر عمل الدبلوماسيين هو السفارة غالباً، ويُعتبرون ممثلين لدولهم، مستقلين استقلالاً تاماً في أداء مهامهم، بالإضافة لهذا، فلهم امتيازات أخرى منها :
+						لا يُلقى القبض عليهم لأي سبب كان، هم أو أحد أفراد أسرهم. 
+						عدم السماح بتفتيش مقر إقاماتهم أو عملهم أو أوراقهم.
+						لا تُفرض عليهم الضرائب التي تفرض على المواطن العادي أثناء إقامتهم في الدولة الموفدين إليها.
+						الحرية الكاملة في أداء عباداتهم.</p>
+													  		
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter0101b05" controls><source src="audio/01/texts/01/010105.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p> يرى بعض الباحثين والعلماء أنّه لا ضرورة للدبلوماسيين في أيامنا هذه، لسهولة تبادل المعلومات والوثائق على أعلى المستويات، وتوفّر وسائل الاتصال، لكن الدبلوماسيين يرون غير ذلك ويهتم البعض بعمل صداقات مع رجالات الدولة المقيمين فيها ! </p>
+			</div>
+		</div>								
+	</div>
+</section>
+
+</body>
+</html>

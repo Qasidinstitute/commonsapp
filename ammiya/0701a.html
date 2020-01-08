@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0701a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة السابعة - شو بلبقلي أكتر؟</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id='allwords_audio'>
+			<source src='audio/07/07.mp3' type='audio/mp3'></audio>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0701a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اشترى- بيشتري</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اشترى- بيشتري</div><audio id='word0701a01_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070101.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To buy</p>
+					<p class='wordContext'>Context:بدها تشتري بنطلون جديد .</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أواعي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أواعي</div><audio id='word0701a02_audio' class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070102.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Clothes</p>
+					<p class='wordContext'>Context:لازم أشتري خزانة أكبر لأنه أواعيي كتار.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لبس بلبس</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لبس بلبس</div><audio id='word0701a03_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070103.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To wear (for clothes only)</p>
+					<p class='wordContext'>Context:عادة بحب ألبس أواعي مريحة لما أروح عالجامعة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لبق – بلبق ( لـ)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لبق – بلبق ( لـ)</div><audio id='word0701a04_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070104.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To suit/ fit/ match</p>
+					<p class='wordContext'>Context:هاد البنطلون عنجد بلبقلك.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لابق</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لابق</div><audio id='word0701a05_audio' class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070105.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>The adjective from the verb above</p>
+					<p class='wordContext'>Context:بصراحة هاد اللون مش لابقلك كتير.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>Size/ قياس/ نمرة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>Size/ قياس/ نمرة</div><audio id='word0701a06_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070106.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'></p>
+					<p class='wordContext'>Context:اي size بتلبس عادة ؟؟ شو قياسك؟</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>غرفة قياس</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>غرفة قياس</div><audio id='word0701a07_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070107.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Changing room</p>
+					<p class='wordContext'>Context:وين غرفة القياس لو سمحت ؟</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ما لبق / ما زبط</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ما لبق / ما زبط</div><audio id='word0701a08_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070108.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>It didn’t fit/ match</p>
+					<p class='wordContext'>Context:شكرا ، الجاكيت ما لبقلي. شكرا الفستان ما زبط معي.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>كم سعره / كم حقه ؟</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>كم سعره / كم حقه ؟</div><audio id='word0701a09_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070109.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>How much is this …..?</p>
+					<p class='wordContext'>Context:هاي الشنته كم سعرها لو سمحت ؟</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قيس – قيسي – قيسوا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قيس – قيسي – قيسوا</div><audio id='word0701a10_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070110.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>The imperative tense to ask someone to try clothes.</p>
+					<p class='wordContext'>Context:قيس هاي البلوزه مع هاد البنطلون بيلبقوا على بعض كتير.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قاس – بقيس (2) جرّب – بجرّب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قاس – بقيس (2) جرّب – بجرّب</div><audio id='word0701a11_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070111.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To try on</p>
+					<p class='wordContext'>Context:بدي اقيس/ أجرب هاي البلوزة مع هاد البنطلون </p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فاصل بفاصل مفاصلة (3)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فاصل بفاصل مفاصلة (3)</div><audio id='word0701a12_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070112.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To bargain </p>
+					<p class='wordContext'>Context:السيارة كان سعرها 5000، بس أنا أخدتها بـ 4000 بعد المفاصلة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شتوي </h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شتوي </div><audio id='word0701a13_audio' class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070113.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Wintry</p>
+					<p class='wordContext'>Context:بالجو البارد بنحب نطبخ شوربة عدس لأنها أكلة شتوية.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صيفي </h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صيفي </div><audio id='word0701a14_audio' class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070114.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Summary </p>
+					<p class='wordContext'>Context:مع إنّا بشهر 12 بس الجو اليوم صيفي.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>رخيص – غالي </h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>رخيص – غالي </div><audio id='word0701a15_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070115.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Cheap – expensive</p>
+					<p class='wordContext'>Context:مش دايما الأشياء الغالية أحسن من الرخيصة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مُناسب </h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مُناسب </div><audio id='word0701a16_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070116.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Appropriate </p>
+					<p class='wordContext'>Context:البنت عادة ما بتقعد بالكرسي الأمامي بالتكسي، لأنه هاد مش مناسب
+						بالثقافة العربية.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لِبْسة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لِبْسة</div><audio id='word0701a17_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070117.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Outfit </p>
+					<p class='wordContext'>Context:بدي أنزل عالسوق عشان أشتري لبسة لعرس ابن خالي.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اختار بختار اخْتِيار (8)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اختار بختار اخْتِيار (8)</div><audio id='word0701a18_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070118.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>To choose </p>
+					<p class='wordContext'>Context:رح أدخل الجامعة السنة الجاي ولسا ما بعرف أي تخصص رح أختار.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>موديل </h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>موديل </div><audio id='word0701a19_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070119.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Style/ design </p>
+					<p class='wordContext'>Context:هاد الموديل لابقلها لأنها نحيفة.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بيّاع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بيّاع</div><audio id='word0701a20_audio' class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070120.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Seller </p>
+					<p class='wordContext'>Context:خالي بشتغل بياع بمحل أواعي.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>خَصِم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>خَصِم</div><audio id='word0701a21_audio' class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070121.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Discount </p>
+					<p class='wordContext'>Context:أخدت خصم 30% على هاد البنطلون لأنه صاحب المحل ابن خالتي. </p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تنزيلات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تنزيلات</div><audio id='word0701a22_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070122.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Sale </p>
+					<p class='wordContext'>Context:خلينا نروح على هاد المحل عامل تنزيلات كبيرة!</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0701a23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أنيق/ـة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0701a23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0701a23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أنيق/ـة</div><audio id='word0701a23_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/07/vocab/01/070123.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Elegant </p>
+					<p class='wordContext'>Context:هاد الزلمة أنيق كتير وبعرف كيف يلبس.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

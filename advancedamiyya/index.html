@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intermediate Jordanian Arabic</title>
+    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/commons.css" />
+    <link rel="stylesheet" href="../css/ammiya.css" />      
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+		var currentvocab = "";
+		var currentAudio = "none";
+		var currenthash = "";
+		var currentpage = "";
+		var htmlpage = "";
+		var backloc = "";
+		$(function(){
+			var rightnav = $("#rightnav");
+			var listbtn = $("#listbtn");
+			var searchbtn = $("#searchbtn");			
+			$("[data-role='header'], [data-role='footer']" ).toolbar();
+			$("body>[data-role='panel']" ).panel();
+			$("#navigationPanel ul").listview();
+			$("#navigationPanel").trigger("create");			
+			$.mobile.document.on("pagecontainerload", function(){
+				currentAudio = "none";
+			});
+			$.mobile.document.on("pagecontainerchange", function(){
+				currenthash = document.location.hash;	
+				currentpage = document.location.pathname;
+				console.log(currentpage);
+				if ((currentpage == "/ammiya/")||(currentpage.lastIndexOf("index.html") > -1)) {
+					if (currenthash == "") {
+						rightnav.attr("href","../index.html");
+						rightnav.attr("data-ajax","false");
+						if (listbtn.hasClass("listbtndown") == false) {
+							listbtn.addClass("listbtndown");
+						}
+						if (listbtn.hasClass("listbtnup")) {
+							listbtn.removeClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown")) {
+							searchbtn.removeClass("searchbtndown")
+						}
+						if (searchbtn.hasClass("searchbtnup") == false) {
+							searchbtn.addClass("searchbtnup");
+						}
+						
+					} else {
+						rightnav.attr("href","#home");
+						rightnav.attr("data-ajax","true");
+						if (listbtn.hasClass("listbtndown")) {
+							listbtn.removeClass("listbtndown");
+						}	
+						if (listbtn.hasClass("listbtnup") == false) {
+							listbtn.addClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown") == false) {
+							searchbtn.addClass("searchbtndown");
+						}	
+						if (searchbtn.hasClass("searchbtnup")) {
+							searchbtn.removeClass("searchbtnup")
+						}
+					}
+				} else {
+					htmlpage = currentpage.substring(currentpage.lastIndexOf(".html")-1,currentpage.lastIndexOf(".html"));
+					var pgname = currentpage.substring(currentpage.lastIndexOf("/")+1,currentpage.lastIndexOf(".html"));
+					backloc = "index.html";
+					rightnav.attr("href",backloc);
+					rightnav.attr("data-ajax","true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+						listbtn.addClass("listbtnup");
+					}	
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown")
+						searchbtn.addClass("searchbtnup");
+					}					
+				}
+
+			});			
+		});
+		$(document).on( "pagecontainerbeforeshow", function() {
+			$.mobile.document.on("click", "#vocabindex li a", function () {
+				currentvocab = $(this).attr('id');
+				$("body").on("pagecontainershow", function(event, ui) {
+					if(ui.prevPage[0].id == "index")
+					  $("html,body").animate({scrollTop: $("#"+currentvocab+"_vocab").offset().top}, 500);
+				});
+			});
+		} );
+    </script>     
+    </head>
+    <body>
+   
+		<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+		  <h1 class="englishText">Advanced Jordanian Arabic</h1>
+		  <a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+		</div>
+   	
+    	<section id="home" data-role="page">
+			<div class="ui-content mainTitle bookimg" role="main">
+			  <h1 class="as1">العامية الأردنية – المستوى المتقدم<br>
+		      </h1>
+			</div>
+   			<ul data-role="listview" data-theme="b" data-filter="true" data-filter-placeholder="Find Lesson..." data-filter-theme="a" data-icon="custom" id="lessonlist">
+				<li data-role='list-divider' data-theme='a'>الوحدة الثالثة: حقيقة وخرافة</li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0301a.html'><div class='as3'>مفردات</div></a></li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0301b.html'><div class='as3'>التمرين والتعابير</div></a></li>		
+				<li data-role='list-divider' data-theme='a'>الوحدة الرابعة: رجل لكل المناسبات</li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0401a.html'><div class='as3'>مفردات</div></a></li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0401b.html'><div class='as3'>التمرين والتعابير</div></a></li>	
+				<li data-role='list-divider' data-theme='a'>الوحدة الخامسة: تحفيز الذات والايجابية</li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0501a.html'><div class='as3'>مفردات</div></a></li>
+				<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='0501b.html'><div class='as3'>التمرين والتعابير</div></a></li>													
+		 	</ul>
+		</section>
+		
+		<div id="index" data-role="page">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Find Vocabulary..." data-inset="true" data-theme="b" id="vocabindex" class="listArabic">
+
+			</ul>	
+		</div>		
+		
+		<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+			<div data-role="navbar" data-grid="b" class="footernav">
+				<ul>
+					<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
+					<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+					<li><a href="#index" class="searchbtnup" data-icon="custom" id="searchbtn">Index</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->   
+        
+    </body>
+</html>

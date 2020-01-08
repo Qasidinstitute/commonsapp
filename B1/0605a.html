@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+</head>
+
+<body>
+
+	<section id="chapter0605a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$("#" + currentvocab + "_vocab").collapsible('expand');
+					});
+				}
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle ch06img" role="main">
+			<h1 class="as1">الدرس الثاني ثانياً :مفردات النص</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0605a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>وزير (ج) وزراء</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>وزير (ج) وزراء</div><audio id='word0605a01_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060501.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Minister(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>يمضي قُدُمًا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>يمضي قُدُمًا</div><audio id='word0605a02_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060502.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: To continue ahead</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سبيل (ج) سُبُل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سبيل (ج) سُبُل</div><audio id='word0605a03_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060503.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Path(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تعاون – يتعاون/ التعاون</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تعاون – يتعاون/ التعاون</div><audio id='word0605a04_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060504.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To cooperate / cooperation</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شقيق(ج) أشقاء</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شقيق(ج) أشقاء</div><audio id='word0605a05_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060505.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Brother(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تعلّق – يتعلَّق/ التعلّق (بـ )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تعلّق – يتعلَّق/ التعلّق (بـ )</div><audio
+							id='word0605a06_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060506.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To be attached with / attachment</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قوّى – يقوّي/ التقوية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قوّى – يقوّي/ التقوية</div><audio id='word0605a07_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060507.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To strengthen</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مجال (ج) ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مجال (ج) ات</div><audio id='word0605a08_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060508.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Field(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ركّز – يركّز/ التركيز</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ركّز – يركّز/ التركيز</div><audio id='word0605a09_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060509.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To focus</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أعدّ – يعدّ/ الإعداد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أعدّ – يعدّ/ الإعداد</div><audio id='word0605a10_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060510.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To prepare / preparation</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>استقطب – يستقطب/ الاستقطاب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>استقطب – يستقطب/ الاستقطاب</div><audio id='word0605a11_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060511.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To attract</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حاجّ (ج) حُجّاج</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حاجّ (ج) حُجّاج</div><audio id='word0605a12_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060512.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Pilgrim(s) (During Hajj)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>معتمِر/ون</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>معتمِر/ون</div><audio id='word0605a13_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060513.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Pilgrim(s) (Umrah)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أكّد – يؤكّد/ التأكيد (على)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أكّد – يؤكّد/ التأكيد (على)</div><audio id='word0605a14_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060514.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To emphasize</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عزّز – يعزز/ التعزيز</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عزّز – يعزز/ التعزيز</div><audio id='word0605a15_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060515.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To reinforce</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سعى – يسعى/ السعي ( لـ / إلى )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سعى – يسعى/ السعي ( لـ / إلى )</div><audio
+							id='word0605a16_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060516.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To seek</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>استعدّ – يستعد/ الاستعداد (لـ )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>استعدّ – يستعد/ الاستعداد (لـ )</div><audio
+							id='word0605a17_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060517.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To get ready</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حقّق – يحقق/ التحقيق</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حقّق – يحقق/ التحقيق</div><audio id='word0605a18_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060518.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: </p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>المصْلحة (ج) المصالح</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>المصْلحة (ج) المصالح</div><audio id='word0605a19_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060519.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Interest(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>وكالة (ج) ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>وكالة (ج) ات</div><audio id='word0605a20_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060520.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Agency</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>روّج – يروج/ الترويج (لـ )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>روّج – يروج/ الترويج (لـ )</div><audio id='word0605a21_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060521.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To promote / promotion</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دَور (ج) أدوار</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دَور (ج) أدوار</div><audio id='word0605a22_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060522.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Turn(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بادر – يبادر/ المبادرة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بادر – يبادر/ المبادرة</div><audio id='word0605a23_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060523.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To initiate / initiation</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a24_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>متواصل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a24'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a24_btn'></div>
+						<div class='as1 ui-bar vocabPos'>متواصل</div><audio id='word0605a24_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060524.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Continuous</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a25_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دعَم – يدعَم/ الدَّعْم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a25'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a25_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دعَم – يدعَم/ الدَّعْم</div><audio id='word0605a25_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060525.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: To support</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a26_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ارتكز – يرتكز/ الارتكاز(حول)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a26'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a26_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ارتكز – يرتكز/ الارتكاز(حول)</div><audio id='word0605a26_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060526.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To rely on</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a27_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>جسّد – يجسّد/ التجسيد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a27'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a27_btn'></div>
+						<div class='as1 ui-bar vocabPos'>جسّد – يجسّد/ التجسيد</div><audio id='word0605a27_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060527.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To embody / embodiment</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a28_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>زخم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a28'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a28_btn'></div>
+						<div class='as1 ui-bar vocabPos'>زخم</div><audio id='word0605a28_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060528.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Magnification</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a29_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بوابة (ج) ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a29'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a29_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بوابة (ج) ات</div><audio id='word0605a29_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060529.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Gate(s)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a30_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أسهمَ – يسهِم/ الإسهام (بـ )</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a30'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a30_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أسهمَ – يسهِم/ الإسهام (بـ )</div><audio id='word0605a30_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060530.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To contribute</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a31_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نشّط – ينشّط/ التنشيط</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a31'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a31_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نشّط – ينشّط/ التنشيط</div><audio id='word0605a31_audio'
+							class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060531.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To activate</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0605a32_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>استثمر – يستثمر/ الاستثمار←مستثمر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0605a32'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0605a32_btn'></div>
+						<div class='as1 ui-bar vocabPos'>استثمر – يستثمر/ الاستثمار←مستثمر</div><audio
+							id='word0605a32_audio' class='vocabAudioSrc'>
+							<source src='audio/06/vocab/05/060532.mp3' type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb and Verbal Noun</p>
+					<p class='wordMearning'>Meaning: To invest / investment</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
