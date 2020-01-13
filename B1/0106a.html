@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter0106a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$("#"+currentvocab+"_vocab").collapsible('expand');
+			} );
+		}
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>
+   <div class="ui-content mainTitle ch01img" role="main">
+	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+		<div data-role='collapsible' id='0106a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لم يعد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a01_btn'></div><div class='as1 ui-bar vocabPos'>لم يعد</div><audio id='word0106a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010601.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: no longer</p></div></div>
+			<div data-role='collapsible' id='0106a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حصانة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a02_btn'></div><div class='as1 ui-bar vocabPos'>حصانة</div><audio id='word0106a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010602.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: immunity</p></div></div>
+			<div data-role='collapsible' id='0106a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مبعوث</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a03_btn'></div><div class='as1 ui-bar vocabPos'>مبعوث</div><audio id='word0106a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010603.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: envoy</p></div></div>
+			<div data-role='collapsible' id='0106a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>في ضوء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a04_btn'></div><div class='as1 ui-bar vocabPos'>في ضوء</div><audio id='word0106a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010604.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: in the light of</p></div></div>
+			<div data-role='collapsible' id='0106a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فظائع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a05_btn'></div><div class='as1 ui-bar vocabPos'>فظائع</div><audio id='word0106a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010605.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: atrocities</p></div></div>
+			<div data-role='collapsible' id='0106a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>على الفور</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a06_btn'></div><div class='as1 ui-bar vocabPos'>على الفور</div><audio id='word0106a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010606.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: immediately</p></div></div>
+			<div data-role='collapsible' id='0106a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الإهانة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a07_btn'></div><div class='as1 ui-bar vocabPos'>الإهانة</div><audio id='word0106a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010607.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: insult</p></div></div>
+			<div data-role='collapsible' id='0106a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شق الصفوف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a08_btn'></div><div class='as1 ui-bar vocabPos'>شق الصفوف</div><audio id='word0106a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010608.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to create a group division</p></div></div>
+			<div data-role='collapsible' id='0106a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تزامن - يتزامن-التزامن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a09_btn'></div><div class='as1 ui-bar vocabPos'>تزامن - يتزامن-التزامن</div><audio id='word0106a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010609.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to concede/to be at the same time of</p></div></div>
+			<div data-role='collapsible' id='0106a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التّنحي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0106a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0106a10_btn'></div><div class='as1 ui-bar vocabPos'>التّنحي</div><audio id='word0106a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/06/010610.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: step down</p></div></div>   
+	</div>
+</section>
+</body>
+
+</html>
