@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title> Advanced Jordanian Arabic </title>
+</head>
+<body>
+   <section id ="chapter1204a" data-role="page">
+   <script >
+      $(function() {
+                if (currentvocab != "") {$("#" + currentvocab + "_vocab").on("collapsiblecreate", function(event, ui) {$(this).collapsible('expand')
+                        })
+       }
+           var count= $(".vocabAudioSrc").length;
+                $(".vocabAudioSrc").each(function(audio_no) {
+                    if (audio_no < count) {
+                        this.addEventListener("ended", function() {
+                                audioBtn= $(this).parent().attr('id').toString() + "_btn";
+                                        $("#" + audioBtn).toggleClass('audio-playing audio-paused');
+                                currentAudio = "none";});                         }
+                });
+
+                $("#vocabwords").on("click", ".audio-play-pause", function() {
+                    thisAudio= $(this).parent().attr('id').toString() + "_audio";
+                    if ($(this).hasClass('audio-paused')) {
+                                if (currentAudio != "none") {$("#" + currentAudio)[0].pause();
+                                                             btnName=currentAudio.substring(
+                                                                 0, currentAudio.indexOf("_audio")) + "_btn";
+                                                             $("#" + btnName).toggleClass('audio-paused audio-playing');}
+                        currentAudio=thisAudio;
+                                $("#" + thisAudio)[0].play();
+                                $(this).toggleClass('audio-playing audio-paused'); } else {
+                        currentAudio="none";
+                                $("#" + thisAudio)[0].pause();
+                                $(this).toggleClass('audio-paused audio-playing'); }
+                });
+                $("#playAllBtn").on("click", function() {
+                        if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {$("#allwords_audio")[0].play();
+                                $(this).text("PAUSE PLAY ALL");} else {$("#allwords_audio")[0].pause();
+                                                                                                $(this).text("PLAY ALL VOCABULARY AUDIO");}
+                });
+                $("#allwords_audio").on('ended', function () {$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");});         });
+    </script >
+    <div class = "ui-content mainTitle bookimg" role="main">
+        <h1 class = "as1">الوحدة الثانية عشرة: مفردات</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id="allwords_audio">
+			<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/12.mp3" type='audio/mp3'></audio>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords"><div data-role="collapsible" id="1204a01_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">بطّل – بِبَطّل</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a01">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a01_btn"></div>
+						<div class="as1 ui-bar vocabPos">بطّل – بِبَطّل</div><audio id="word1204a01_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120401.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: توقف عن</p>
+					<p class="wordContext">Context: -بطلت أفكر بموضوع الدراسة برة الاردن.
+- بطلت تفرق معاي .
+
+بطلنا نسمع اخبار عن الثورة اليمنية .</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a02_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">لحّق – بيلحِّق</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a02">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a02_btn"></div>
+						<div class="as1 ui-bar vocabPos">لحّق – بيلحِّق</div><audio id="word1204a02_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120402.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: To catch something
+(be in time for)</p>
+					<p class="wordContext">Context: في تنزيلات كتيرة بالسوق...لحّق حالك</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a03_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">يا ميت اهلا وسهلا</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a03">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a03_btn"></div>
+						<div class="as1 ui-bar vocabPos">يا ميت اهلا وسهلا</div><audio id="word1204a03_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120403.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: تقال عندما تكون سعيد بمجيء شخص معين (ميت = 100)</p>
+					<p class="wordContext">Context: نورت عمان يا شباب والله يا ميت اهلا وسهلا</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a04_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">تراس</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a04">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a04_btn"></div>
+						<div class="as1 ui-bar vocabPos">تراس</div><audio id="word1204a04_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120404.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: Terrace</p>
+					<p class="wordContext">Context: بحب اقعد اشرب كاسة شاي ع التراس</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a05_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">اتمدّد – بِتمدَّد</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a05">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a05_btn"></div>
+						<div class="as1 ui-bar vocabPos">اتمدّد – بِتمدَّد</div><audio id="word1204a05_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120405.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: استلقى</p>
+					<p class="wordContext">Context: احلى شي تتمدد بعد الغدا</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a06_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">كل سنة وانت سالمة</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a06">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a06_btn"></div>
+						<div class="as1 ui-bar vocabPos">كل سنة وانت سالمة</div><audio id="word1204a06_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120406.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: كل عام وانت بخير</p>
+					<p class="wordContext">Context: كل سنة وانت سالمة وان شالله تكون سنه حلوه عليكي.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a07_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">ايمتى رح حنفرح فيكي</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a07">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a07_btn"></div>
+						<div class="as1 ui-bar vocabPos">ايمتى رح حنفرح فيكي</div><audio id="word1204a07_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120407.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: سؤال عن متى سوف تتزوجين</p>
+					<p class="wordContext">Context: ما شاالله عليكي كبرانه! ايمتى رح نفرح فيكي؟</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a08_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">روحك بتطلع</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a08">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a08_btn"></div>
+						<div class="as1 ui-bar vocabPos">روحك بتطلع</div><audio id="word1204a08_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120408.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: </p>
+					<p class="wordContext">Context: في الصيف، روحك بتطلع لتلاقي تكسي.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a09_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">حامل هم</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a09">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a09_btn"></div>
+						<div class="as1 ui-bar vocabPos">حامل هم</div><audio id="word1204a09_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120409.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: قلقان على شيء معين</p>
+					<p class="wordContext">Context: الكل حامل هم الامتحان</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a10_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">على كيفك</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a10">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a10_btn"></div>
+						<div class="as1 ui-bar vocabPos">على كيفك</div><audio id="word1204a10_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120410.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: كما تحبه ان يكون</p>
+					<p class="wordContext">Context: والله الأكل اليوم على كيفك</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a11_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">عُرُس</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a11">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a11_btn"></div>
+						<div class="as1 ui-bar vocabPos">عُرُس</div><audio id="word1204a11_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120411.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: حفلة الزواج</p>
+					<p class="wordContext">Context: بدي اشتري فستان جديد عشان عرس اخوي.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a12_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">ملتهي</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a12">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a12_btn"></div>
+						<div class="as1 ui-bar vocabPos">ملتهي</div><audio id="word1204a12_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120412.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: اسم فاعل من الفعل التهي ويعني مشغول</p>
+					<p class="wordContext">Context: رن تلفوني كتير بس ما قدر ارد كنت ملتهية بشغل البيت .</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a13_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">قلاية بندورة</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a13">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a13_btn"></div>
+						<div class="as1 ui-bar vocabPos">قلاية بندورة</div><audio id="word1204a13_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120413.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: طبخه عبارة عن بندورة، توم، زيت زيتون وتطبخ في المقلاة.</p>
+					<p class="wordContext">Context: ما في ازكى من قلاية بندورة امي.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a14_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">شغليها للأسطوانه</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a14">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a14_btn"></div>
+						<div class="as1 ui-bar vocabPos">شغليها للأسطوانه</div><audio id="word1204a14_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120414.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: تقال عندما الشخص دايما يعيد نفس الكلام عن موضوع معين.</p>
+					<p class="wordContext">Context: كل ما بحكي مع اختي عن شغل البيت بتشغل نفس الاسطوانة عن انها مشغولة بالدراسة.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a15_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">سكران</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a15">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a15_btn"></div>
+						<div class="as1 ui-bar vocabPos">سكران</div><audio id="word1204a15_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120415.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: شرب الخمر لدرجة عالية وتقال للشخص الفاقد للتركيز.</p>
+					<p class="wordContext">Context: السواق مش مركز اليوم، بسوق زي السكران.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a16_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">يا خسارة</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a16">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a16_btn"></div>
+						<div class="as1 ui-bar vocabPos">يا خسارة</div><audio id="word1204a16_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120416.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: </p>
+					<p class="wordContext">Context: </p>
+				</div>
+			</div><div data-role="collapsible" id="1204a17_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">شرّف- شرّفي  (فعل امر)</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a17">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a17_btn"></div>
+						<div class="as1 ui-bar vocabPos">شرّف- شرّفي  (فعل امر)</div><audio id="word1204a17_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120417.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: تفضلي</p>
+					<p class="wordContext">Context: ممكن احكي معك بموضوع؟
+اه شرفي.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a18_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">دبّر –بدبّر</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a18">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a18_btn"></div>
+						<div class="as1 ui-bar vocabPos">دبّر –بدبّر</div><audio id="word1204a18_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120418.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: يعرف كيف يصرف اموره
+To mange things</p>
+					<p class="wordContext">Context: ابني أهبل ما بعرف يدبر حاله في المدرسة.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a19_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">اذنّي</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a19">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a19_btn"></div>
+						<div class="as1 ui-bar vocabPos">اذنّي</div><audio id="word1204a19_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120419.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: اذا كنت / لو كنت</p>
+					<p class="wordContext">Context: احكيلي اذا رحت ع السينما واذني فاضي بروح معك.</p>
+				</div>
+			</div><div data-role="collapsible" id="1204a20_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">البسطة</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1204a20">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1204a20_btn"></div>
+						<div class="as1 ui-bar vocabPos">البسطة</div><audio id="word1204a20_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/04/120420.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: مكان يباع فيه الأشياء على الرصيف بالشارع.</p>
+					<p class="wordContext">Context: الأشياء ع البسطة أرخص من المحلات.</p>
+				</div>
+			</div></div></section></body></html>

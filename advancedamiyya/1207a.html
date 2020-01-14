@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title> Advanced Jordanian Arabic </title>
+</head>
+<body>
+   <section id ="chapter1207a" data-role="page">
+   <script >
+      $(function() {
+                if (currentvocab != "") {$("#" + currentvocab + "_vocab").on("collapsiblecreate", function(event, ui) {$(this).collapsible('expand')
+                        })
+       }
+           var count= $(".vocabAudioSrc").length;
+                $(".vocabAudioSrc").each(function(audio_no) {
+                    if (audio_no < count) {
+                        this.addEventListener("ended", function() {
+                                audioBtn= $(this).parent().attr('id').toString() + "_btn";
+                                        $("#" + audioBtn).toggleClass('audio-playing audio-paused');
+                                currentAudio = "none";});                         }
+                });
+
+                $("#vocabwords").on("click", ".audio-play-pause", function() {
+                    thisAudio= $(this).parent().attr('id').toString() + "_audio";
+                    if ($(this).hasClass('audio-paused')) {
+                                if (currentAudio != "none") {$("#" + currentAudio)[0].pause();
+                                                             btnName=currentAudio.substring(
+                                                                 0, currentAudio.indexOf("_audio")) + "_btn";
+                                                             $("#" + btnName).toggleClass('audio-paused audio-playing');}
+                        currentAudio=thisAudio;
+                                $("#" + thisAudio)[0].play();
+                                $(this).toggleClass('audio-playing audio-paused'); } else {
+                        currentAudio="none";
+                                $("#" + thisAudio)[0].pause();
+                                $(this).toggleClass('audio-paused audio-playing'); }
+                });
+                $("#playAllBtn").on("click", function() {
+                        if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {$("#allwords_audio")[0].play();
+                                $(this).text("PAUSE PLAY ALL");} else {$("#allwords_audio")[0].pause();
+                                                                                                $(this).text("PLAY ALL VOCABULARY AUDIO");}
+                });
+                $("#allwords_audio").on('ended', function () {$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");});         });
+    </script >
+    <div class = "ui-content mainTitle bookimg" role="main">
+        <h1 class = "as1">الوحدة الثانية عشرة: مفردات</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id="allwords_audio">
+			<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/12.mp3" type='audio/mp3'></audio>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords"><div data-role="collapsible" id="1207a01_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">بلكي</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a01">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a01_btn"></div>
+						<div class="as1 ui-bar vocabPos">بلكي</div><audio id="word1207a01_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120701.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: ممكن</p>
+					<p class="wordContext">Context: ما بعرف ليش بشحد؟؟ بس بلكي عنجد ما معه مصاري ؟</p>
+				</div>
+			</div><div data-role="collapsible" id="1207a02_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">عامل طوب</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a02">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a02_btn"></div>
+						<div class="as1 ui-bar vocabPos">عامل طوب</div><audio id="word1207a02_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120702.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: عامل يعمل مع  Brick</p>
+					<p class="wordContext">Context: شغلة عامل الطوب صعبة على الكبار .. فما بالك الصغار ؟</p>
+				</div>
+			</div><div data-role="collapsible" id="1207a03_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">عامل باطون</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a03">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a03_btn"></div>
+						<div class="as1 ui-bar vocabPos">عامل باطون</div><audio id="word1207a03_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120703.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: عامل يعمل معconcrete</p>
+					<p class="wordContext">Context: </p>
+				</div>
+			</div><div data-role="collapsible" id="1207a04_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">صنعة</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a04">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a04_btn"></div>
+						<div class="as1 ui-bar vocabPos">صنعة</div><audio id="word1207a04_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120704.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: مهنة .. ولكن عادة تكونتحتاج مهارة يدوية .. (ميكانيكي – حدّاد- نجّار )</p>
+					<p class="wordContext">Context: </p>
+				</div>
+			</div><div data-role="collapsible" id="1207a05_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">ناوي</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a05">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a05_btn"></div>
+						<div class="as1 ui-bar vocabPos">ناوي</div><audio id="word1207a05_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120705.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: اسم فاعل من الفعل نوى</p>
+					<p class="wordContext">Context: شو ناوي تعمل السنة الجاي ؟.؟
+والله لحد هلّا مابعرف .</p>
+				</div>
+			</div><div data-role="collapsible" id="1207a06_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">الحاوية</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a06">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a06_btn"></div>
+						<div class="as1 ui-bar vocabPos">الحاوية</div><audio id="word1207a06_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120706.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: Container , عادة يعني حاوية زبالة .. ولكن ممكن ان نقول حاوية ملابس .. حاوية دواء</p>
+					<p class="wordContext">Context: </p>
+				</div>
+			</div><div data-role="collapsible" id="1207a07_vocab" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">بخزي</h3>
+				<div class="wordMeaningBox">
+					<div class="wordText" id="word1207a07">
+						<div class="audio-play-pause audio-paused ui-block-a" id="word1207a07_btn"></div>
+						<div class="as1 ui-bar vocabPos">بخزي</div><audio id="word1207a07_audio"
+							class="vocabAudioSrc">
+							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/12/vocab/07/120707.mp3" type="audio/mp3"></audio>
+					</div>
+					<p class="wordMearning">Meaning: مُخزي ..</p>
+					<p class="wordContext">Context: هاد التصرف بخزي ومش مناسب بالمرررة .</p>
+				</div>
+			</div></div></section></body></html>
