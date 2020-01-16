@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1205b" data-role="page">	
+<script>
+	$(function() {
+		var countP = $(".passageAudio").length;
+		$(".passageAudio").each(function (passage_no) {
+		if (passage_no < countP) {
+			this.addEventListener("play", function () {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+				}
+					currentAudio = $(this).attr('id');			
+				});
+			this.addEventListener("ended", function () {
+				console.log("audio ended");
+				currentAudio = "none";
+			});
+			this.addEventListener("pause", function () {
+				console.log("audio paused");
+				currentAudio = "none";
+			});
+			}
+		});	
+	});
+</script>
+   <div class="ui-content mainTitle ch12img" role="main">
+	   <h1 class="as1">الدرس الرابع: النص - ناجي العلي .. حنظلة</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+    	<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+    		<audio class="passageAudio" id="chapter1205b01" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/05/B1120501t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+			<p>"أربعون ألف رسم كاريكاتوري"، انتهت "بحنظلة" الذي صار بمثابة أيقونة تمثلُ الانهزامَ والضعف العربيَّين. لم تكن شخصية حنظلة التي ابتدَعَها الفنان "ناجي العلي" مجرَّدَ رسم كاريكاتوري تمثلُ صبياً في العاشرة من عمره أدار ظهره، وكتّف يديه خلفه كشاهد فقط، بل كانت رمزا دخل به "العلي" إلى قلوب الجماهير العربية عبر شخصية تجتمع فيها شخصية الشعب الفلسطيني المعذّب من جهة، والقوي من الجهة الأخرى.</p>	
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+    		<audio class="passageAudio" id="chapter1005b02" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/05/B1120501t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+			<p>ولد ناجي سليم حسين العلي في العام 1937، وحصَلَ على شهادة "ميكانيكا"، ثمَّ عمِلَ محرِّرا ورساما ومخرجا صحافيا في صحيفتي "الطليعة" و"السياسة" في الكويت، ثمَّ في "السفير" اللبنانية ف"القبس" الكويتية و"القبس" الدولية.
+			</p>	
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+    		<audio class="passageAudio" id="chapter1005b03" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/05/B1120503t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>اغتاله شخصٌ ما يزالُ مجهولا في لندن العام 1987 مُنهياً برصاصته حياة مبدع لم يعرف الاستقرار أبدا، بل ذهَبَ أبعَدَ من الخوف، وهو يزيد من نشاطاته المعادية للاحتلال الصهيوني، ويرسمُ صورا جديدة ولافتة للمقاومة.</p>	
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+    		<audio class="passageAudio" id="chapter1005b04" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/05/B1120504t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+				<p>لم يكتفِ العلي بالرسم فقط، بل إنه كتبَ جملة من المقالات التي تدلُّ على وعيه الثوري، كما تدلُّ على إخلاصه لقضيته.  وعن حنظلة يقول ناجي: ولد حنظلة في العاشرة في عمره، وسيَظلُّ دائما في العاشرة من عمره، ففي تلك السن غادرَ فلسطين، وحين يعود حنظلة إلى فلسطين سيكون في العاشرة ثم يبدأ في الكبر، فقوانين الطبيعة لا تنطبق عليه لأنه استثناء، كما هو فقدان الوطن استثناء". وأما عن سبب تكتيف يديه فيقول ناجي العلي: كتفته بعد حرب أكتوبر 1973 لأن المنطقة كانت تشهد عملية تطبيع شاملة، وهنا كان تكتيف الطفل دلالة على رفضه المشاركة في حلول التسوية الأميركية في المنطقة، فهو ثائر وليس مطبّعا.</p>	
+			</div>
+		</div>
+		<div data-role="collapsible" data-iconpos="right">
+    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+    		<audio class="passageAudio" id="chapter1005b05" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/05/B1120505t.mp3" type="audio/mp3"></audio>
+    		<div class="as2">
+			<p>ويرى مبدعون أن ناجي العلي رسم الثورة والقضية بريشة فنان مبدع حرص على التحريض بسلاح السخرية والنقد اللاذع للأصدقاء والخصوم معا. ويؤكدون أنه عاش عمره وهو يبحث عن الحرية، مبينين أن فنه تميز بأسلوب لا مثيل له في معالجة القضايا السياسية والاجتماعية والإنسانية.</p>	
+			</div>
+		</div>													
+	</div>
+</section>
+
+</body>
+</html>
