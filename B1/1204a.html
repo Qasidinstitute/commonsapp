@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1204a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch12img" role="main">
+	   <h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+		<div data-role='collapsible' id='1204a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ذراعيها</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a01_btn'></div><div class='as1 ui-bar vocabPos'>ذراعيها</div><audio id='word1204a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120401.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Her arms</p></div></div>
+			<div data-role='collapsible' id='1204a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شظايا</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a02_btn'></div><div class='as1 ui-bar vocabPos'>شظايا</div><audio id='word1204a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120402.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Splinter</p></div></div>
+			<div data-role='collapsible' id='1204a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>البلور</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a03_btn'></div><div class='as1 ui-bar vocabPos'>البلور</div><audio id='word1204a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120403.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Crystal</p></div></div>
+			<div data-role='collapsible' id='1204a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فنّجان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a04_btn'></div><div class='as1 ui-bar vocabPos'>فنّجان</div><audio id='word1204a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120404.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cup</p></div></div>
+			<div data-role='collapsible' id='1204a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العطارين</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a05_btn'></div><div class='as1 ui-bar vocabPos'>العطارين</div><audio id='word1204a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120405.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Perfumers</p></div></div>
+			<div data-role='collapsible' id='1204a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>العرّافات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a06_btn'></div><div class='as1 ui-bar vocabPos'>العرّافات</div><audio id='word1204a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120406.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: fortuneteller</p></div></div>
+			<div data-role='collapsible' id='1204a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أُمشط</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a07_btn'></div><div class='as1 ui-bar vocabPos'>أُمشط</div><audio id='word1204a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120407.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To comb</p></div></div>
+			<div data-role='collapsible' id='1204a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ألمم</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a08_btn'></div><div class='as1 ui-bar vocabPos'>ألمم</div><audio id='word1204a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120408.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To collect</p></div></div>
+			<div data-role='collapsible' id='1204a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دوّخت</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a09_btn'></div><div class='as1 ui-bar vocabPos'>دوّخت</div><audio id='word1204a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120409.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To daze</p></div></div>
+			<div data-role='collapsible' id='1204a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وجع</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a10_btn'></div><div class='as1 ui-bar vocabPos'>وجع</div><audio id='word1204a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120410.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Pain</p></div></div>
+			<div data-role='collapsible' id='1204a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الدمع</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a11_btn'></div><div class='as1 ui-bar vocabPos'>الدمع</div><audio id='word1204a11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120411.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tears</p></div></div>
+			<div data-role='collapsible' id='1204a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أتصرف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a12_btn'></div><div class='as1 ui-bar vocabPos'>أتصرف</div><audio id='word1204a12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120412.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To behave</p></div></div>
+			<div data-role='collapsible' id='1204a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الصبيان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a13_btn'></div><div class='as1 ui-bar vocabPos'>الصبيان</div><audio id='word1204a13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120413.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Boys</p></div></div>
+			<div data-role='collapsible' id='1204a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الطبشور</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a14_btn'></div><div class='as1 ui-bar vocabPos'>الطبشور</div><audio id='word1204a14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120414.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Chalk</p></div></div>
+			<div data-role='collapsible' id='1204a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الحيطان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a15_btn'></div><div class='as1 ui-bar vocabPos'>الحيطان</div><audio id='word1204a15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120415.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Walls</p></div></div>
+			<div data-role='collapsible' id='1204a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مذبوح</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a16'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a16_btn'></div><div class='as1 ui-bar vocabPos'>مذبوح</div><audio id='word1204a16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120416.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective (Passive participle)</p><p class='wordMearning'>Meaning: Slaughtered</p></div></div>
+			<div data-role='collapsible' id='1204a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الشرّيان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a17'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a17_btn'></div><div class='as1 ui-bar vocabPos'>الشرّيان</div><audio id='word1204a17_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120417.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Artery</p></div></div>
+			<div data-role='collapsible' id='1204a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تكف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a18'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a18_btn'></div><div class='as1 ui-bar vocabPos'>تكف</div><audio id='word1204a18_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120418.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To stop</p></div></div>
+			<div data-role='collapsible' id='1204a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الدوران</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a19'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a19_btn'></div><div class='as1 ui-bar vocabPos'>الدوران</div><audio id='word1204a19_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120419.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Turning</p></div></div>
+			<div data-role='collapsible' id='1204a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الحسبان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a20'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a20_btn'></div><div class='as1 ui-bar vocabPos'>الحسبان</div><audio id='word1204a20_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120420.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: taken into consideration</p></div></div>
+			<div data-role='collapsible' id='1204a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أقاصيص</h3> <div class='wordMeaningBox'><div class='wordText' id='word1204a21'><div class='audio-play-pause audio-paused ui-block-a' id='word1204a21_btn'></div><div class='as1 ui-bar vocabPos'>أقاصيص</div><audio id='word1204a21_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/04/120421.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Novella/ Stories</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>
