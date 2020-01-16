@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1104a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch11img" role="main">
+	   <h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+		<div data-role='collapsible' id='1104a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أناشيد</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a01_btn'></div><div class='as1 ui-bar vocabPos'>أناشيد</div><audio id='word1104a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110401.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Song</p></div></div>
+			<div data-role='collapsible' id='1104a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جنبات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a02_btn'></div><div class='as1 ui-bar vocabPos'>جنبات</div><audio id='word1104a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110402.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Sides</p></div></div>
+			<div data-role='collapsible' id='1104a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مبادرة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a03_btn'></div><div class='as1 ui-bar vocabPos'>مبادرة</div><audio id='word1104a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110403.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Initiative</p></div></div>
+			<div data-role='collapsible' id='1104a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التسامح</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a04_btn'></div><div class='as1 ui-bar vocabPos'>التسامح</div><audio id='word1104a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110404.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tolerance</p></div></div>
+			<div data-role='collapsible' id='1104a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يبرره</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a05_btn'></div><div class='as1 ui-bar vocabPos'>يبرره</div><audio id='word1104a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110405.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To Justify</p></div></div>
+			<div data-role='collapsible' id='1104a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نحظى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a06_btn'></div><div class='as1 ui-bar vocabPos'>نحظى</div><audio id='word1104a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110406.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To obtain</p></div></div>
+			<div data-role='collapsible' id='1104a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الترويج</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a07_btn'></div><div class='as1 ui-bar vocabPos'>الترويج</div><audio id='word1104a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110407.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Promotion</p></div></div>
+			<div data-role='collapsible' id='1104a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سِلع</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a08_btn'></div><div class='as1 ui-bar vocabPos'>سِلع</div><audio id='word1104a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110408.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Goods</p></div></div>
+			<div data-role='collapsible' id='1104a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جاليات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a09_btn'></div><div class='as1 ui-bar vocabPos'>جاليات</div><audio id='word1104a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110409.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Communities</p></div></div>
+			<div data-role='collapsible' id='1104a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مذهل</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a10_btn'></div><div class='as1 ui-bar vocabPos'>مذهل</div><audio id='word1104a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110410.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Awesome/ Amazing/ Incredible</p></div></div>
+			<div data-role='collapsible' id='1104a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا ...بل</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a11_btn'></div><div class='as1 ui-bar vocabPos'>لا ...بل</div><audio id='word1104a11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110411.mp3' type='audio/mp3'></audio></div><p class='wordType'>Connector</p><p class='wordMearning'>Meaning: Not ... but</p></div></div>
+			<div data-role='collapsible' id='1104a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تناغم</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a12_btn'></div><div class='as1 ui-bar vocabPos'>تناغم</div><audio id='word1104a12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110412.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Harmony</p></div></div>
+			<div data-role='collapsible' id='1104a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نموذج</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a13_btn'></div><div class='as1 ui-bar vocabPos'>نموذج</div><audio id='word1104a13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110413.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Example</p></div></div>
+			<div data-role='collapsible' id='1104a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التعايش</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a14_btn'></div><div class='as1 ui-bar vocabPos'>التعايش</div><audio id='word1104a14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110414.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Coexistence</p></div></div>
+			<div data-role='collapsible' id='1104a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التصادم</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a15_btn'></div><div class='as1 ui-bar vocabPos'>التصادم</div><audio id='word1104a15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110415.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Collision</p></div></div>
+			<div data-role='collapsible' id='1104a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تقبُّل الآخَر</h3> <div class='wordMeaningBox'><div class='wordText' id='word1104a16'><div class='audio-play-pause audio-paused ui-block-a' id='word1104a16_btn'></div><div class='as1 ui-bar vocabPos'>تقبُّل الآخَر</div><audio id='word1104a16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/04/110416.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Acceptance of other</p></div></div>		
+	</div>	
+</section>
+
+</body>
+
+</html>

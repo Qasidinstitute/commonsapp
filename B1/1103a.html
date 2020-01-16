@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats B1/1+</title>
+    </head>
+    <body>
+
+<section id="chapter1103a" data-role="page">
+ <script>
+	$(function() {
+		if (currentvocab != "") {
+			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
+				$(this).collapsible('expand');
+			} );
+		}
+
+		var count = $(".vocabAudioSrc").length;
+		$(".vocabAudioSrc").each(function (audio_no) {
+			if (audio_no < count) {
+				this.addEventListener("ended", function () {
+					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
+					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
+					currentAudio = "none";
+				});
+			}
+		});
+		
+		$("#vocabwords").on("click",".audio-play-pause", function() {
+			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
+			if ($(this).hasClass('audio-paused')) {
+				if (currentAudio != "none") {
+					$("#"+currentAudio)[0].pause();
+					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
+					$("#"+btnName).toggleClass('audio-paused audio-playing');
+				}
+				currentAudio = thisAudio;	
+				$("#"+thisAudio)[0].play();
+				$(this).toggleClass('audio-playing audio-paused');
+			} else {
+				currentAudio = "none";
+				$("#"+thisAudio)[0].pause();
+				$(this).toggleClass('audio-paused audio-playing');
+			}			
+		});
+	});
+</script>  
+   <div class="ui-content mainTitle ch11img" role="main">
+	   <h1 class="as1">الدرس الثاني ثانياً: مفردات الاستماع</h1>
+    </div>
+    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
+		<div data-role='collapsible' id='1103a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مدفع</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a01_btn'></div><div class='as1 ui-bar vocabPos'>مدفع</div><audio id='word1103a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110301.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cannon</p></div></div>
+			<div data-role='collapsible' id='1103a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تقليد</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a02_btn'></div><div class='as1 ui-bar vocabPos'>تقليد</div><audio id='word1103a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110302.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Tradition</p></div></div>
+			<div data-role='collapsible' id='1103a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الروايات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a03_btn'></div><div class='as1 ui-bar vocabPos'>الروايات</div><audio id='word1103a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110303.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Novels/ Stories</p></div></div>
+			<div data-role='collapsible' id='1103a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قذيفة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a04_btn'></div><div class='as1 ui-bar vocabPos'>قذيفة</div><audio id='word1103a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110304.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cannonball</p></div></div>
+			<div data-role='collapsible' id='1103a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الأقاويل</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a05_btn'></div><div class='as1 ui-bar vocabPos'>الأقاويل</div><audio id='word1103a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110305.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Saying</p></div></div>
+			<div data-role='collapsible' id='1103a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فرمان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a06_btn'></div><div class='as1 ui-bar vocabPos'>فرمان</div><audio id='word1103a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110306.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Order/ Firman</p></div></div>
+			<div data-role='collapsible' id='1103a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تراث</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a07_btn'></div><div class='as1 ui-bar vocabPos'>تراث</div><audio id='word1103a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110307.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Heritage</p></div></div>
+			<div data-role='collapsible' id='1103a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أصيل</h3> <div class='wordMeaningBox'><div class='wordText' id='word1103a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1103a08_btn'></div><div class='as1 ui-bar vocabPos'>أصيل</div><audio id='word1103a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/03/110308.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Authentic/ Original</p></div></div>
+	</div>	
+</section>
+
+</body>
+
+</html>
