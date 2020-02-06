@@ -1,0 +1,35 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    margin:0;
+  }
+  
+  /* Create five equal columns that sits next to each other */
+  .column {
+    flex: 20%;
+    max-width: 20%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width:100%;
+  }
+  
+  /* Responsive layout - makes a three column-layout instead of four columns */
+  @media screen and (max-width: 500px) {
+    .column {
+      flex: 33%;
+      max-width: 33%;
+    }
+  }
+  
+  /* Responsive layout - makes the one columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 250px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
