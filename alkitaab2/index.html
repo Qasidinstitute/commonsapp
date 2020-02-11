@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Al-Kitaab Book 2</title>
-    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
-    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="../css/commons.css?id=6" />
-    <link rel="stylesheet" href="../css/alkitaab2.css" />      
-    <script src="../js/jquery-1.11.1.min.js"></script>
-    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
-    <script>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Al-Kitaab Book 2</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/alkitaab2.css" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+	<script>
 		var currentvocab = "";
 		var currentAudio = "none";
 		var currenthash = "";
 		var currentpage = "";
 		var htmlpage = "";
 		var backloc = "";
-		$(function(){
+		$(function () {
 			var rightnav = $("#rightnav");
 			var listbtn = $("#listbtn");
-			var searchbtn = $("#searchbtn");	
+			var searchbtn = $("#searchbtn");
 			var infobtn = $("#infobtn");
-			$("[data-role='header'], [data-role='footer']" ).toolbar();			
-			$.mobile.document.on("pagecontainerload", function(){
+			$("[data-role='header'], [data-role='footer']").toolbar();
+			$.mobile.document.on("pagecontainerload", function () {
 				currentAudio = "none";
 			});
-			$.mobile.document.on("pagecontainerchange", function(){
-				currenthash = document.location.hash;	
+			$.mobile.document.on("pagecontainerchange", function () {
+				currenthash = document.location.hash;
 				currentpage = document.location.pathname;
-				if ((currentpage == "/B1/")||(currenthash.lastIndexOf("index.html") > -1)||(currentpage == "")||(currenthash=="#index")||(currentpage == "")||(currentpage == "/B1/index.html")) {
-					if ((currenthash == "")||(currenthash == "#/B1/index.html")||(currenthash == "/B1/index.html")) {
-						rightnav.attr("href","../index.html");
-						rightnav.attr("data-ajax","false");
+				if ((currentpage == "/B1/") || (currenthash.lastIndexOf("index.html") > -1) || (currentpage == "") || (currenthash == "#index") || (currentpage == "") || (currentpage == "/B1/index.html")) {
+					if ((currenthash == "") || (currenthash == "#/B1/index.html") || (currenthash == "/B1/index.html")) {
+						rightnav.attr("href", "../index.html");
+						rightnav.attr("data-ajax", "false");
 						if (listbtn.hasClass("listbtndown") == false) {
 							listbtn.addClass("listbtndown");
 						}
@@ -50,282 +51,265 @@
 						}
 						if (infobtn.hasClass("infobtndown")) {
 							infobtn.removeClass("infobtndown");
-						}	
+						}
 						if (infobtn.hasClass("infobtnup") == false) {
 							infobtn.addClass("infobtnup");
-						}						
+						}
 					} else {
 						console.log(currenthash);
 						console.log(currentpage);
-						rightnav.attr("href","#home");
-						rightnav.attr("data-ajax","true");
+						rightnav.attr("href", "#home");
+						rightnav.attr("data-ajax", "true");
 						if (currenthash == "#info") {
 							if (infobtn.hasClass("infobtndown") == false) {
 								infobtn.addClass("infobtndown");
-							}	
+							}
 							if (infobtn.hasClass("infobtnup")) {
 								infobtn.removeClass("infobtnup")
-							}		
+							}
 							if (searchbtn.hasClass("searchbtndown")) {
 								searchbtn.removeClass("searchbtndown");
-							}	
+							}
 							if (searchbtn.hasClass("searchbtnup") == false) {
 								searchbtn.addClass("searchbtnup");
-							}							
+							}
 						} else if (currenthash == "#index") {
 							if (searchbtn.hasClass("searchbtndown") == false) {
 								searchbtn.addClass("searchbtndown");
-							}	
+							}
 							if (searchbtn.hasClass("searchbtnup")) {
 								searchbtn.removeClass("searchbtnup")
-							}	
+							}
 							if (infobtn.hasClass("infobtndown")) {
 								infobtn.removeClass("infobtndown");
-							}	
+							}
 							if (infobtn.hasClass("infobtnup") == false) {
 								infobtn.addClass("infobtnup");
-							}							
+							}
 						}
 						if (listbtn.hasClass("listbtndown")) {
 							listbtn.removeClass("listbtndown");
-						}	
+						}
 						if (listbtn.hasClass("listbtnup") == false) {
 							listbtn.addClass("listbtnup");
-						}						
+						}
 					}
 				} else {
 					if (currenthash == "") {
-						htmlpage = currentpage.substring(currentpage.lastIndexOf(".html")-1,currentpage.lastIndexOf(".html"));
-						var pgname = currentpage.substring(currentpage.lastIndexOf("/")+1,currentpage.lastIndexOf(".html"));
+						htmlpage = currentpage.substring(currentpage.lastIndexOf(".html") - 1, currentpage.lastIndexOf(".html"));
+						var pgname = currentpage.substring(currentpage.lastIndexOf("/") + 1, currentpage.lastIndexOf(".html"));
 					} else {
-						htmlpage = currenthash.substring(currenthash.lastIndexOf(".html")-1,currenthash.lastIndexOf(".html"));
-						var pgname = currenthash.substring(currenthash.lastIndexOf("/")+1,currenthash.lastIndexOf(".html"));
+						htmlpage = currenthash.substring(currenthash.lastIndexOf(".html") - 1, currenthash.lastIndexOf(".html"));
+						var pgname = currenthash.substring(currenthash.lastIndexOf("/") + 1, currenthash.lastIndexOf(".html"));
 					}
 					if (pgname.length == 2) {
 						backloc = "index.html";
 					} else {
-						backloc = pgname.substring(0,2)+".html";
+						backloc = pgname.substring(0, 2) + ".html";
 					}
-					rightnav.attr("href",backloc);
-					rightnav.attr("data-ajax","true");
+					rightnav.attr("href", backloc);
+					rightnav.attr("data-ajax", "true");
 					if (listbtn.hasClass("listbtndown")) {
 						listbtn.removeClass("listbtndown");
 						listbtn.addClass("listbtnup");
-					}	
+					}
 					if (searchbtn.hasClass("searchbtndown")) {
 						searchbtn.removeClass("searchbtndown")
 						searchbtn.addClass("searchbtnup");
-					}	
+					}
 					if (infobtn.hasClass("infobtndown")) {
 						infobtn.removeClass("infobtndown")
 						infobtn.addClass("infobtnup");
-					}					
+					}
 				}
 
-			});				
+			});
 		});
-		$(document).on( "pagecontainerbeforeshow", function() {
+		$(document).on("pagecontainerbeforeshow", function () {
 			$.mobile.document.on("click", "#vocabindex li a", function () {
 				currentvocab = $(this).attr('id');
-				$("body").on("pagecontainershow", function(event, ui) {
-					if(ui.prevPage[0].id == "index")
-					  $("html,body").animate({scrollTop: $("#"+currentvocab+"_vocab").offset().top}, 500);
+				$("body").on("pagecontainershow", function (event, ui) {
+					if (ui.prevPage[0].id == "index")
+						$("html,body").animate({ scrollTop: $("#" + currentvocab + "_vocab").offset().top }, 500);
 				});
 			});
-		} );
-    </script>     
-    </head>
-    <body>
-   
-		<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
-			<h1 class="englishText">Al-Kitaab Book 2</h1>
-			<a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+		});
+	</script>
+</head>
+
+<body>
+
+	<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+		<h1 class="englishText">Al-Kitaab Book 2</h1>
+		<a href="../index.html"
+			class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav"
+			data-ajax="false" data-rel="external">Back</a>
+	</div>
+
+	<section id="home" data-role="page">
+		<div class="ui-content mainTitle bookimg" role="main">
 		</div>
-   	
-    	<section id="home" data-role="page">
-			<div class="ui-content mainTitle bookimg" role="main">
+		<div class="ui-grid-c bookTitle">
+			<div class="ui-block-a bookTitleLeft">
+				<h2>كتاب مستوى</h2>
+				<h3>2/3</h3>
 			</div>
-			<div class="ui-grid-c bookTitle">
-				<div class="ui-block-a bookTitleLeft">
-					<h2>كتاب مستوى</h2>
-					<h3>2/3</h3>
-				</div>
-				<div class="ui-grid-solo bookTitleRight">
-					<h1>الكتاب في تعلم العربية</h1>
-					<h2>الجزء الثانية</h2>
-				</div>
+			<div class="ui-grid-solo bookTitleRight">
+				<h1>الكتاب في تعلم العربية</h1>
+				<h2>الجزء الثانية</h2>
 			</div>
-			<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
-				<div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 01</h3>
-					<audio class="passageAudio" id="Chapter011" controls>
-					  <source
-						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 01/01-Pg14-ابن بطوطة.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter012" controls>
-					  <source
-						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 01/02-Pg30-دمشق.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 02</h3>
-					<audio class="passageAudio" id="Chapter021" controls>
-					  <source
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">الوحدة الأولى: ابن بطوطة وأطول رحلة في التاريخ</h3>
+				<div class="as2">
+					<p>النص: ابن بطوطة وأطول رحلة في التاريخ</p>
+					<p>الصفحة: ١٤</p>
+				</div>
+				<audio class="passageAudio" id="Chapter011" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 01/01-Pg14-ابن بطوطة.mp3"
+						type="audio/mp3" />
+				</audio>
+				<div class="as2">
+					<p>القراءة: دمشق أقدم مدينة مأهولة في التاريخ</p>
+					<p>الصفحة: ٣٠</p>
+				</div>
+				<audio class="passageAudio" id="Chapter012" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 01/02-Pg30-دمشق.mp3"
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 02</h3>
+				<audio class="passageAudio" id="Chapter021" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 02/03-Pg49-ذكريات رمضان من الشام.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter022" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter022" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 02/04-Pg61-أعياد المسيحيين.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>	
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 03</h3>
-					<audio class="passageAudio" id="Chapter031" controls>
-					  <source
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 03</h3>
+				<audio class="passageAudio" id="Chapter031" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 03/05-Pg82-بدايات الصحافة العربية.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter032" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter032" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 03/06-Pg-96-الصحافة النسائية.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>	
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 04</h3>
-					<audio class="passageAudio" id="Chapter041" controls>
-					  <source
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 04</h3>
+				<audio class="passageAudio" id="Chapter041" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 04/07-Pg117-مهمة الجامعة.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter042" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter042" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 04/08-Pg128-نودة عالية عن تاريخ الجزيرة العربية.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>	
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 05</h3>
-					<audio class="passageAudio" id="Chapter051" controls>
-					  <source
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 05</h3>
+				<audio class="passageAudio" id="Chapter051" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 05/09-Pg149-وفاة توفيق الحكيم.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter052" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter052" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 05/10-Pg162-ديزي الأمير.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 06</h3>
-					<audio class="passageAudio" id="Chapter061" controls>
-					  <source
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 06</h3>
+				<audio class="passageAudio" id="Chapter061" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 06/11-Pg184-هدى شعراوي.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter062" controls>
-					  <source
-						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 06/12-Pg196-أنس باز.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>				  				  			  			  			  
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 07</h3>
-					<audio class="passageAudio" id="Chapter071" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter062" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 06/12-Pg196-أنس باز.mp3"
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 07</h3>
+				<audio class="passageAudio" id="Chapter071" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 07/13-Pg217-ألف ليلة وليلة.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter072" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter072" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 07/14-Pg219-التاجر والجني.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>	
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 08</h3>
-					<audio class="passageAudio" id="Chapter081" controls>
-					  <source
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 08</h3>
+				<audio class="passageAudio" id="Chapter081" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 08/15-Pg248-المؤسسات الاجتماعية في الحضارة العربية.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter082" controls>
-					  <source
-						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 08/16-Pg262-البربر.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 09</h3>
-					<audio class="passageAudio" id="Chapter091" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter082" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 08/16-Pg262-البربر.mp3"
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 09</h3>
+				<audio class="passageAudio" id="Chapter091" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 09/17-Pg284-قضية الفصحى والعامية.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>	
-				  <div data-role="collapsible" data-iconpos="right">
-					<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 10</h3>
-					<audio class="passageAudio" id="Chapter101" controls>
-					  <source
+						type="audio/mp3" />
+				</audio>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">Chapter 10</h3>
+				<audio class="passageAudio" id="Chapter101" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 10/18-Pg319-زواج الجيل الجديد.mp3"
-						type="audio/mp3"
-					  /></audio
-					><audio class="passageAudio" id="Chapter102" controls>
-					  <source
+						type="audio/mp3" /></audio><audio class="passageAudio" id="Chapter102" controls>
+					<source
 						src="https://qasidrepos.s3.amazonaws.com/commons/alkitaab2/Chapter 10/19-Pg328-البنت لابن عمها.mp3"
-						type="audio/mp3"
-					  />
-					</audio>
-				  </div>				  			  				  			  
-				</div>
-		</section>
-		
-		<div id="info" data-role="page">
-			<div class="ui-content mainTitle bookimg" role="main">
+						type="audio/mp3" />
+				</audio>
 			</div>
-			<div class="ui-grid-c bookTitle">
-				<div class="ui-block-a bookTitleLeft">
-					<h2>كتاب مستوى</h2>
-					<h3>2/3</h3>
-				</div>
-				<div class="ui-grid-solo bookTitleRight">
-					<h1>الكتاب في تعلم العربية</h1>
-					<h2>الجزء الثانية</h2>
-				</div>
-			</div>		
-			<div id="creditsBox">
-				<h3>Book Authors</h3>
-				<p>Kristen Bustad</p>
-				<p>Abbas Al-Tonsi</p>
-				<p>Mahmoud Al-Batal</p>
-				<h3>Recordings of Readings</h3>
-				<p>Qasid Arabic Institute Studio</p>
+		</div>
+	</section>
+
+	<div id="info" data-role="page">
+		<div class="ui-content mainTitle bookimg" role="main">
+		</div>
+		<div class="ui-grid-c bookTitle">
+			<div class="ui-block-a bookTitleLeft">
+				<h2>كتاب مستوى</h2>
+				<h3>2/3</h3>
 			</div>
-		</div>	
-		
-		<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
-			<div data-role="navbar" data-grid="b" class="footernav">
-				<ul>
-					<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
-					<li><a href="#info" class="infobtnup" data-icon="custom" id="infobtn">Book Info</a></li>
-					<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
-				</ul>
-			</div><!-- /navbar -->
-		</div><!-- /footer -->   
-        
-    </body>
+			<div class="ui-grid-solo bookTitleRight">
+				<h1>الكتاب في تعلم العربية</h1>
+				<h2>الجزء الثانية</h2>
+			</div>
+		</div>
+		<div id="creditsBox">
+			<h3>Book Authors</h3>
+			<p>Kristen Bustad</p>
+			<p>Abbas Al-Tonsi</p>
+			<p>Mahmoud Al-Batal</p>
+			<h3>Recordings of Readings</h3>
+			<p>Qasid Arabic Institute Studio</p>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+		<div data-role="navbar" data-grid="b" class="footernav">
+			<ul>
+				<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup"
+						id="homebtn">Home</a></li>
+				<li><a href="#info" class="infobtnup" data-icon="custom" id="infobtn">Book Info</a></li>
+				<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</body>
+
 </html>
