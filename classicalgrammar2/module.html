@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classical Grammar 2</title>
+</head>
+
+<body>
+  <section id="chapter" data-role="page">
+    <script>
+      $(function () {
+        var maintitle = $("#mainTitle");
+        var lessonlist = $("#lessonlist");
+        $.mobile.document.on("click", ".vocabbtn", function () {
+          currentvocab = "";
+        });
+        $.mobile.document.on("pagecontainerchange", function () {
+          var currentModuleId = Number(document.location.search.split("id=")[1] - 1);
+          var currentModule = {};
+          var lessons = [];
+          maintitle.html(jsondata[currentModuleId].title);
+          $.each(jsondata[currentModuleId].lessons, function (i, val) {
+            lessons.push("<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='video.html?module=" + currentModuleId.toString() + "&id=" + val.id + "'><div class='as3'>" + val.name + "</div></a></li>");
+          });
+          lessonlist.html(lessons.join(""));
+          lessonlist.listview("refresh");
+          /** 
+          $.getJSON("json/data.json", function (data) {
+            console.log(data.modules[currentModuleId]);
+            maintitle.html(data.modules[currentModuleId].title);
+            $.each(data.modules[currentModuleId].lessons, function (i, val) {
+              lessons.push("<li class='ui-btn-icon-right ui-icon-vocab ui-nodisc-icon ui-corner-all'><a href='video.html?module=" + currentModuleId.toString() + "&id=" + val.id + "'><div class='as3'>" + val.name + "</div></a></li>");
+            });
+            lessonlist.html(lessons.join(""));
+            lessonlist.listview("refresh");
+          });
+          **/
+        });
+      });
+    </script>
+    <div class="ui-content mainTitle ch01img" role="main">
+      <h1 class="as1" id="mainTitle"></h1>
+    </div>
+    <ul data-role="listview" data-theme="b" data-filter="true" data-filter-placeholder="Find Book..."
+      data-filter-theme="a" data-icon="custom" id="lessonlist">
+    </ul>
+  </section>
+</body>
+
+</html>

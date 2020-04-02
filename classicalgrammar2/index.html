@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Classical Arabic Grammar</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/classicalgrammar2.css" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+	<script>
+		var currentvocab = "";
+		var currentAudio = "none";
+		var currenthash = "";
+		var currentpage = "";
+		var htmlpage = "";
+		var backloc = "";
+		var modules = [];
+		var jsondata = [];
+		$(function () {
+			var rightnav = $("#rightnav");
+			var listbtn = $("#listbtn");
+			var searchbtn = $("#searchbtn");
+			var infobtn = $("#infobtn");
+			var chapterlist = $("#chapterlist");
+			var moduleid = "";
+			$("[data-role='header'], [data-role='footer']").toolbar();
+			$.getJSON("json/data.json", function (data) {
+				jsondata = data.modules;
+				$.each(data.modules, function (i, val) {
+					if (val !== undefined) {
+						modules.push("<li class='ui-btn-icon-left ui-icon-carat-l'><a href='module.html?id=" + val.id.toString() + "'><img src='images/thumb-chapter0" + val.id.toString() + ".jpg' class='list-image' />" + val.title + "</a></li>");
+					}
+				});
+				chapterlist.html(modules.join(""));
+				chapterlist.listview("refresh");
+			});
+			$.mobile.document.on("pagecontainerload", function () {
+				currentAudio = "none";
+			});
+			$.mobile.document.on("pagecontainerchange", function () {
+				currenthash = document.location.hash;
+				currentpage = document.location.pathname;
+				if ((currentpage == "/classicalgrammar2/") || (currenthash.lastIndexOf("index.html") > -1) || (currentpage == "") || (currenthash == "#index") || (currentpage == "") || (currentpage == "/classicalgrammar2/index.html")) {
+					if ((currenthash == "") || (currenthash == "#/classicalgrammar2/index.html") || (currenthash == "/classicalgrammar2/index.html")) {
+						rightnav.attr("href", "../index.html");
+						rightnav.attr("data-ajax", "false");
+						if (listbtn.hasClass("listbtndown") == false) {
+							listbtn.addClass("listbtndown");
+						}
+						if (listbtn.hasClass("listbtnup")) {
+							listbtn.removeClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown")) {
+							searchbtn.removeClass("searchbtndown")
+						}
+						if (searchbtn.hasClass("searchbtnup") == false) {
+							searchbtn.addClass("searchbtnup");
+						}
+					} else {
+						rightnav.attr("href", "#home");
+						rightnav.attr("data-ajax", "true");
+						if (currenthash == "#info") {
+							if (infobtn.hasClass("infobtndown") == false) {
+								infobtn.addClass("infobtndown");
+							}
+							if (infobtn.hasClass("infobtnup")) {
+								infobtn.removeClass("infobtnup")
+							}
+							if (searchbtn.hasClass("searchbtndown")) {
+								searchbtn.removeClass("searchbtndown");
+							}
+							if (searchbtn.hasClass("searchbtnup") == false) {
+								searchbtn.addClass("searchbtnup");
+							}
+						} else if (currenthash == "#index") {
+							if (searchbtn.hasClass("searchbtndown") == false) {
+								searchbtn.addClass("searchbtndown");
+							}
+							if (searchbtn.hasClass("searchbtnup")) {
+								searchbtn.removeClass("searchbtnup")
+							}
+							if (infobtn.hasClass("infobtndown")) {
+								infobtn.removeClass("infobtndown");
+							}
+							if (infobtn.hasClass("infobtnup") == false) {
+								infobtn.addClass("infobtnup");
+							}
+						}
+						if (listbtn.hasClass("listbtndown")) {
+							listbtn.removeClass("listbtndown");
+						}
+						if (listbtn.hasClass("listbtnup") == false) {
+							listbtn.addClass("listbtnup");
+						}
+					}
+				} else {
+					if (currenthash == "") {
+						htmlpage = currentpage.substring(currentpage.lastIndexOf(".html") - 1, currentpage.lastIndexOf(".html"));
+						var pgname = currentpage.substring(currentpage.lastIndexOf("/") + 1, currentpage.lastIndexOf(".html"));
+					} else {
+						htmlpage = currenthash.substring(currenthash.lastIndexOf(".html") - 1, currenthash.lastIndexOf(".html"));
+						var pgname = currenthash.substring(currenthash.lastIndexOf("/") + 1, currenthash.lastIndexOf(".html"));
+					}
+					if (pgname === "module") {
+						backloc = "index.html";
+					} else if (pgname === "video") {
+						var currentModuleId = Number(document.location.search.split("module=")[1].split("&")[0]) + 1;
+						backloc = "module.html?id=" + currentModuleId.toString();
+					}
+					rightnav.attr("href", backloc);
+					rightnav.attr("data-ajax", "true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+						listbtn.addClass("listbtnup");
+					}
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown")
+						searchbtn.addClass("searchbtnup");
+					}
+					if (infobtn.hasClass("infobtndown")) {
+						infobtn.removeClass("infobtndown")
+						infobtn.addClass("infobtnup");
+					}
+				}
+
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+		<h1 class="englishText">Classical Grammar 2</h1>
+		<a href="../index.html"
+			class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav"
+			data-ajax="false" data-rel="external">Back</a>
+	</div>
+
+	<section id="home" data-role="page">
+		<div class="ui-content mainTitle bookimg" role="main">
+		</div>
+		<div class="ui-grid-c bookTitle">
+			<div class="ui-block-a bookTitleLeft">
+				<h2>كتاب مستوى</h2>
+				<h3>2/3</h3>
+			</div>
+			<div class="ui-grid-solo bookTitleRight">
+				<h1>العربــية الكلسكية</h1>
+				<h2>Classical Arabic Grammar</h2>
+			</div>
+		</div>
+		<ul data-role="listview" data-theme="b" class="listArabic" id="chapterlist" data-icon="custom">
+		</ul>
+	</section>
+
+	<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+		<div data-role="navbar" data-grid="a" class="footernav">
+			<ul>
+				<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup"
+						id="homebtn">Home</a></li>
+				<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</body>
+
+</html>

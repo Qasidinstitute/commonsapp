@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats C2/3+</title>
+</head>
+
+<body>
+
+	<section id="chapter0103a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle ch01img" role="main">
+			<h1 class="as1">الدرس الأول: مفردات المقالات</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0103a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فطري</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a01_btn'></div><div class='as1 ui-bar vocabPos'>فطري</div><audio id='word0103a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010301a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Innate</p></div></div>
+				<div data-role='collapsible' id='0103a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الخليقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a02_btn'></div><div class='as1 ui-bar vocabPos'>الخليقة</div><audio id='word0103a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010302a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Creation</p></div></div>
+				<div data-role='collapsible' id='0103a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ازلي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a03_btn'></div><div class='as1 ui-bar vocabPos'>ازلي</div><audio id='word0103a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010303a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Forever / timeless</p></div></div>
+				<div data-role='collapsible' id='0103a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رفاهية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a04_btn'></div><div class='as1 ui-bar vocabPos'>رفاهية</div><audio id='word0103a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010304a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Luxury</p></div></div>
+				<div data-role='collapsible' id='0103a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اتّسم – يتسم - الاتسام</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a05_btn'></div><div class='as1 ui-bar vocabPos'>اتّسم – يتسم - الاتسام</div><audio id='word0103a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010305a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Characterized</p></div></div>
+				<div data-role='collapsible' id='0103a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شراهة - شره</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a06_btn'></div><div class='as1 ui-bar vocabPos'>شراهة - شره</div><audio id='word0103a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010306a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Gluttony</p></div></div>
+				<div data-role='collapsible' id='0103a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تآلف – يتآلف - التآلف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a07_btn'></div><div class='as1 ui-bar vocabPos'>تآلف – يتآلف - التآلف</div><audio id='word0103a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010307a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Vibe / harmony</p></div></div>
+				<div data-role='collapsible' id='0103a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طلى – يطلي - طلاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a08_btn'></div><div class='as1 ui-bar vocabPos'>طلى – يطلي - طلاء</div><audio id='word0103a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010308a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Paint</p></div></div>
+				<div data-role='collapsible' id='0103a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خرابة - خرابات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a09_btn'></div><div class='as1 ui-bar vocabPos'>خرابة - خرابات</div><audio id='word0103a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010309a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Ruin</p></div></div>
+				<div data-role='collapsible' id='0103a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ينبوع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a10_btn'></div><div class='as1 ui-bar vocabPos'>ينبوع</div><audio id='word0103a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010310a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Fountain</p></div></div>
+				<div data-role='collapsible' id='0103a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نقاء – نقي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a11_btn'></div><div class='as1 ui-bar vocabPos'>نقاء – نقي</div><audio id='word0103a11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010311a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Purity / clarity</p></div></div>
+				<div data-role='collapsible' id='0103a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دبغ</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a12_btn'></div><div class='as1 ui-bar vocabPos'>دبغ</div><audio id='word0103a12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010312a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Tanning</p></div></div>
+				<div data-role='collapsible' id='0103a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حتمي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a13_btn'></div><div class='as1 ui-bar vocabPos'>حتمي</div><audio id='word0103a13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010313a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Inevitable</p></div></div>
+				<div data-role='collapsible' id='0103a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كائن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a14_btn'></div><div class='as1 ui-bar vocabPos'>كائن</div><audio id='word0103a14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010314a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Creature</p></div></div>
+				<div data-role='collapsible' id='0103a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إزاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a15_btn'></div><div class='as1 ui-bar vocabPos'>إزاء</div><audio id='word0103a15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010315a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Towards</p></div></div>
+				<div data-role='collapsible' id='0103a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وخيمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a16_btn'></div><div class='as1 ui-bar vocabPos'>وخيمة</div><audio id='word0103a16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010316a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Severe</p></div></div>
+				<div data-role='collapsible' id='0103a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غير السوية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a17_btn'></div><div class='as1 ui-bar vocabPos'>غير السوية</div><audio id='word0103a17_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010317a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Anomalous</p></div></div>
+				<div data-role='collapsible' id='0103a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اسرف – يسرف - الاسراف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a18_btn'></div><div class='as1 ui-bar vocabPos'>اسرف – يسرف - الاسراف</div><audio id='word0103a18_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010318a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Grief / too much</p></div></div>		
+		</div>
+	</section>
+
+</body>
+
+</html>

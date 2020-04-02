@@ -1,0 +1,824 @@
+db = db.getSiblingDB("SIS");
+db.commons.insertMany(
+[
+  {
+    "id": 1,
+    "book" : "classicalgrammar2",
+    "title": "Introduction & Prerequisites",
+    "url": "https://qasidapi.herokuapp.com/api/cgrammar/1",
+    "lessons": [
+      {
+        "id": 1,
+        "name": "Introduction to 10 Forms",
+        "video": "53405515",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 2,
+        "name": "10 Forms | Word Formation",
+        "video": "54923249",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Form 1 | فَعَلَ",
+        "video": "51846342",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Form 2 | فَعَّلَ",
+        "video": "51846343",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Form 3 | فَاعَلَ",
+        "video": "51917506",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Form 4 | أَفْعَلَ",
+        "video": "51917507",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Form 5 | تَفَعَّلَ",
+        "video": "51917508",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Form 6 | تَفَاعَلَ",
+        "video": "51918188",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Form 7 | اِنْفَعَلَ",
+        "video": "51917510",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Form 8 | اِفْتَعَلَ",
+        "video": "51917511",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Form 9 | اِفْعَلَّ",
+        "video": "51918487",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Form 10 | اِسْتَفْعَلَ",
+        "video": "51918189",
+        "teacher": "Sam Ross",
+        "description": [
+          "Guess the meaning of a word without  having to use a dictionary.",
+          "Better appreciate the subtitles of Arabic words.",
+          "Maximize your benefit of a root-based dictionary."
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Introduction to Hans Wehr",
+        "video": "101826050",
+        "teacher": "Sam Ross",
+        "description": [
+          "Why use a root-based dictionary?",
+          "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+          "Advanced ways to use Hans Wehr."
+        ]
+      },
+      {
+        "id": 14,
+        "name": "How to use Hans Wehr Part 1",
+        "video": "63032868",
+        "teacher": "Sam Ross",
+        "description": [
+          "Why use a root-based dictionary?",
+          "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+          "Advanced ways to use Hans Wehr."
+        ]
+      },
+      {
+        "id": 15,
+        "name": "How to use Hans Wehr Part 2",
+        "video": "63032864",
+        "teacher": "Sam Ross",
+        "description": [
+          "Why use a root-based dictionary?",
+          "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+          "Advanced ways to use Hans Wehr."
+        ]
+      },
+      {
+        "id": 16,
+        "name": "How to use Hans Wehr Part 3",
+        "video": "63032865",
+        "teacher": "Sam Ross",
+        "description": [
+          "Why use a root-based dictionary?",
+          "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+          "Advanced ways to use Hans Wehr."
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Introduction to Classical Arabic",
+        "video": "52992926",
+        "teacher": "Sam Ross",
+        "description": [
+          "Define and differenciate Classical and Modern Standard Arabic.",
+          "Have several good reasons for studying Classical Arabic.",
+          "Know one common myth about Classical Arabic."
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Introduction to Arabic Grammar",
+        "video": "52993419",
+        "teacher": "Sam Ross",
+        "description": [
+          "Why was Arabic Grammar developed? What problem did it solve?",
+          "Why is Arabic Grammar is still important today?"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "book" : "classicalgrammar2",
+    "title": "Identifying Iraab | إعراب",
+    "url": "https://qasidapi.herokuapp.com/api/cgrammar/2",
+    "lessons": [
+      {
+        "id": 1,
+        "name": "كلام and its categories",
+        "video": "106262611",
+        "teacher": "Omar Matadar",
+        "description": [
+          "Why is كلام important?",
+          "Definition of كلام.",
+          "Three parts of speech."
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Speech and its parts",
+        "video": "52994228",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know Qasid's aproach to classical grammar and why it was chosen.",
+          "Know how the Arabic Grammarians defined speech and why.",
+          "Know the parts of speech in Arabic and know how they compare to English."
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Signs of the noun (اسم)",
+        "video": "106261929",
+        "teacher": "Omar Matadar",
+        "description": [
+          "What are the four signs of the اسم?",
+          "How can these signs help us?"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "The challenge of unvoweled texts",
+        "video": "53003091",
+        "teacher": "Sam Ross",
+        "description": [
+          "Challenge #1: Homonyms.",
+          "Challenge #2: Multiple possible roots.",
+          "Challenge #3: Multiple possible forms.",
+          "How to recognize اسم, فعل or حرف.",
+          "What are the weaknesses with the recognition system."
+        ]
+      },
+      {
+        "id": 5,
+        "name": "The importance of إعراب",
+        "video": "52994229",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know the evidence that Arabic nouns and verbs have states.",
+          "Know where the names of the states came from."
+        ]
+      },
+      {
+        "id": 6,
+        "name": "The Definite Article (ال)",
+        "video": "106261931",
+        "teacher": "Omar Matadar",
+        "description": [
+          "Learn the six types of ال.",
+          "Understand how these six types affect meaning."
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Three States of the Noun (اسم)",
+        "video": "106262799",
+        "teacher": "Omar Matadar",
+        "description": [
+          "How we use or describe the three states of أسماء with particular nouns."
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Signs of the noun table",
+        "video": "52993432",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be familiar with the members of each category.",
+          "Know the signe for each noun category in every state."
+        ]
+      },
+      {
+        "id": 9,
+        "name": "The dual noun in Idafa",
+        "video": "52993429",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be familiar with the members of each noun category.",
+          "Know the signs for each noun category in every state."
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Asma' that do not show their sign",
+        "video": "69823150",
+        "teacher": "Sam Ross",
+        "description": [
+          "Learn what kinds of أسماء do not show their signs.",
+          "Learn why they will not show their signs."
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Signs of the verb (فعل)",
+        "video": "106261927",
+        "teacher": "Omar Matadar",
+        "description": [
+          "The three signs of a فعل.",
+          "How knowing these signs helps us."
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Signs of الفعل المعرب",
+        "video": "56541571",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know all the categories and signs for all معرب verbs.",
+          "Confidence - no more uncertainty.",
+          "Empowerd in your reading and writing."
+        ]
+      },
+      {
+        "id": 13,
+        "name": "البناء والمحل",
+        "video": "56541570",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to recognize مبني words.",
+          "Know why مبني words are مبني.",
+          "Correctly interpret vowels on مبني words.",
+          "Understand how grammarians dealt with مبني words."
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Introduction to المبني",
+        "video": "163248812",
+        "teacher": "Faraz Malik",
+        "description": [
+          "Types of مبني words in each of the categories of اسم, فعل and حرف.",
+          "How is each type of word مبني or fixed?"
+        ]
+      },
+      {
+        "id": 15,
+        "name": "الأفعال المبنية",
+        "video": "163248813",
+        "teacher": "Faraz Malik",
+        "description": [
+          "Types of مبني words in each of the categories of اسم, فعل and حرف.",
+          "How is each type of word مبني or fixed?"
+        ]
+      },
+      {
+        "id": 16,
+        "name": "الحروف المبنية",
+        "video": "163248814",
+        "teacher": "Faraz Malik",
+        "description": [
+          "Types of مبني words in each of the categories of اسم, فعل and حرف.",
+          "How is each type of word مبني or fixed?"
+        ]
+      },
+      {
+        "id": 17,
+        "name": "الأسماء المبنية",
+        "video": "163248815",
+        "teacher": "Faraz Malik",
+        "description": [
+          "Types of مبني words in each of the categories of اسم, فعل and حرف.",
+          "How is each type of word مبني or fixed?"
+        ]
+      },
+      {
+        "id": 18,
+        "name": "المبني conclusion",
+        "video": "163248817",
+        "teacher": "Faraz Malik",
+        "description": [
+          "Types of مبني words in each of the categories of اسم, فعل and حرف.",
+          "How is each type of word مبني or fixed?"
+        ]
+      },
+      {
+        "id": 19,
+        "name": "Formal إعراب",
+        "video": "56541573",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know the process for fully parsing any sentence.",
+          "Feel confident about the sign/state/role system.",
+          "Be able to use the commentary literature to help you crack a difficult text."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "book" : "classicalgrammar2",
+    "title": "Mafuaat | المرفوعات",
+    "url": "https://qasidapi.herokuapp.com/api/cgrammar/3",
+    "lessons": [
+      {
+        "id": 1,
+        "name": "The مرفوعات",
+        "video": "106262800",
+        "teacher": "Omar Matadar",
+        "description": [
+          "What are the main signs for the مرفوعات.",
+          "Which roles make up this category."
+        ]
+      },
+      {
+        "id": 2,
+        "name": "The Doer (الفاعل)",
+        "video": "106262801",
+        "teacher": "Omar Matadar",
+        "description": [
+          "Two conditions for the فاعل.",
+          "The different types of فاعل."
+        ]
+      },
+      {
+        "id": 3,
+        "name": "الفاعل",
+        "video": "56541572",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to identify the فاعل in any sentence.",
+          "Be able to conjugate the verb for any فاعل.",
+          "Understand how English and Arabic differ with regard to the verd."
+        ]
+      },
+      {
+        "id": 4,
+        "name": "The Passive Doer (نائب الفاعل)",
+        "video": "106264149",
+        "teacher": "Omar Matadar",
+        "description": [
+          "What use do we have for the نائب الفاعل.",
+          "How do we form the نائب الفاعل in the past and present."
+        ]
+      },
+      {
+        "id": 5,
+        "name": "نائب الفاعل",
+        "video": "56541574",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know the rhetorical benefits of the passive.",
+          "Know how to conjugate the passive verb.",
+          "Be able to recognize passive verbs.",
+          "Know how to transform an active sentence into a passive sentence.",
+          "Know how the Quran uses passives for rhetorical effect."
+        ]
+      },
+      {
+        "id": 6,
+        "name": "مبتدأ and خبر Part 1",
+        "video": "57526196",
+        "teacher": "Omar Matadar",
+        "description": [
+          "Conditions for the مبتدأ and خبر.",
+          "Understand the relationship between the two.",
+          "The different types of خبر."
+        ]
+      },
+      {
+        "id": 7,
+        "name": "مبتدأ and خبر Part 2",
+        "video": "106264503",
+        "teacher": "Omar Matadar",
+        "description": [
+          "Conditions for the مبتدأ and خبر.",
+          "Understand the relationship between the two.",
+          "The different types of خبر."
+        ]
+      },
+      {
+        "id": 8,
+        "name": "المبتدأ و االخبر",
+        "video": "60433321",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know the rules of the مبتدأ and خبر and their logic.",
+          "Identify the مبتدأ and خبر in any sentence.",
+          "Understand how Arabic and English treat  the subject and predicate differently.",
+          "Recognize the rhetorical subtleties in the جملة اسمية especially in the Quran."
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Troubleshooting",
+        "video": "60433320",
+        "teacher": "Sam Ross",
+        "description": [
+          "Look for the verb to be in translation. The مبتدأ is on one side and the خبر on the other.",
+          "The grammar of the خبر and مبتدأ.",
+          "Rhetoric."
+        ]
+      },
+      {
+        "id": 10,
+        "name": "النواسخ: كان",
+        "video": "60433542",
+        "teacher": "Sam Ross",
+        "description": [
+          "Introduction to the نولسخ.",
+          "كان can be ناقص (deficient).",
+          "Conjugating كان.",
+          "The tenses of كان.",
+          "The pronoun كان subject.",
+          "Common mistake with vowelling.",
+          "كان can be تام (not deficient).",
+          "Common mistake تام vs ناقص."
+        ]
+      },
+      {
+        "id": 11,
+        "name": "The sisters of كان",
+        "video": "60433540",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to convert any nomial sentence to one with a sister of كان.",
+          "Be able to parse any sentence with a sister of كان.",
+          "Be able to identify multiple possible interpretations."
+        ]
+      },
+      {
+        "id": 12,
+        "name": "إن and her sisters",
+        "video": "60433541",
+        "teacher": "Sam Ross",
+        "description": [
+          "Understand why we use توكيد.",
+          "Be able to convert any nomial sentence to one impacted by إن or her sisters.",
+          "Be able to parse any setence with إن or a sister.",
+          "Use your knowlegde of توكيد to catch subtleties in the Quranic text."
+        ]
+      },
+      {
+        "id": 13,
+        "name": "The Sifa | صفة",
+        "video": "68515671",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know all the rules of the صفة.",
+          "Be able to accurately identify a صفة in a sentence.",
+          "Be able to accurately decline and conjugate a word to be a صفة."
+        ]
+      },
+      {
+        "id": 14,
+        "name": "The sentence Sifa | جملة الصفة ",
+        "video": "72408785",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know all the rules of the صفة.",
+          "Be able to accurately identify a صفة in a sentence.",
+          "Be able to accurately decline and conjugate a word to be a صفة."
+        ]
+      },
+      {
+        "id": 15,
+        "name": "The Badl | البدل",
+        "video": "68515673",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know all the rules of the بدل.",
+          "Be able to accurately identify a بدل in a sentence.",
+          "Be able to choose the appropriate pronoun in a بدل where necessary."
+        ]
+      },
+      {
+        "id": 16,
+        "name": "The Atf | العطف",
+        "video": "70768048",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to parse any sentence with عطف.",
+          "Be able to troubleshoot tricky passages.",
+          "Know multiple meanings of the particles of عطف.",
+          "Empower your reading of the Quran and Bible."
+        ]
+      },
+      {
+        "id": 17,
+        "name": "The Tawkeed | التوكيد",
+        "video": "68515674",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to emphasize an اسم in Arabic.",
+          "Be able to accurately parse a sentence with توكيد.",
+          "Be able to read additional layers of meaning out of the Quran."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "book" : "classicalgrammar2",
+    "title": "Mansubaat | المنصوبات",
+    "url": "https://qasidapi.herokuapp.com/api/cgrammar/4",
+    "lessons": [
+      {
+        "id": 1,
+        "name": "المنصوبات Introduction",
+        "video": "106265560",
+        "teacher": "Omar Matadar",
+        "description": ["State of the منصوبات.", "Number of منصوبات."]
+      },
+      {
+        "id": 2,
+        "name": "Nawasib | نواصب",
+        "video": "69609642",
+        "teacher": "Sam Ross",
+        "description": [
+          "Revise the signs of the verb in نصب.",
+          "Know the نواصب in their meanings, impacts and using them.",
+          "Have a greater understanding of the Quranic worldview."
+        ]
+      },
+      {
+        "id": 3,
+        "name": "مفعول به Part 1",
+        "video": "106265559",
+        "teacher": "Omar Matadar",
+        "description": ["Pronoun vs non-pronoun.", "Attached vs non-attached"]
+      },
+      {
+        "id": 4,
+        "name": "مفعول به Part 2",
+        "video": "106265753",
+        "teacher": "Omar Matadar",
+        "description": ["Pronoun vs non-pronoun.", "Attached vs non-attached"]
+      },
+      {
+        "id": 5,
+        "name": "The Maf'ul Bihi | المفعول به",
+        "video": "70768574",
+        "teacher": "Sam Ross",
+        "description": [
+          "Expand your knowledge about the types of pronouns in Arabic.",
+          "Know the rules of attaching and detaching pronouns to verbs.",
+          "Be able to read rhetorical subtlety out of the location of the مفعول به."
+        ]
+      },
+      {
+        "id": 6,
+        "name": "ظن and Her Sisters Part 1",
+        "video": "106265351",
+        "teacher": "Oamr Matadar",
+        "description": [
+          "Grammatical roles.",
+          "Grammatical states.",
+          "Meanings.",
+          "Categories."
+        ]
+      },
+      {
+        "id": 7,
+        "name": "ظن and Her Sisters Part 2",
+        "video": "106265352",
+        "teacher": "Omar Matadar",
+        "description": [
+          "Grammatical roles.",
+          "Grammatical states.",
+          "Meanings.",
+          "Categories."
+        ]
+      },
+      {
+        "id": 8,
+        "name": "The Sisters of Dhanna | ظن",
+        "video": "68515669",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to transform any nomial sentence into one with ظن or its sisters.",
+          "Be able to parse any sentence containing ظن or its sisters.",
+          "Be able to identify multiple interpretations."
+        ]
+      },
+      {
+        "id": 9,
+        "name": "الحال",
+        "video": "61695801",
+        "teacher": "Omar Matadar",
+        "description": [
+          "What does the حال give us?",
+          "Conditions for the حال.",
+          "Conditions for صاحب الحال."
+        ]
+      },
+      {
+        "id": 10,
+        "name": "The Hal | الحال",
+        "video": "72585158",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to use حال in a sentence.",
+          "Be able to recognize حال(s) in your reading.",
+          "Understand how the rules of the حال can lead to multiple interpretations, including in law."
+        ]
+      },
+      {
+        "id": 11,
+        "name": "التمييز",
+        "video": "78253406",
+        "teacher": "Omar Matadar",
+        "description": ["How does the تمييز help us?", "Two types of تمييز."]
+      },
+      {
+        "id": 12,
+        "name": "The Tamyiz | التمييز",
+        "video": "72537905",
+        "teacher": "Sohail Hanif",
+        "description": [
+          "Understand the properties of the تمييز.",
+          "Identify the two types of تمييز in a sentence."
+        ]
+      },
+      {
+        "id": 13,
+        "name": "المفعول من أجله",
+        "video": "106266042",
+        "teacher": "Omar Matadar",
+        "description": ["What meaning do we get?", "Conditions."]
+      },
+      {
+        "id": 14,
+        "name": "المفعول المطلق",
+        "video": "106266044",
+        "teacher": "Omar Matadar",
+        "description": [
+          "How does the مفعول مطلق help us?",
+          "The types of مفعول مطلق."
+        ]
+      },
+      {
+        "id": 15,
+        "name": "The Maful Mutlaq | المفعول المطلق",
+        "video": "70770072",
+        "teacher": "Sam Ross",
+        "description": [
+          "Be able to form the مفعول مطلق for any verb.",
+          "Be able to identify the مفعول مطلق in your reading.",
+          "Use your knowlegde of مفعول مطلق to bring out subtleties."
+        ]
+      },
+      {
+        "id": 16,
+        "name": "الظرف Part 1",
+        "video": "106265353",
+        "teacher": "Omar Matadar",
+        "description": [
+          "State of a ظرف.",
+          "Two types of ظرف.",
+          "How the two types of are used."
+        ]
+      },
+      {
+        "id": 17,
+        "name": "الظرف Part 2",
+        "video": "106265557",
+        "teacher": "Omar Matadar",
+        "description": [
+          "State of a ظرف.",
+          "Two types of ظرف.",
+          "How the two types of are used."
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "book" : "classicalgrammar2",
+    "title": "Jawazim | الجوازم",
+    "url": "https://qasidapi.herokuapp.com/api/cgrammar/5",
+    "lessons": [
+      {
+        "id": 1,
+        "name": "Jawazim Part 1 | جوازم",
+        "video": "70035702",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know four جوازم, their meanings, impacts and how to use them.",
+          "Revise the signs of the verb in جزم",
+          "Know the rhetorical difference between لم and ما.",
+          "Be proficient at handling dropped weak letters."
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Jawazim Part 2 | جوازم",
+        "video": "69609641",
+        "teacher": "Sam Ross",
+        "description": [
+          "Know four جوازم, their meanings, impacts and how to use them.",
+          "Revise the signs of the verb in جزم",
+          "Know the rhetorical difference between لم and ما.",
+          "Be proficient at handling dropped weak letters."
+        ]
+      }
+    ]
+  }
+]);

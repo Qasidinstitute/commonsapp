@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Classical Grammar 2</title>
+</head>
+
+<body>
+
+	<section id="video" data-role="page">
+		<script>
+			$(function () {
+				var videotitle = $("#videotitle");
+				var videoplayer = $("#videoplayer");
+				$.mobile.document.on("pagecontainerchange", function () {
+					var currentModuleId = Number(document.location.search.split("module=")[1].split("&")[0]);
+					var currentVideoId = Number(document.location.search.split("id=")[1] - 1);
+					var currentLesson = {};
+					var lessons = [];
+					console.log(jsondata);
+					videotitle.html(jsondata[currentModuleId].lessons[currentVideoId].name);
+					videoplayer.html("<iframe src='https://player.vimeo.com/video/"+jsondata[currentModuleId].lessons[currentVideoId].video+"' width='640' height='360' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>");
+					/**
+					$.getJSON("json/data.json", function (data) {
+						videotitle.html(data.modules[currentModuleId].lessons[currentVideoId].name);
+						videoplayer.html("<iframe src='https://player.vimeo.com/video/"+data.modules[currentModuleId].lessons[currentVideoId].video+"' width='640' height='360' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe>");
+					});
+					**/
+				});
+			});
+		</script>
+		<h1 class="s1" id="videotitle"></h1>
+		<div id="videoplayer">
+		</div>
+	</section>
+
+</body>
+
+</html>

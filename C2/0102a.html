@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats C2/3+</title>
+</head>
+
+<body>
+
+	<section id="chapter0102a" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle ch01img" role="main">
+			<h1 class="as1">الدرس الأول: مفردات المقالات</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0102a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الطاقة الاحفورية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a01_btn'></div><div class='as1 ui-bar vocabPos'>الطاقة الاحفورية</div><audio id='word0102a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010201a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Fossil energy</p></div></div>
+				<div data-role='collapsible' id='0102a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شح – شحيح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a02_btn'></div><div class='as1 ui-bar vocabPos'>شح – شحيح</div><audio id='word0102a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010202a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Scarce</p></div></div>
+				<div data-role='collapsible' id='0102a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المكرر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a03_btn'></div><div class='as1 ui-bar vocabPos'>المكرر</div><audio id='word0102a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010203a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Refined</p></div></div>
+				<div data-role='collapsible' id='0102a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المتاح</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a04_btn'></div><div class='as1 ui-bar vocabPos'>المتاح</div><audio id='word0102a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010204a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Available</p></div></div>
+				<div data-role='collapsible' id='0102a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ولّد – يولد - التوليد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a05_btn'></div><div class='as1 ui-bar vocabPos'>ولّد – يولد - التوليد</div><audio id='word0102a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010205a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Generation</p></div></div>
+				<div data-role='collapsible' id='0102a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إنجاز</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a06_btn'></div><div class='as1 ui-bar vocabPos'>إنجاز</div><audio id='word0102a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010206a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Achievement</p></div></div>
+				<div data-role='collapsible' id='0102a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>واعد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a07_btn'></div><div class='as1 ui-bar vocabPos'>واعد</div><audio id='word0102a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010207a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Promising</p></div></div>
+				<div data-role='collapsible' id='0102a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>زخم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a08_btn'></div><div class='as1 ui-bar vocabPos'>زخم</div><audio id='word0102a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010208a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Momentum</p></div></div>
+				<div data-role='collapsible' id='0102a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اكتنف – يكتنف - الاكتناف</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a09_btn'></div><div class='as1 ui-bar vocabPos'>اكتنف – يكتنف - الاكتناف</div><audio id='word0102a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010209a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Surrounding</p></div></div>
+				<div data-role='collapsible' id='0102a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مرده</h3> <div class='wordMeaningBox'><div class='wordText' id='word0102a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0102a10_btn'></div><div class='as1 ui-bar vocabPos'>مرده</div><audio id='word0102a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010210a.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Is due</p></div></div>			
+		</div>
+	</section>
+
+</body>
+
+</html>

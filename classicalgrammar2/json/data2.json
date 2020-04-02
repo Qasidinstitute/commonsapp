@@ -1,0 +1,204 @@
+{
+  "id": 1,
+  "title": "Introduction & Prerequisites",
+  "url": "https://qasidapi.herokuapp.com/api/cgrammar/1",
+  "lessons": [
+    {
+      "id": 1,
+      "name": "Introduction to 10 Forms",
+      "video": "53405515",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "10 Forms | Word Formation",
+      "video": "54923249",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Form 1 | فَعَلَ",
+      "video": "51846342",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Form 2 | فَعَّلَ",
+      "video": "51846343",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Form 3 | فَاعَلَ",
+      "video": "51917506",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Form 4 | أَفْعَلَ",
+      "video": "51917507",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Form 5 | تَفَعَّلَ",
+      "video": "51917508",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Form 6 | تَفَاعَلَ",
+      "video": "51918188",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Form 7 | اِنْفَعَلَ",
+      "video": "51917510",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Form 8 | اِفْتَعَلَ",
+      "video": "51917511",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Form 9 | اِفْعَلَّ",
+      "video": "51918487",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Form 10 | اِسْتَفْعَلَ",
+      "video": "51918189",
+      "teacher": "Sam Ross",
+      "description": [
+        "Guess the meaning of a word without  having to use a dictionary.",
+        "Better appreciate the subtitles of Arabic words.",
+        "Maximize your benefit of a root-based dictionary."
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Introduction to Hans Wehr",
+      "video": "101826050",
+      "teacher": "Sam Ross",
+      "description": [
+        "Why use a root-based dictionary?",
+        "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+        "Advanced ways to use Hans Wehr."
+      ]
+    },
+    {
+      "id": 14,
+      "name": "How to use Hans Wehr Part 1",
+      "video": "63032868",
+      "teacher": "Sam Ross",
+      "description": [
+        "Why use a root-based dictionary?",
+        "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+        "Advanced ways to use Hans Wehr."
+      ]
+    },
+    {
+      "id": 15,
+      "name": "How to use Hans Wehr Part 2",
+      "video": "63032864",
+      "teacher": "Sam Ross",
+      "description": [
+        "Why use a root-based dictionary?",
+        "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+        "Advanced ways to use Hans Wehr."
+      ]
+    },
+    {
+      "id": 16,
+      "name": "How to use Hans Wehr Part 3",
+      "video": "63032865",
+      "teacher": "Sam Ross",
+      "description": [
+        "Why use a root-based dictionary?",
+        "How to use Hans Wehr (Organization by roots, past tense and present tense options, Masadir or Verbal Nouns, Prepositional Usage, 10 forms, Common Phrases, Common Nouns).",
+        "Advanced ways to use Hans Wehr."
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Introduction to Classical Arabic",
+      "video": "52992926",
+      "teacher": "Sam Ross",
+      "description": [
+        "Define and differenciate Classical and Modern Standard Arabic.",
+        "Have several good reasons for studying Classical Arabic.",
+        "Know one common myth about Classical Arabic."
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Introduction to Arabic Grammar",
+      "video": "52993419",
+      "teacher": "Sam Ross",
+      "description": [
+        "Why was Arabic Grammar developed? What problem did it solve?",
+        "Why is Arabic Grammar is still important today?"
+      ]
+    }
+  ]
+}

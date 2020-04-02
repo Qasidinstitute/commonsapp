@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arabic for Diplomats C2/3+</title>
+    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../css/commons.css" />
+    <link rel="stylesheet" href="../css/c2.css?id=2" />      
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+    <script>
+		var currentvocab = "";
+		var currentAudio = "none";
+		var currenthash = "";
+		var currentpage = "";
+		var htmlpage = "";
+		var backloc = "";
+		$(function(){
+			var rightnav = $("#rightnav");
+			var listbtn = $("#listbtn");
+			var searchbtn = $("#searchbtn");	
+			var infobtn = $("#infobtn");
+			$("[data-role='header'], [data-role='footer']" ).toolbar();			
+			$.mobile.document.on("pagecontainerload", function(){
+				currentAudio = "none";
+			});
+			$.mobile.document.on("pagecontainerchange", function(){
+				currenthash = document.location.hash;	
+				currentpage = document.location.pathname;
+				if ((currentpage == "/C1/")||(currenthash.lastIndexOf("index.html") > -1)||(currentpage == "")||(currenthash=="#index")||(currentpage == "")||(currentpage == "/C1/index.html")) {
+					if ((currenthash == "")||(currenthash == "#/C1/index.html")||(currenthash == "/C1/index.html")) {
+						rightnav.attr("href","../index.html");
+						rightnav.attr("data-ajax","false");
+						if (listbtn.hasClass("listbtndown") == false) {
+							listbtn.addClass("listbtndown");
+						}
+						if (listbtn.hasClass("listbtnup")) {
+							listbtn.removeClass("listbtnup");
+						}
+						if (searchbtn.hasClass("searchbtndown")) {
+							searchbtn.removeClass("searchbtndown")
+						}
+						if (searchbtn.hasClass("searchbtnup") == false) {
+							searchbtn.addClass("searchbtnup");
+						}
+						if (infobtn.hasClass("infobtndown")) {
+							infobtn.removeClass("infobtndown");
+						}	
+						if (infobtn.hasClass("infobtnup") == false) {
+							infobtn.addClass("infobtnup");
+						}						
+					} else {
+						console.log(currenthash);
+						console.log(currentpage);
+						rightnav.attr("href","#home");
+						rightnav.attr("data-ajax","true");
+						if (currenthash == "#info") {
+							if (infobtn.hasClass("infobtndown") == false) {
+								infobtn.addClass("infobtndown");
+							}	
+							if (infobtn.hasClass("infobtnup")) {
+								infobtn.removeClass("infobtnup")
+							}		
+							if (searchbtn.hasClass("searchbtndown")) {
+								searchbtn.removeClass("searchbtndown");
+							}	
+							if (searchbtn.hasClass("searchbtnup") == false) {
+								searchbtn.addClass("searchbtnup");
+							}							
+						} else if (currenthash == "#index") {
+							if (searchbtn.hasClass("searchbtndown") == false) {
+								searchbtn.addClass("searchbtndown");
+							}	
+							if (searchbtn.hasClass("searchbtnup")) {
+								searchbtn.removeClass("searchbtnup")
+							}	
+							if (infobtn.hasClass("infobtndown")) {
+								infobtn.removeClass("infobtndown");
+							}	
+							if (infobtn.hasClass("infobtnup") == false) {
+								infobtn.addClass("infobtnup");
+							}							
+						}
+						if (listbtn.hasClass("listbtndown")) {
+							listbtn.removeClass("listbtndown");
+						}	
+						if (listbtn.hasClass("listbtnup") == false) {
+							listbtn.addClass("listbtnup");
+						}						
+					}
+				} else {
+					if (currenthash == "") {
+						htmlpage = currentpage.substring(currentpage.lastIndexOf(".html")-1,currentpage.lastIndexOf(".html"));
+						var pgname = currentpage.substring(currentpage.lastIndexOf("/")+1,currentpage.lastIndexOf(".html"));
+					} else {
+						htmlpage = currenthash.substring(currenthash.lastIndexOf(".html")-1,currenthash.lastIndexOf(".html"));
+						var pgname = currenthash.substring(currenthash.lastIndexOf("/")+1,currenthash.lastIndexOf(".html"));
+					}
+					if (pgname.length == 2) {
+						backloc = "index.html";
+					} else {
+						backloc = pgname.substring(0,2)+".html";
+					}
+					rightnav.attr("href",backloc);
+					rightnav.attr("data-ajax","true");
+					if (listbtn.hasClass("listbtndown")) {
+						listbtn.removeClass("listbtndown");
+						listbtn.addClass("listbtnup");
+					}	
+					if (searchbtn.hasClass("searchbtndown")) {
+						searchbtn.removeClass("searchbtndown")
+						searchbtn.addClass("searchbtnup");
+					}	
+					if (infobtn.hasClass("infobtndown")) {
+						infobtn.removeClass("infobtndown")
+						infobtn.addClass("infobtnup");
+					}					
+				}
+
+			});				
+		});
+		$(document).on( "pagecontainerbeforeshow", function() {
+			$.mobile.document.on("click", "#vocabindex li a", function () {
+				currentvocab = $(this).attr('id');
+				$("body").on("pagecontainershow", function(event, ui) {
+					if(ui.prevPage[0].id == "index")
+					  $("html,body").animate({scrollTop: $("#"+currentvocab+"_vocab").offset().top}, 500);
+				});
+			});
+		} );
+    </script> 		
+    </head>
+    <body>
+   
+		<div data-role="header" data-position="fixed" data-theme="a" id="topbar">
+			<h1 class="englishText">Diplomats C2/3+</h1>
+			<a href="../index.html" class="ui-btn ui-icon-forward ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-right" id="rightnav" data-ajax="false" data-rel="external">Back</a>
+		</div>
+   	
+    	<section id="home" data-role="page">
+			<div class="ui-content mainTitle bookimg" role="main">
+			</div>
+			<div class="ui-grid-c bookTitle">
+				<div class="ui-block-a bookTitleLeft">
+					<h2>كتاب مستوى</h2>
+					<h3>C2/3+</h3>
+				</div>
+				<div class="ui-grid-solo bookTitleRight">
+					<h1>العربــية الدبلوماسية</h1>
+					<h2>Arabic for Diplomats</h2>
+				</div>
+			</div>			
+    		<ul data-role="listview" data-theme="b" class="listArabic" id="chapterlist" data-icon="custom">
+				<li class="ui-btn-icon-left ui-icon-carat-l"><a href="01.html"><img src="images/thumb-chapter01.jpg" class="list-image"/>الوحدة الأولى: بـيئتنـا</a></li>		
+		 	</ul>			
+		</section>
+		
+		<div id="info" data-role="page">
+			<div class="ui-content mainTitle bookimg" role="main">
+			</div>
+			<div class="ui-grid-c bookTitle">
+				<div class="ui-block-a bookTitleLeft">
+					<h2>كتاب مستوى</h2>
+					<h3>C2/3+</h3>
+				</div>
+				<div class="ui-grid-solo bookTitleRight">
+					<h1>العربــية الدبلوماسية</h1>
+					<h2>Arabic for Diplomats</h2>
+				</div>
+			</div>			
+			<div id="creditsBox">
+				<h2>فريق التأليف</h2>
+				<p>د. خالد حسين أبو عمشة</p>
+				<p>إبراهيم الخطيب</p>
+				<p>فادي علي شطناوي</p>
+				<p>د. ساجدة أبو سيف</p>
+				<p>بتول دعسان</p>
+				<h2><a href="/pdf/toc-c2.pdf" target="_blank">شاهد كل المحتوى الكتاب هنا</a></h2>
+			</div>
+		</div>		
+		
+		<div id="index" data-role="page">
+			<ul data-role="listview" data-filter="true" data-filter-placeholder="Find Vocabulary..." data-inset="true" data-theme="b" id="vocabindex" class="listArabic">
+				
+			</ul>	
+		</div>		
+		
+		<div data-role="footer" data-position="fixed" data-theme="b" class="footernav">
+			<div data-role="navbar" data-grid="c" class="footernav">
+				<ul>
+					<li><a href="../index.html" data-icon="custom" data-ajax="false" data-rel="external" class="homebtnup" id="homebtn">Home</a></li>
+					<li><a href="#info" class="infobtnup" data-icon="custom" id="infobtn">Book Info</a></li>
+					<li><a href="#home" class="listbtndown" data-icon="custom" id="listbtn">Chapters</a></li>
+					<li><a href="#index" class="searchbtnup" data-icon="custom" id="searchbtn">Index</a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div><!-- /footer -->   
+        
+    </body>
+</html>
