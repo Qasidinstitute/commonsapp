@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats C2/3+</title>
+</head>
+
+<body>
+
+	<section id="chapter0103l" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle ch01img" role="main">
+			<h1 class="as1">الدرس الأول: مفردات المقالات</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0103l01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طن – أطنان</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l01'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l01_btn'></div><div class='as1 ui-bar vocabPos'>طن – أطنان</div><audio id='word0103l01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010301l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Ton</p></div></div>
+				<div data-role='collapsible' id='0103l02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فكك – يفكك – التفكيك</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l02'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l02_btn'></div><div class='as1 ui-bar vocabPos'>فكك – يفكك – التفكيك</div><audio id='word0103l02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010302l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Dismantled</p></div></div>
+				<div data-role='collapsible' id='0103l03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مكب النفايات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l03'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l03_btn'></div><div class='as1 ui-bar vocabPos'>مكب النفايات</div><audio id='word0103l03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010303l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Dumpster</p></div></div>
+				<div data-role='collapsible' id='0103l04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قطع غيار</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l04'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l04_btn'></div><div class='as1 ui-bar vocabPos'>قطع غيار</div><audio id='word0103l04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010304l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Spare parts</p></div></div>
+				<div data-role='collapsible' id='0103l05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الرزق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l05'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l05_btn'></div><div class='as1 ui-bar vocabPos'>الرزق</div><audio id='word0103l05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010305l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Subsistence</p></div></div>
+				<div data-role='collapsible' id='0103l06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المعدن -المعادن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l06'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l06_btn'></div><div class='as1 ui-bar vocabPos'>المعدن -المعادن</div><audio id='word0103l06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010306l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Metal</p></div></div>
+				<div data-role='collapsible' id='0103l07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ثمين</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l07'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l07_btn'></div><div class='as1 ui-bar vocabPos'>ثمين</div><audio id='word0103l07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010307l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Valuable</p></div></div>
+				<div data-role='collapsible' id='0103l08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نقع – ينقع – النقع</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l08'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l08_btn'></div><div class='as1 ui-bar vocabPos'>نقع – ينقع – النقع</div><audio id='word0103l08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010308l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Soak</p></div></div>
+				<div data-role='collapsible' id='0103l09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الحمض</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l09'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l09_btn'></div><div class='as1 ui-bar vocabPos'>الحمض</div><audio id='word0103l09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010309l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Acid</p></div></div>
+				<div data-role='collapsible' id='0103l10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بخار - ابخرة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l10'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l10_btn'></div><div class='as1 ui-bar vocabPos'>بخار - ابخرة</div><audio id='word0103l10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010310l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: steam</p></div></div>
+				<div data-role='collapsible' id='0103l11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بخس</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l11'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l11_btn'></div><div class='as1 ui-bar vocabPos'>بخس</div><audio id='word0103l11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010311l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Cheap / underestimation</p></div></div>
+				<div data-role='collapsible' id='0103l12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اجتذب – يجتذب - الاجتذاب</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l12'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l12_btn'></div><div class='as1 ui-bar vocabPos'>اجتذب – يجتذب - الاجتذاب</div><audio id='word0103l12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010312l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Attract</p></div></div>
+				<div data-role='collapsible' id='0103l13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>راكم - يراكم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103l13'><div class='audio-play-pause audio-paused ui-block-a' id='word0103l13_btn'></div><div class='as1 ui-bar vocabPos'>راكم - يراكم</div><audio id='word0103l13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/C2/audio/01/vocab/C2010313l.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Accumulate</p></div></div>			
+			</div>
+	</section>
+
+</body>
+
+</html>
