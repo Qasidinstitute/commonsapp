@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0501c" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة الخامسة - البيت بده أغراض</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id='allwords_audio'>
+			<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/05.mp3' type='audio/mp3'>
+		</audio>
+
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0503a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بشوفـ(ك) على خير</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0503a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0503a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بشوفـ(ك) على خير</div><audio id='word0503a01_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/03/0501.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: Literally means “see you in a good situation” or in “good times”.
+						It is said when you say goodbye to someone and hope to see them again.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0503a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عمر(ي) ما</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0503a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0503a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عمر(ي) ما</div><audio id='word0503a02_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/03/0502.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: The phrase is expressed “I never”. Together the expression in the
+						Second phrase expresses “I never did this”. It is said when you want to emphasize something you
+						or somebody else never did or experienced.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0503a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أول على/عن آخر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0503a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0503a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أول على/عن آخر</div><audio id='word0503a03_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/03/0503.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: This is a simple phrase literally translated as “first to last”.
+						The phrase is used as to simply express the word “eventually”.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0503a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بالي مشغول</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0503a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0503a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بالي مشغول</div><audio id='word0503a04_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/03/0504.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: The phrase is used when you want to say “I’m worried about…” or “I
+						am preoccupied with…”. It is primarily used when you want to show concern for somebody or
+						something. It is also used when you hear bad news about family or friends or want to find out
+						why someone was absent from a situation or event. It could also be used when asking or inquiring
+						about a new experience someone is having in his/her life.</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0503a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>واخيرا فرجت</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0503a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0503a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>واخيرا فرجت</div><audio id='word0503a05_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/03/0505.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: The phrase is primarily used to express a problem or issue that has
+						finally been solved or over. It is used when someone has experienced suffering or hardship and
+						that suffering or hardship has finally ended.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
