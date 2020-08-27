@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0501d" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة الخامسة - البيت بده أغراض</h1>
+		</div>
+
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0504a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ساعة - ساعات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ساعة - ساعات</div><audio id='word0504a01_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050401.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/a96e9aaffca04f5eb4f99657ed2561e0/82498ff0/pexels-stas-knop-11982641.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>كنباية - كنبايات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>كنباية - كنبايات</div><audio id='word0504a02_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050402.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/95effb060695d548a18e9cba65244769/221c70c9/pexels-martin-pchy-1866149.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مرايِة - مرايا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مرايِة - مرايا</div><audio id='word0504a03_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050403.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/f8779493335d3b08312022189ba90090/b23ef787/pexels-nadine-wuchenauer-1528975.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>خزانِة -خزاين</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>خزانِة -خزاين</div><audio id='word0504a04_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050404.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/8bc3372f16cf5b84a80cccb4dd1fd330/8047af23/closet-3300326_960_720.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تيبل لامب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تيبل لامب</div><audio id='word0504a05_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050405.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/9071b589adc1082b34a18cc9ce328553/e639b858/night-table-lamp-843461_960_720.webp' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تلاجِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تلاجِة</div><audio id='word0504a06_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050406.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سجّادة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سجّادة</div><audio id='word0504a07_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050407.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مكتبة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مكتبة</div><audio id='word0504a08_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050408.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ساعة مُنَبّه</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ساعة مُنَبّه</div><audio id='word0504a09_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050409.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سرير</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سرير</div><audio id='word0504a10_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050410.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بُرداية - برادي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بُرداية - برادي</div><audio id='word0504a11_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050411.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>علّاقة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>علّاقة</div><audio id='word0504a12_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050412.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دُرج –دروج</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دُرج –دروج</div><audio id='word0504a13_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050413.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ضَوّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ضَوّ</div><audio id='word0504a14_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050414.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>زرّيعة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>زرّيعة</div><audio id='word0504a15_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050415.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سخّان</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سخّان</div><audio id='word0504a16_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050416.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مَكوى</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مَكوى</div><audio id='word0504a17_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050417.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>غسّالِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>غسّالِة</div><audio id='word0504a18_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050418.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0504a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مكنسة كهربا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0504a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0504a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مكنسة كهربا</div><audio id='word0504a19_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/05/vocab/04/050419.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img src='' /></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
