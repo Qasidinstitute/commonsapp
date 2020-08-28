@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0601d" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة السادسة - صاحب ما بنساه</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='06_04_01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شايِب/ـة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شايِب/ـة</div><audio id='word06_04_01_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060401.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/0dd16c3db8ca5a25e87ff885b2653737/5886dcf8/Fodil_skander.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أشْقَر/ شَقْرا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أشْقَر/ شَقْرا</div><audio id='word06_04_02_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060402.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/75543fbca04d95ea3524aa25718305c2/650ac684/Picture2.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شَعَر أسوَد وقَصير</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شَعَر أسوَد وقَصير</div><audio id='word06_04_03_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060403.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/e316cde655940a360c88b77c8e78a5da/cd7bf6e3/Picture4.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شعر بنّي وطويل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شعر بنّي وطويل</div><audio id='word06_04_04_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060404.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/5552813efed299adbbf877282b5078c8/e4c742e2/Picture3.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سَكْسوكِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سَكْسوكِة</div><audio id='word06_04_05_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060405.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/ac95362ee5008c99b101e5d5e3d57347/1997fc3a/Picture5.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شَوارِب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شَوارِب</div><audio id='word06_04_06_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060406.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/f2e865c4255b1fa89046afe3b7348f67/2c4273b4/Picture6.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لِحْيِة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لِحْيِة</div><audio id='word06_04_07_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060407.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/638bb047733712fdc73547c4e9356868/22389467/Picture7.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أصْلَع/صَلْعا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أصْلَع/صَلْعا</div><audio id='word06_04_08_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060408.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/d559d75b0f7541d398b7dd0b8e8e66a0/d71b2d97/Picture8.png' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قصير</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قصير</div><audio id='word06_04_09_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060409.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/98eeba8f85e76c35c6e592bf9d3b2007/c083c26b/Picture9-1.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>طويل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>طويل</div><audio id='word06_04_10_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060410.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/63b4104710248f0935210025b318d635/4005b3fd/Picture9-2.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فقير</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فقير</div><audio id='word06_04_11_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060411.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/dcc79b1906357c6f26ef78a4191e873b/b1eecbe1/Picture10-1.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>غَني</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>غَني</div><audio id='word06_04_12_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060412.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/7556f1cd057387a9c0029e425fca1e80/cda492dd/Picture10-2.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نْحيف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نْحيف</div><audio id='word06_04_13_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060413.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/6e3847ec394b60b947e1c764f222b5f1/50c024e0/Picture11-1.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مَلْيان</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مَلْيان</div><audio id='word06_04_14_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060414.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/9a67baad33ee417b1885c9c1613b308f/136c9921/Picture11-2.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ناصِح</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ناصِح</div><audio id='word06_04_15_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060415.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/37dff0c04bbd18fd596bdadab472a865/d581f595/Picture11-2.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ضْعيف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ضْعيف</div><audio id='word06_04_16_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060416.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/52336484157df5fb3c564229f8397322/c79c36b4/Picture12-1.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قَوي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قَوي</div><audio id='word06_04_17_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060417.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/25e44f036014b6359504fae21d9f451d/11a2cb0a/Picture12-2.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صْغير/شَبّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صْغير/شَبّ</div><audio id='word06_04_18_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060418.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/70592cc980bc50afcf08d8267a67d77f/057f06ac/Picture13-1.jpg' />
+					</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_04_19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>خِتيار/كْبير بالعُمُر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_04_19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_04_19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>خِتيار/كْبير بالعُمُر</div><audio id='word06_04_19_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/04/060419.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'><img
+							src='https://dl.airtable.com/.attachments/4e1a188bf907a94909265b72c98e55ff/8cd6eec2/Picture13-2.jpg' />
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

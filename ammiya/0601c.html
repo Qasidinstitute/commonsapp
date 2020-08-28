@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+</head>
+
+<body>
+
+	<section id="chapter0601c" data-role="page">
+		<script>
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content mainTitle bookimg" role="main">
+			<h1 class="as1">الوحدة السادسة - صاحب ما بنساه</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='06_03_01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>هديك المرة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_03_01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_03_01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>هديك المرة</div><audio id='word06_03_01_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/03/060301.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: The other time</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_03_02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>إزا ما كنت غلطان</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_03_02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_03_02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>إزا ما كنت غلطان</div><audio id='word06_03_02_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/03/060302.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: If I’m not mistaken</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_03_03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مع بعض</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_03_03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_03_03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مع بعض</div><audio id='word06_03_03_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/03/060303.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: Together</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_03_04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بـالصدفة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_03_04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_03_04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بـالصدفة</div><audio id='word06_03_04_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/03/060304.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: By (chance/ coincidence)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_03_05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>طول عمره ≠ ما عمره..</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_03_05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_03_05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>طول عمره ≠ ما عمره..</div><audio id='word06_03_05_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/03/060305.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: He has been always (this way) or (doing something)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='06_03_06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اسم على مُسمّى</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word06_03_06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word06_03_06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اسم على مُسمّى</div><audio id='word06_03_06_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/06/vocab/03/060306.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordMearning'>Meaning: Aptly named (used when the qualities of the person/thing matches
+						the name)</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>
