@@ -1,6 +1,7 @@
 /** Custom styles for B1 Diplomat book **/
 .mainTitle h1 { position: absolute; bottom:0.2em; right: 0.5em;}
 .mainTitle {text-align: right;}
+.contentTitle {text-align: right;padding: 0 0.2em 0 0.3em; position: relative;background-color:#8c0c04}
 .bookimg {background-image:url(../ammiya/images/headerimage-georgetown01.jpg);}
 .s1 {font-size:1.5em; font-style: normal;}
 .s2 {font-size:1.2em; font-style: normal;}
