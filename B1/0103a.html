@@ -1,75 +1,328 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arabic for Diplomats B1/1+</title>
-    </head>
-    <body>
 
-<section id="chapter0103a" data-role="page">
- <script>
-	$(function() {
-		if (currentvocab != "") {
-			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
-				$("#"+currentvocab+"_vocab").collapsible('expand');
-			} );
-		}
-		var count = $(".vocabAudioSrc").length;
-		$(".vocabAudioSrc").each(function (audio_no) {
-			if (audio_no < count) {
-				this.addEventListener("ended", function () {
-					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
-					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
-					currentAudio = "none";
-				});
-			}
-		});
-		$("#vocabwords").on("click",".audio-play-pause", function() {
-			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
-			if ($(this).hasClass('audio-paused')) {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
-					$("#"+btnName).toggleClass('audio-paused audio-playing');
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/b1.css?id=4" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
+
+<body>
+
+	<section id="chapter0103a" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$("#" + currentvocab + "_vocab").collapsible('expand');
+					});
 				}
-				currentAudio = thisAudio;	
-				$("#"+thisAudio)[0].play();
-				$(this).toggleClass('audio-playing audio-paused');
-			} else {
-				currentAudio = "none";
-				$("#"+thisAudio)[0].pause();
-				$(this).toggleClass('audio-paused audio-playing');
-			}			
-		});
-	});
-</script>
-   <div class="ui-content mainTitle ch01img" role="main">
-	   <h1 class="as1">الدرس الثاني ثانياً :مفردات الاستماع</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
-		<div data-role='collapsible' id='0103a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تضمّن -يتضمّن - التضمّن</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a01'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a01_btn'></div><div class='as1 ui-bar vocabPos'>تضمّن -يتضمّن - التضمّن</div><audio id='word0103a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010301.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to include</p></div></div>
-			<div data-role='collapsible' id='0103a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مصطلحات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a02'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a02_btn'></div><div class='as1 ui-bar vocabPos'>مصطلحات</div><audio id='word0103a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010302.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: terms</p></div></div>
-			<div data-role='collapsible' id='0103a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سائدة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a03'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a03_btn'></div><div class='as1 ui-bar vocabPos'>سائدة</div><audio id='word0103a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010303.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: dominant(adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اعتمد-يعتمد - الاعتماد</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a04'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a04_btn'></div><div class='as1 ui-bar vocabPos'>اعتمد-يعتمد - الاعتماد</div><audio id='word0103a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010304.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to adopt</p></div></div>
-			<div data-role='collapsible' id='0103a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لبقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a05'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a05_btn'></div><div class='as1 ui-bar vocabPos'>لبقة</div><audio id='word0103a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010305.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: polite(adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حرجة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a06'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a06_btn'></div><div class='as1 ui-bar vocabPos'>حرجة</div><audio id='word0103a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010306.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: critical(adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قاسية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a07'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a07_btn'></div><div class='as1 ui-bar vocabPos'>قاسية</div><audio id='word0103a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010307.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: rough(adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تدرّج - يتدرّج - التدرّج</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a08'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a08_btn'></div><div class='as1 ui-bar vocabPos'>تدرّج - يتدرّج - التدرّج</div><audio id='word0103a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010308.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: to increase gradually</p></div></div>
-			<div data-role='collapsible' id='0103a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>التّنبيه</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a09'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a09_btn'></div><div class='as1 ui-bar vocabPos'>التّنبيه</div><audio id='word0103a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010309.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: warning</p></div></div>
-			<div data-role='collapsible' id='0103a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>غير مبالية</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a10'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a10_btn'></div><div class='as1 ui-bar vocabPos'>غير مبالية</div><audio id='word0103a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010310.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: indifferent/careless(adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حيال</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a11'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a11_btn'></div><div class='as1 ui-bar vocabPos'>حيال</div><audio id='word0103a11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010311.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: about</p></div></div>
-			<div data-role='collapsible' id='0103a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مصممة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a12'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a12_btn'></div><div class='as1 ui-bar vocabPos'>مصممة</div><audio id='word0103a12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010312.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: determined (adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قلق</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a13'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a13_btn'></div><div class='as1 ui-bar vocabPos'>قلق</div><audio id='word0103a13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010313.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: worried(adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صارم</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a14'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a14_btn'></div><div class='as1 ui-bar vocabPos'>صارم</div><audio id='word0103a14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010314.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: strict (adjective)</p></div></div>
-			<div data-role='collapsible' id='0103a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مضطّر</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a15'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a15_btn'></div><div class='as1 ui-bar vocabPos'>مضطّر</div><audio id='word0103a15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010315.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: compelled</p></div></div>
-			<div data-role='collapsible' id='0103a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تحفظات</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a16'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a16_btn'></div><div class='as1 ui-bar vocabPos'>تحفظات</div><audio id='word0103a16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010316.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: reservations</p></div></div>
-			<div data-role='collapsible' id='0103a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ودّي</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a17'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a17_btn'></div><div class='as1 ui-bar vocabPos'>ودّي</div><audio id='word0103a17_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010317.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: friendly</p></div></div>
-			<div data-role='collapsible' id='0103a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بدقة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a18'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a18_btn'></div><div class='as1 ui-bar vocabPos'>بدقة</div><audio id='word0103a18_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010318.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: accurately</p></div></div>
-			<div data-role='collapsible' id='0103a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مجاملة</h3> <div class='wordMeaningBox'><div class='wordText' id='word0103a19'><div class='audio-play-pause audio-paused ui-block-a' id='word0103a19_btn'></div><div class='as1 ui-bar vocabPos'>مجاملة</div><audio id='word0103a19_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010319.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: courtesy</p></div></div>
-	</div>
-</section>
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الثاني ثانياً :مفردات الاستماع</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='0103a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تضمّن -يتضمّن - التضمّن</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تضمّن -يتضمّن - التضمّن</div><audio id='word0103a01_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010301.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: to include</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مصطلحات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مصطلحات</div><audio id='word0103a02_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010302.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: terms</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>سائدة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>سائدة</div><audio id='word0103a03_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010303.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: dominant(adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اعتمد-يعتمد - الاعتماد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اعتمد-يعتمد - الاعتماد</div><audio id='word0103a04_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010304.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: to adopt</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لبقة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لبقة</div><audio id='word0103a05_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010305.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: polite(adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حرجة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حرجة</div><audio id='word0103a06_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010306.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: critical(adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قاسية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قاسية</div><audio id='word0103a07_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010307.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: rough(adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تدرّج - يتدرّج - التدرّج</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تدرّج - يتدرّج - التدرّج</div><audio id='word0103a08_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010308.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: to increase gradually</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>التّنبيه</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>التّنبيه</div><audio id='word0103a09_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010309.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: warning</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>غير مبالية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>غير مبالية</div><audio id='word0103a10_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010310.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: indifferent/careless(adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حيال</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حيال</div><audio id='word0103a11_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010311.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: about</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مصممة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مصممة</div><audio id='word0103a12_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010312.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: determined (adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قلق</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قلق</div><audio id='word0103a13_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010313.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: worried(adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صارم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صارم</div><audio id='word0103a14_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010314.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: strict (adjective)</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مضطّر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مضطّر</div><audio id='word0103a15_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010315.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: compelled</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تحفظات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تحفظات</div><audio id='word0103a16_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010316.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: reservations</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ودّي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ودّي</div><audio id='word0103a17_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010317.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: friendly</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بدقة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بدقة</div><audio id='word0103a18_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010318.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: accurately</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='0103a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مجاملة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word0103a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word0103a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مجاملة</div><audio id='word0103a19_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/01/vocab/03/010319.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: courtesy</p>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 
 </html>

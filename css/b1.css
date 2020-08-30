@@ -1,6 +1,7 @@
 /** Custom styles for B1 Diplomat book **/
 .mainTitle h1 { position: absolute; bottom:0.2em; right: 0.5em;}
 .mainTitle {text-align: right;}
+.contentTitle {text-align: right;padding: 0 0.2em 0 0.3em; position: relative;background-color:#8c0c04}
 .ch01img {background-image:url(../B1/images/headerimage-chapter01.jpg);}
 .ch02img {background-image:url(../B1/images/headerimage-chapter02.jpg);}
 .ch03img {background-image:url(../B1/images/headerimage-chapter03.jpg);}
