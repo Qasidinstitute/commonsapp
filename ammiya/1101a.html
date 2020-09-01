@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Intermediate Jordanian Arabic</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css" />
+	<link rel="stylesheet" href="../css/ammiya.css" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>	
+</head>
+
+<body>
+
+	<section id="chapter1101a" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";				
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
+				}
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () {
+					$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");
+				});
+			});
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الوحدة 11 - ملحق الحوارات</h1>
+		</div>
+		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
+		<audio id='allwords_audio'>
+			<source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/11.mp3' type='audio/mp3'></audio>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='11_01_01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رحل – برحل</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_01'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_01_btn'></div><div class='as1 ui-bar vocabPos'>رحل – برحل</div><audio id='word11_01_01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110101.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To move</p><p class='wordContext'>Context: أنا عمري ما رحلت من البيت اللي أنا فيه، طول حياتي وأنا ساكنة بنفس البيت.</p></div></div>
+				<div data-role='collapsible' id='11_01_02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حالياً</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_02'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_02_btn'></div><div class='as1 ui-bar vocabPos'>حالياً</div><audio id='word11_01_02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110102.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Currently</p><p class='wordContext'>Context: الموضوع اللي كل الناس بتحكي عنه حاليا، هوي فيروس كورونا ولو كان في علاج لهاد الفايروس.</p></div></div>
+				<div data-role='collapsible' id='11_01_03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دوّر على – بدوّر على</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_03'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_03_btn'></div><div class='as1 ui-bar vocabPos'>دوّر على – بدوّر على</div><audio id='word11_01_03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110103.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Look for - search</p><p class='wordContext'>Context: لما كنت بأمريكا، دوّرت على مطاعم كتير حتى لقيت مطعم بعمل حمص وفول وفلافل.</p></div></div>
+				<div data-role='collapsible' id='11_01_04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دلّ على – بدلّ على</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_04'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_04_btn'></div><div class='as1 ui-bar vocabPos'>دلّ على – بدلّ على</div><audio id='word11_01_04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110104.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To guide</p><p class='wordContext'>Context: صاحبتي ما كانت تعرف من وين تشتري أواعي رخيصة وحلوة، بس أنا دليتها على على مكان كتير ممتاز بجبل الحسين.</p></div></div>
+				<div data-role='collapsible' id='11_01_05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خبّر – بخبّر</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_05'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_05_btn'></div><div class='as1 ui-bar vocabPos'>خبّر – بخبّر</div><audio id='word11_01_05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110105.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To tell - to inform</p><p class='wordContext'>Context: عملت مقابلة شغل الأسبوع الماضي، الشركة حكتلي إنهم رح يخبروني عن نتيجة المقابلة الأسبوع الجاي .</p></div></div>
+				<div data-role='collapsible' id='11_01_06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>منافع البيت</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_06'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_06_btn'></div><div class='as1 ui-bar vocabPos'>منافع البيت</div><audio id='word11_01_06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110106.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: An expression which is used to say “kitchen and bathroom(s)”. Ex. my house is very small it has two rooms, a kitchen and a bathroom  غرفتين" ومنافعهم"</p><p class='wordContext'>Context: بيت أخوي مش كبير كتير غرفتين ومنافعهم.</p></div></div>
+				<div data-role='collapsible' id='11_01_07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يا دوب</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_07'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_07_btn'></div><div class='as1 ui-bar vocabPos'>يا دوب</div><audio id='word11_01_07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110107.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Hardly ( he can hardly read - هو يا دوب بيقرأ)</p><p class='wordContext'>Context: الحرارة في عمّان في فصل الشتا يا دوب توصل 20 سيلسيوس.</p></div></div>
+				<div data-role='collapsible' id='11_01_08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>طلِع لي – بطلع لي</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_08'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_08_btn'></div><div class='as1 ui-bar vocabPos'>طلِع لي – بطلع لي</div><audio id='word11_01_08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110108.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To get accepted (in college, work .. )</p><p class='wordContext'>Context: قدّمت لجامعات كتير في امريكا  بس ما طلعلي ولا بجامعة منهم، وطلعلي أدرس في جامعة بريطانية.</p></div></div>
+				<div data-role='collapsible' id='11_01_09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شِرِح (صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_09'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_09_btn'></div><div class='as1 ui-bar vocabPos'>شِرِح (صفة)</div><audio id='word11_01_09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110109.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: ample, wide</p><p class='wordContext'>Context: البيت الشرح أحسن للصحة النفسية عشان الشمس بتدخله دايما.</p></div></div>
+				<div data-role='collapsible' id='11_01_10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>سكّان (ساكن)</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_10'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_10_btn'></div><div class='as1 ui-bar vocabPos'>سكّان (ساكن)</div><audio id='word11_01_10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110110.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Resident, occupant</p><p class='wordContext'>Context: لما تكون سكّان عمّان بتكون حياتك أسهل لو بدك تشترك بالأنشطة الثقافية.</p></div></div>
+				<div data-role='collapsible' id='11_01_11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تقسيمة</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_11'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_11_btn'></div><div class='as1 ui-bar vocabPos'>تقسيمة</div><audio id='word11_01_11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110111.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: The way the house is divided, the style of the house</p><p class='wordContext'>Context: في بيوت مش كبيرة بس تقسيمتها منيحة كثير وعشان هيك بتبيّن كبيرة.</p></div></div>
+				<div data-role='collapsible' id='11_01_12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خزان ماي</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_12'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_12_btn'></div><div class='as1 ui-bar vocabPos'>خزان ماي</div><audio id='word11_01_12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110112.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Water tank</p><p class='wordContext'>Context: الماي بتقطع كتير بعمان، عشان هيك معظم البيوت الها خزانين واحد فوق البيت والثاني تحته.</p></div></div>
+				<div data-role='collapsible' id='11_01_13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حارس (ج) حُرّاس</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_13'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_13_btn'></div><div class='as1 ui-bar vocabPos'>حارس (ج) حُرّاس</div><audio id='word11_01_13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110113.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: guard(s)</p><p class='wordContext'>Context: الجيش الأردني حارس الحدود الأردنية .</p></div></div>
+				<div data-role='collapsible' id='11_01_14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>وقّع على – بوقّع على</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_14'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_14_btn'></div><div class='as1 ui-bar vocabPos'>وقّع على – بوقّع على</div><audio id='word11_01_14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110114.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: To sign</p><p class='wordContext'>Context: في الأردن الملك لازم يوقّع على أي تغيير بالدستور .</p></div></div>
+				<div data-role='collapsible' id='11_01_15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>توقيع</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_15'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_15_btn'></div><div class='as1 ui-bar vocabPos'>توقيع</div><audio id='word11_01_15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110115.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Signature</p><p class='wordContext'>Context: خالد: وين مكتب المدير لو سمحت ؟ سعيد: المدير مش هون، بس كيف بقدر أخدمك . خالد: عندي هاي الورقة ومحتاج توقيع المدير عليها.</p></div></div>
+				<div data-role='collapsible' id='11_01_16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عَقِد  (ج) عقود</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_16'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_16_btn'></div><div class='as1 ui-bar vocabPos'>عَقِد  (ج) عقود</div><audio id='word11_01_16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110116.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: contract(s)</p><p class='wordContext'>Context: كثير من الشركات بالأردن بتوقّع مع الموظفين عقود سنوية.</p></div></div>
+				<div data-role='collapsible' id='11_01_17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تفصيل (ج) تفاصيل</h3> <div class='wordMeaningBox'><div class='wordText' id='word11_01_17'><div class='audio-play-pause audio-paused ui-block-a' id='word11_01_17_btn'></div><div class='as1 ui-bar vocabPos'>تفصيل (ج) تفاصيل</div><audio id='word11_01_17_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/ammiya/audio/11/vocab/01/110117.mp3' type='audio/mp3'></audio></div><p class='wordMearning'>Meaning: Details</p><p class='wordContext'>Context: " الشيطان يكمن في التفاصيل" عبارة انجليزية بس بالثقافة العربية بنستخدم نفس المعنى كمان.</p></div></div>
+		</div>
+	</section>
+
+</body>
+
+</html>
