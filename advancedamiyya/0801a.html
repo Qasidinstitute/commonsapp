@@ -1,476 +1,438 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset = "utf-8">
-    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1">
-	<title> Advanced Jordanian Arabic </title>
-    <link rel="stylesheet" href="../css/themes/qasid-commons.css" />
-    <link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="../css/commons.css" />
-    <link rel="stylesheet" href="../css/ammiya.css" />      
-    <script src="../js/jquery-1.11.1.min.js"></script>
-    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>		
-</head>
-<body>
-   <section id ="chapter0801a" data-role="page">
-   <script >
-		var currentvocab = "";
-		var currentAudio = "none";
-		var currenthash = "";
-		var currentpage = "";
-		var htmlpage = "";
-		var backloc = "";		   
-      $(function() {
-                if (currentvocab != "") {$("#" + currentvocab + "_vocab").on("collapsiblecreate", function(event, ui) {$(this).collapsible('expand')
-                        })
-       }
-           var count= $(".vocabAudioSrc").length;
-                $(".vocabAudioSrc").each(function(audio_no) {
-                    if (audio_no < count) {
-                        this.addEventListener("ended", function() {
-                                audioBtn= $(this).parent().attr('id').toString() + "_btn";
-                                        $("#" + audioBtn).toggleClass('audio-playing audio-paused');
-                                currentAudio = "none";});                         }
-                });
 
-                $("#vocabwords").on("click", ".audio-play-pause", function() {
-                    thisAudio= $(this).parent().attr('id').toString() + "_audio";
-                    if ($(this).hasClass('audio-paused')) {
-                                if (currentAudio != "none") {$("#" + currentAudio)[0].pause();
-                                                             btnName=currentAudio.substring(
-                                                                 0, currentAudio.indexOf("_audio")) + "_btn";
-                                                             $("#" + btnName).toggleClass('audio-paused audio-playing');}
-                        currentAudio=thisAudio;
-                                $("#" + thisAudio)[0].play();
-                                $(this).toggleClass('audio-playing audio-paused'); } else {
-                        currentAudio="none";
-                                $("#" + thisAudio)[0].pause();
-                                $(this).toggleClass('audio-paused audio-playing'); }
-                });
-                $("#playAllBtn").on("click", function() {
-                        if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {$("#allwords_audio")[0].play();
-                                $(this).text("PAUSE PLAY ALL");} else {$("#allwords_audio")[0].pause();
-                                                                                                $(this).text("PLAY ALL VOCABULARY AUDIO");}
-                });
-                $("#allwords_audio").on('ended', function () {$("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO");});         });
-    </script >
-    <div class = "ui-content contentTitle" role="main">
-        <h1 class = "as1">الوحدة الثامنة: مفردات</h1>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Advanced Jordanian Arabic </title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css" />
+	<link rel="stylesheet" href="../css/ammiya.css" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
+
+<body>
+	<section id="chapter0801a" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand')
+					})
+				}
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(
+								0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+				$("#playAllBtn").on("click", function () {
+					if ($(this).text() == "PLAY ALL VOCABULARY AUDIO") {
+						$("#allwords_audio")[0].play();
+						$(this).text("PAUSE PLAY ALL");
+					} else {
+						$("#allwords_audio")[0].pause();
+						$(this).text("PLAY ALL VOCABULARY AUDIO");
+					}
+				});
+				$("#allwords_audio").on('ended', function () { $("#playAllBtn").text("PLAY ALL VOCABULARY AUDIO"); });
+			});
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الوحدة الثامنة: مفردات</h1>
 		</div>
 		<button id="playAllBtn" class="ui-btn ui-corner-all ui-shadow">PLAY ALL VOCABULARY AUDIO</button>
 		<audio id="allwords_audio">
-			<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/08.mp3" type='audio/mp3'></audio>
+			<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/08_Vocab.mp3"
+				type='audio/mp3'></audio>
 		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
-			id="vocabwords"><div data-role="collapsible" id="0801a01_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">كافح/بِكافح..مكافحة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a01">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a01_btn"></div>
-						<div class="as1 ui-bar vocabPos">كافح/بِكافح..مكافحة</div><audio id="word0801a01_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080101.mp3" type="audio/mp3"></audio>
+			id="vocabwords">
+			<div data-role='collapsible' id='08_01_01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مو معقول</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مو معقول</div><audio id='word08_01_01_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080101.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To strive / to resist</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: unbelievable</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a02_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">هيئة مكافحة الفساد</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a02">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a02_btn"></div>
-						<div class="as1 ui-bar vocabPos">هيئة مكافحة الفساد</div><audio id="word0801a02_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080102.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>خَيَلتني</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>خَيَلتني</div><audio id='word08_01_02_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080102.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Anti-Corruption Commission</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: You confused me</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a03_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">زوّر /بِزَوِّر ...تزوير</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a03">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a03_btn"></div>
-						<div class="as1 ui-bar vocabPos">زوّر /بِزَوِّر ...تزوير</div><audio id="word0801a03_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080103.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>استمارة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>استمارة</div><audio id='word08_01_03_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080103.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To forge</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: application</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a04_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">شفافيّة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a04">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a04_btn"></div>
-						<div class="as1 ui-bar vocabPos">شفافيّة</div><audio id="word0801a04_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080104.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مرق على</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مرق على</div><audio id='word08_01_04_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080104.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Transparency</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Have seen something before</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a05_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">غشّ /بغُش</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a05">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a05_btn"></div>
-						<div class="as1 ui-bar vocabPos">غشّ /بغُش</div><audio id="word0801a05_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080105.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الطول المثالي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الطول المثالي</div><audio id='word08_01_05_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080105.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To cheat</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: perfect length</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a06_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">منفعة شخْصِيّة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a06">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a06_btn"></div>
-						<div class="as1 ui-bar vocabPos">منفعة شخْصِيّة</div><audio id="word0801a06_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080106.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لونه حنطي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لونه حنطي</div><audio id='word08_01_06_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080106.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Personal interest</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Half white</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a07_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">رَشْوة ج رشاوى</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a07">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a07_btn"></div>
-						<div class="as1 ui-bar vocabPos">رَشْوة ج رشاوى</div><audio id="word0801a07_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080107.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أسمر – سمراء - سُمُر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أسمر – سمراء - سُمُر</div><audio id='word08_01_07_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080107.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Bribe</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: brown</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a08_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">مكافأة ج مكافآت</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a08">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a08_btn"></div>
-						<div class="as1 ui-bar vocabPos">مكافأة ج مكافآت</div><audio id="word0801a08_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080108.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شعر خرّوبي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شعر خرّوبي</div><audio id='word08_01_08_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080108.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Reward</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Hair with carob color</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a09_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">وقّع / بوَقّع ... توقيع</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a09">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a09_btn"></div>
-						<div class="as1 ui-bar vocabPos">وقّع / بوَقّع ... توقيع</div><audio id="word0801a09_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080109.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>معجزة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>معجزة</div><audio id='word08_01_09_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080109.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To sign</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: miracle</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a10_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">معاليك!</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a10">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a10_btn"></div>
-						<div class="as1 ui-bar vocabPos">معاليك!</div><audio id="word0801a10_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080110.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بني آدم/ة/ين</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بني آدم/ة/ين</div><audio id='word08_01_10_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080110.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Your highness!</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: human, person, son of Adam (n.)</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a11_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">اِمغطّى بالقانون</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a11">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a11_btn"></div>
-						<div class="as1 ui-bar vocabPos">اِمغطّى بالقانون</div><audio id="word0801a11_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080111.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>كل عمري = طول عمري + فعل مضارع</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>كل عمري = طول عمري + فعل مضارع</div><audio
+							id='word08_01_11_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080111.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Covered by law</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: All my life</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a12_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">ضابط/ضوابط</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a12">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a12_btn"></div>
-						<div class="as1 ui-bar vocabPos">ضابط/ضوابط</div><audio id="word0801a12_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080112.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بطيّر العقل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بطيّر العقل</div><audio id='word08_01_12_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080112.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Regulation/Controller</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Fantastic</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a13_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">الموضوع بِنسَكتش عليه</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a13">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a13_btn"></div>
-						<div class="as1 ui-bar vocabPos">الموضوع بِنسَكتش عليه</div><audio id="word0801a13_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080113.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شو بدي أعمل هلأ يعني!</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شو بدي أعمل هلأ يعني!</div><audio id='word08_01_13_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080113.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: We can't stay silent</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: What should I do now?</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a14_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">ما شمّينا ريحة الفساد</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a14">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a14_btn"></div>
-						<div class="as1 ui-bar vocabPos">ما شمّينا ريحة الفساد</div><audio id="word0801a14_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080114.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مياعة! (الاسم) | مايِع/ة ( الصفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مياعة! (الاسم) | مايِع/ة ( الصفة)</div><audio
+							id='word08_01_14_audio' class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080114.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: We didn’t see any evidence for corruption</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Spoilt | Spoiled</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a15_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">انسلّط الضّوء على</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a15">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a15_btn"></div>
-						<div class="as1 ui-bar vocabPos">انسلّط الضّوء على</div><audio id="word0801a15_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080115.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الله يوفقك!</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الله يوفقك!</div><audio id='word08_01_15_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080115.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To shed the light on</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Please (Depends on tone)</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a16_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">الموضوع بِفْقع المرارة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a16">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a16_btn"></div>
-						<div class="as1 ui-bar vocabPos">الموضوع بِفْقع المرارة</div><audio id="word0801a16_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080116.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>على راسك ريشة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>على راسك ريشة</div><audio id='word08_01_16_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080116.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: This issue makes me so upset</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: You are special</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a17_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">اقتنع / بِقتَنِع ... اقتناع</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a17">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a17_btn"></div>
-						<div class="as1 ui-bar vocabPos">اقتنع / بِقتَنِع ... اقتناع</div><audio id="word0801a17_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080117.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أمرنا لَـالله</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أمرنا لَـالله</div><audio id='word08_01_17_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080117.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To be convinced</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: An expression that means to accept reluctantly</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a18_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">حساب وعقاب</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a18">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a18_btn"></div>
-						<div class="as1 ui-bar vocabPos">حساب وعقاب</div><audio id="word0801a18_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080118.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أنو واحد؟</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أنو واحد؟</div><audio id='word08_01_18_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080118.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Questioning and punishment</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Which one (of them)</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a19_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">ثَواب</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a19">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a19_btn"></div>
-						<div class="as1 ui-bar vocabPos">ثَواب</div><audio id="word0801a19_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080119.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>هِدِي – بِهدى / الهداوة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>هِدِي – بِهدى / الهداوة</div><audio id='word08_01_19_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080119.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Reward</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: To calm</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a20_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">حقّق / بحقّق .... تحقيق</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a20">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a20_btn"></div>
-						<div class="as1 ui-bar vocabPos">حقّق / بحقّق .... تحقيق</div><audio id="word0801a20_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080120.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ثقة بالنفس</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ثقة بالنفس</div><audio id='word08_01_20_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080120.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: To achieve or to investigate</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: self-confidence</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a21_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">ضَمير</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a21">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a21_btn"></div>
-						<div class="as1 ui-bar vocabPos">ضَمير</div><audio id="word0801a21_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080121.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>رضي بـ/في + (شيء أو شخص)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>رضي بـ/في + (شيء أو شخص)</div><audio id='word08_01_21_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080121.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Conscience</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: To accept someone/ something</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a22_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">تجاوز ج تجاوزات</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a22">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a22_btn"></div>
-						<div class="as1 ui-bar vocabPos">تجاوز ج تجاوزات</div><audio id="word0801a22_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080122.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ما بمشي معي الحال</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ما بمشي معي الحال</div><audio id='word08_01_22_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080122.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Override</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: It doesn't work</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a23_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">منتهية الصّلاحيّة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a23">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a23_btn"></div>
-						<div class="as1 ui-bar vocabPos">منتهية الصّلاحيّة</div><audio id="word0801a23_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080123.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ضياعة وقت</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ضياعة وقت</div><audio id='word08_01_23_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080123.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Expired</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: waste of time</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a24_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">الّله أعلم</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a24">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a24_btn"></div>
-						<div class="as1 ui-bar vocabPos">الّله أعلم</div><audio id="word0801a24_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080124.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_24_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مضطر على</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_24'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_24_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مضطر على</div><audio id='word08_01_24_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080124.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Allah knows</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: Need to / have to</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a25_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">الرّقابة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a25">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a25_btn"></div>
-						<div class="as1 ui-bar vocabPos">الرّقابة</div><audio id="word0801a25_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080125.mp3" type="audio/mp3"></audio>
+			</div>
+			<div data-role='collapsible' id='08_01_25_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>موقف (ج) مواقِف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word08_01_25'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word08_01_25_btn'></div>
+						<div class='as1 ui-bar vocabPos'>موقف (ج) مواقِف</div><audio id='word08_01_25_audio'
+							class='vocabAudioSrc'>
+							<source
+								src='https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080125.mp3'
+								type='audio/mp3'></audio>
 					</div>
-					<p class="wordMearning">Meaning: Observation/Censorship</p>
-					<p class="wordContext">Context:</p>
+					<p class='wordMearning'>Meaning: situation</p>
 				</div>
-			</div><div data-role="collapsible" id="0801a26_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">فش داعي</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a26">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a26_btn"></div>
-						<div class="as1 ui-bar vocabPos">فش داعي</div><audio id="word0801a26_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080126.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: No need</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a27_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">علّق / بِعَلِّق على</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a27">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a27_btn"></div>
-						<div class="as1 ui-bar vocabPos">علّق / بِعَلِّق على</div><audio id="word0801a27_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080127.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: To comment</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a28_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">سَرق / بِسْرِق .... سِرْقة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a28">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a28_btn"></div>
-						<div class="as1 ui-bar vocabPos">سَرق / بِسْرِق .... سِرْقة</div><audio id="word0801a28_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080128.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: To steal</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a29_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">ورقة بيضا</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a29">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a29_btn"></div>
-						<div class="as1 ui-bar vocabPos">ورقة بيضا</div><audio id="word0801a29_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080129.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: White paper</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a30_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">أُمّيّ</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a30">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a30_btn"></div>
-						<div class="as1 ui-bar vocabPos">أُمّيّ</div><audio id="word0801a30_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080130.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: Illiterate</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a31_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">طرّ / بطُرّ</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a31">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a31_btn"></div>
-						<div class="as1 ui-bar vocabPos">طرّ / بطُرّ</div><audio id="word0801a31_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080131.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: To fire</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a32_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">بَرّاكيّة = خيمَة</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a32">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a32_btn"></div>
-						<div class="as1 ui-bar vocabPos">بَرّاكيّة = خيمَة</div><audio id="word0801a32_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080132.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: Tent</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a33_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">طُق راسَك بالحيط</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a33">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a33_btn"></div>
-						<div class="as1 ui-bar vocabPos">طُق راسَك بالحيط</div><audio id="word0801a33_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080133.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: Do whatever you want
-(Negative use)</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div><div data-role="collapsible" id="0801a34_vocab" data-iconpos="right">
-				<h3 class="asList ui-nodisc-icon ui-alt-icon">استـغـل / بـستغل / استغلال</h3>
-				<div class="wordMeaningBox">
-					<div class="wordText" id="word0801a34">
-						<div class="audio-play-pause audio-paused ui-block-a" id="word0801a34_btn"></div>
-						<div class="as1 ui-bar vocabPos">استـغـل / بـستغل / استغلال</div><audio id="word0801a34_audio"
-							class="vocabAudioSrc">
-							<source src="https://qasidrepos.s3.amazonaws.com/commons/advancedamiyya/audio/08/vocab/01/080134.mp3" type="audio/mp3"></audio>
-					</div>
-					<p class="wordMearning">Meaning: To take advantage</p>
-					<p class="wordContext">Context:</p>
-				</div>
-			</div></div></section></body></html>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
