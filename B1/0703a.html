@@ -20,6 +20,12 @@
 
 	<section id="chapter0703a" data-role="page">
 		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";			
 			$(function () {
 				if (currentvocab != "") {
 					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
@@ -55,7 +61,7 @@
 				});
 			});
 		</script>
-		<div class="ui-content mainTitle ch07img" role="main">
+		<div class="ui-content contentTitle" role="main">
 			<h1 class="as1">الدرس الثاني ثانياً :مفردات النص</h1>
 		</div>
 		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."

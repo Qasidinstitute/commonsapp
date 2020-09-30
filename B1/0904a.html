@@ -20,6 +20,12 @@
 
 	<section id="chapter0904a" data-role="page">
 		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";			
 			$(function () {
 				if (currentvocab != "") {
 					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
@@ -57,7 +63,7 @@
 				});
 			});
 		</script>
-		<div class="ui-content mainTitle ch09img" role="main">
+		<div class="ui-content contentTitle" role="main">
 			<h1 class="as1">الدرس الثالث: مفردات الاستماع</h1>
 		</div>
 		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."

@@ -1,81 +1,464 @@
 <!DOCTYPE html>
 <html>
 
-    <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/b1.css?id=4" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
 
-<section id="chapter1202a" data-role="page">
- <script>
-	$(function() {
-		if (currentvocab != "") {
-			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
-				$(this).collapsible('expand');
-			} );
-		}
+<body>
 
-		var count = $(".vocabAudioSrc").length;
-		$(".vocabAudioSrc").each(function (audio_no) {
-			if (audio_no < count) {
-				this.addEventListener("ended", function () {
-					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
-					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
-					currentAudio = "none";
-				});
-			}
-		});
-		
-		$("#vocabwords").on("click",".audio-play-pause", function() {
-			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
-			if ($(this).hasClass('audio-paused')) {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
-					$("#"+btnName).toggleClass('audio-paused audio-playing');
+	<section id="chapter1202a" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
 				}
-				currentAudio = thisAudio;	
-				$("#"+thisAudio)[0].play();
-				$(this).toggleClass('audio-playing audio-paused');
-			} else {
-				currentAudio = "none";
-				$("#"+thisAudio)[0].pause();
-				$(this).toggleClass('audio-paused audio-playing');
-			}			
-		});
-	});
-</script>  
-   <div class="ui-content mainTitle ch12img" role="main">
-	   <h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
-		<div data-role='collapsible' id='1202a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ناهض - يناهض / المناهضة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a01_btn'></div><div class='as1 ui-bar vocabPos'>ناهض - يناهض / المناهضة</div><audio id='word1202a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120201.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To combat/ To oppose/ to resist</p></div></div>
-			<div data-role='collapsible' id='1202a02_vocaßb' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ساحة/ ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a02_btn'></div><div class='as1 ui-bar vocabPos'>ساحة/ ات</div><audio id='word1202a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120202.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Arenas/ Squares</p></div></div>
-			<div data-role='collapsible' id='1202a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>الفساد (فاسد: صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a03_btn'></div><div class='as1 ui-bar vocabPos'>الفساد (فاسد: صفة)</div><audio id='word1202a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120203.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Corruption</p></div></div>
-			<div data-role='collapsible' id='1202a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ريف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a04_btn'></div><div class='as1 ui-bar vocabPos'>ريف</div><audio id='word1202a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120204.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Rural area/ Countryside</p></div></div>
-			<div data-role='collapsible' id='1202a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تُعَدّ</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a05_btn'></div><div class='as1 ui-bar vocabPos'>تُعَدّ</div><audio id='word1202a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120205.mp3' type='audio/mp3'></audio></div><p class='wordType'>Passive</p><p class='wordMearning'>Meaning: Considered</p></div></div>
-			<div data-role='collapsible' id='1202a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قيادي (صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a06_btn'></div><div class='as1 ui-bar vocabPos'>قيادي (صفة)</div><audio id='word1202a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120206.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Leader</p></div></div>
-			<div data-role='collapsible' id='1202a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بارز (صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a07_btn'></div><div class='as1 ui-bar vocabPos'>بارز (صفة)</div><audio id='word1202a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120207.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Prominent</p></div></div>
-			<div data-role='collapsible' id='1202a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فاعل (صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a08_btn'></div><div class='as1 ui-bar vocabPos'>فاعل (صفة)</div><audio id='word1202a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120208.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Active</p></div></div>
-			<div data-role='collapsible' id='1202a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>نقابة/ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a09_btn'></div><div class='as1 ui-bar vocabPos'>نقابة/ات</div><audio id='word1202a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120209.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Syndicate/ Union</p></div></div>
-			<div data-role='collapsible' id='1202a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إئتلاف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a10_btn'></div><div class='as1 ui-bar vocabPos'>إئتلاف</div><audio id='word1202a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120210.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Coalition</p></div></div>
-			<div data-role='collapsible' id='1202a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>دافع - يدافع / الدفاع (عن) (مدافع: اسم فاعل)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a11_btn'></div><div class='as1 ui-bar vocabPos'>دافع - يدافع / الدفاع (عن) (مدافع: اسم فاعل)</div><audio id='word1202a11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120211.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To defend</p></div></div>
-			<div data-role='collapsible' id='1202a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>حرّض - يحرّض / التحريض (على)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a12_btn'></div><div class='as1 ui-bar vocabPos'>حرّض - يحرّض / التحريض (على)</div><audio id='word1202a12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120212.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To instigate/ To incite</p></div></div>
-			<div data-role='collapsible' id='1202a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ناضل - يناضل / النضال</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a13_btn'></div><div class='as1 ui-bar vocabPos'>ناضل - يناضل / النضال</div><audio id='word1202a13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120213.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To struggle</p></div></div>
-			<div data-role='collapsible' id='1202a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أفرج - يفرج / الإفراج (عن)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a14_btn'></div><div class='as1 ui-bar vocabPos'>أفرج - يفرج / الإفراج (عن)</div><audio id='word1202a14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120214.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To release</p></div></div>
-			<div data-role='collapsible' id='1202a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رخّص - يرخص / الترخيص (مرخّص: اسم مفعول)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a15_btn'></div><div class='as1 ui-bar vocabPos'>رخّص - يرخص / الترخيص (مرخّص: اسم مفعول)</div><audio id='word1202a15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120215.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To authorize/ To license</p></div></div>
-			<div data-role='collapsible' id='1202a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ناشطة/ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a16'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a16_btn'></div><div class='as1 ui-bar vocabPos'>ناشطة/ات</div><audio id='word1202a16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120216.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Activist</p></div></div>
-			<div data-role='collapsible' id='1202a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جرأة (جريء: صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a17'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a17_btn'></div><div class='as1 ui-bar vocabPos'>جرأة (جريء: صفة)</div><audio id='word1202a17_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120217.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Boldness</p></div></div>
-			<div data-role='collapsible' id='1202a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شجاعة (شجاع: صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a18'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a18_btn'></div><div class='as1 ui-bar vocabPos'>شجاعة (شجاع: صفة)</div><audio id='word1202a18_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120218.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Courage/ Bravery</p></div></div>
-			<div data-role='collapsible' id='1202a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>انتهك - ينتهك/ الانتهاك</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a19'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a19_btn'></div><div class='as1 ui-bar vocabPos'>انتهك - ينتهك/ الانتهاك</div><audio id='word1202a19_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120219.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To violate</p></div></div>
-			<div data-role='collapsible' id='1202a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أثّر - يؤثر/ التأثير (على/في) (مؤثر: اسم فاعل)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a20'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a20_btn'></div><div class='as1 ui-bar vocabPos'>أثّر - يؤثر/ التأثير (على/في) (مؤثر: اسم فاعل)</div><audio id='word1202a20_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120220.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To influence</p></div></div>
-			<div data-role='collapsible' id='1202a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>إصلاح/ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a21'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a21_btn'></div><div class='as1 ui-bar vocabPos'>إصلاح/ات</div><audio id='word1202a21_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120221.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Reform</p></div></div>
-			<div data-role='collapsible' id='1202a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>اعتصام/ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a22'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a22_btn'></div><div class='as1 ui-bar vocabPos'>اعتصام/ات</div><audio id='word1202a22_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120222.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Stay-in strike</p></div></div>
-			<div data-role='collapsible' id='1202a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مخلوع (اسم مفعول)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a23'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a23_btn'></div><div class='as1 ui-bar vocabPos'>مخلوع (اسم مفعول)</div><audio id='word1202a23_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120223.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Deposed</p></div></div>
-			<div data-role='collapsible' id='1202a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صارمة (صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a24'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a24_btn'></div><div class='as1 ui-bar vocabPos'>صارمة (صفة)</div><audio id='word1202a24_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120224.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Firm/ Severe</p></div></div>
-			<div data-role='collapsible' id='1202a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فوضى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a25'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a25_btn'></div><div class='as1 ui-bar vocabPos'>فوضى</div><audio id='word1202a25_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120225.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Chaos</p></div></div>
-			<div data-role='collapsible' id='1202a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>شغب</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a26'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a26_btn'></div><div class='as1 ui-bar vocabPos'>شغب</div><audio id='word1202a26_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120226.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Riot</p></div></div>
-			<div data-role='collapsible' id='1202a27_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>صنّف - يصنف/ التصنيف</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a27'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a27_btn'></div><div class='as1 ui-bar vocabPos'>صنّف - يصنف/ التصنيف</div><audio id='word1202a27_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120227.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To classify</p></div></div>
-			<div data-role='collapsible' id='1202a28_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أثار- يثير / الإثارة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1202a28'><div class='audio-play-pause audio-paused ui-block-a' id='word1202a28_btn'></div><div class='as1 ui-bar vocabPos'>أثار- يثير / الإثارة</div><audio id='word1202a28_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120228.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To cause</p></div></div>
-	</div>	
-</section>
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الثاني أولاً: مفردات النص</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='1202a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ناهض - يناهض / المناهضة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ناهض - يناهض / المناهضة</div><audio id='word1202a01_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120201.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To combat/ To oppose/ to resist</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a02_vocaßb' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ساحة/ ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ساحة/ ات</div><audio id='word1202a02_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120202.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Arenas/ Squares</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>الفساد (فاسد: صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>الفساد (فاسد: صفة)</div><audio id='word1202a03_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120203.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Corruption</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ريف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ريف</div><audio id='word1202a04_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120204.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Rural area/ Countryside</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تُعَدّ</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تُعَدّ</div><audio id='word1202a05_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120205.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Passive</p>
+					<p class='wordMearning'>Meaning: Considered</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قيادي (صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قيادي (صفة)</div><audio id='word1202a06_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120206.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Leader</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بارز (صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بارز (صفة)</div><audio id='word1202a07_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120207.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Prominent</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فاعل (صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فاعل (صفة)</div><audio id='word1202a08_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120208.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Active</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>نقابة/ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>نقابة/ات</div><audio id='word1202a09_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120209.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Syndicate/ Union</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>إئتلاف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>إئتلاف</div><audio id='word1202a10_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120210.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Coalition</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>دافع - يدافع / الدفاع (عن) (مدافع: اسم فاعل)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>دافع - يدافع / الدفاع (عن) (مدافع: اسم فاعل)</div><audio
+							id='word1202a11_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120211.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To defend</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>حرّض - يحرّض / التحريض (على)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>حرّض - يحرّض / التحريض (على)</div><audio id='word1202a12_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120212.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To instigate/ To incite</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ناضل - يناضل / النضال</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ناضل - يناضل / النضال</div><audio id='word1202a13_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120213.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To struggle</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أفرج - يفرج / الإفراج (عن)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أفرج - يفرج / الإفراج (عن)</div><audio id='word1202a14_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120214.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To release</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>رخّص - يرخص / الترخيص (مرخّص: اسم مفعول)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>رخّص - يرخص / الترخيص (مرخّص: اسم مفعول)</div><audio
+							id='word1202a15_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120215.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To authorize/ To license</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ناشطة/ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ناشطة/ات</div><audio id='word1202a16_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120216.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Activist</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>جرأة (جريء: صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>جرأة (جريء: صفة)</div><audio id='word1202a17_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120217.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Boldness</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شجاعة (شجاع: صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شجاعة (شجاع: صفة)</div><audio id='word1202a18_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120218.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Courage/ Bravery</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>انتهك - ينتهك/ الانتهاك</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>انتهك - ينتهك/ الانتهاك</div><audio id='word1202a19_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120219.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To violate</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أثّر - يؤثر/ التأثير (على/في) (مؤثر: اسم فاعل)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أثّر - يؤثر/ التأثير (على/في) (مؤثر: اسم فاعل)</div><audio
+							id='word1202a20_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120220.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To influence</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>إصلاح/ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>إصلاح/ات</div><audio id='word1202a21_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120221.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Reform</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>اعتصام/ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>اعتصام/ات</div><audio id='word1202a22_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120222.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Stay-in strike</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مخلوع (اسم مفعول)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مخلوع (اسم مفعول)</div><audio id='word1202a23_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120223.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Deposed</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a24_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صارمة (صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a24'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a24_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صارمة (صفة)</div><audio id='word1202a24_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120224.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Firm/ Severe</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a25_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فوضى</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a25'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a25_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فوضى</div><audio id='word1202a25_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120225.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Chaos</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a26_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>شغب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a26'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a26_btn'></div>
+						<div class='as1 ui-bar vocabPos'>شغب</div><audio id='word1202a26_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120226.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Riot</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a27_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>صنّف - يصنف/ التصنيف</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a27'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a27_btn'></div>
+						<div class='as1 ui-bar vocabPos'>صنّف - يصنف/ التصنيف</div><audio id='word1202a27_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120227.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To classify</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1202a28_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أثار- يثير / الإثارة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1202a28'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1202a28_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أثار- يثير / الإثارة</div><audio id='word1202a28_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/02/120228.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To cause</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 </body>
 

@@ -1,79 +1,438 @@
 <!DOCTYPE html>
 <html>
 
-    <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/b1.css?id=4" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
 
-<section id="chapter1201a" data-role="page">
- <script>
-	$(function() {
-		if (currentvocab != "") {
-			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
-				$(this).collapsible('expand');
-			} );
-		}
+<body>
 
-		var count = $(".vocabAudioSrc").length;
-		$(".vocabAudioSrc").each(function (audio_no) {
-			if (audio_no < count) {
-				this.addEventListener("ended", function () {
-					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
-					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
-					currentAudio = "none";
-				});
-			}
-		});
-		
-		$("#vocabwords").on("click",".audio-play-pause", function() {
-			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
-			if ($(this).hasClass('audio-paused')) {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
-					$("#"+btnName).toggleClass('audio-paused audio-playing');
+	<section id="chapter1201a" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
 				}
-				currentAudio = thisAudio;	
-				$("#"+thisAudio)[0].play();
-				$(this).toggleClass('audio-playing audio-paused');
-			} else {
-				currentAudio = "none";
-				$("#"+thisAudio)[0].pause();
-				$(this).toggleClass('audio-paused audio-playing');
-			}			
-		});
-	});
-</script>  
-   <div class="ui-content mainTitle ch12img" role="main">
-	   <h1 class="as1">الدرس الأول: مفردات النص</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
-		<div data-role='collapsible' id='1201a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استخلص - يستخلص/ الاستخلاص (من)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a01_btn'></div><div class='as1 ui-bar vocabPos'>استخلص - يستخلص/ الاستخلاص (من)</div><audio id='word1201a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120101.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To extract</p></div></div>
-			<div data-role='collapsible' id='1201a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فراغ ( فارغ - صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a02_btn'></div><div class='as1 ui-bar vocabPos'>فراغ ( فارغ - صفة)</div><audio id='word1201a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120102.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Vacuum</p></div></div>
-			<div data-role='collapsible' id='1201a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>من حيث</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a03_btn'></div><div class='as1 ui-bar vocabPos'>من حيث</div><audio id='word1201a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120103.mp3' type='audio/mp3'></audio></div><p class='wordType'>Connector</p><p class='wordMearning'>Meaning: In terms of</p></div></div>
-			<div data-role='collapsible' id='1201a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>في غاية الثراء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a04_btn'></div><div class='as1 ui-bar vocabPos'>في غاية الثراء</div><audio id='word1201a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120104.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Enormously/ Very rich</p></div></div>
-			<div data-role='collapsible' id='1201a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بلاغة ( بلاغية - صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a05_btn'></div><div class='as1 ui-bar vocabPos'>بلاغة ( بلاغية - صفة)</div><audio id='word1201a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120105.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Rhetoric/ Rhetorical</p></div></div>
-			<div data-role='collapsible' id='1201a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ساحرة ( صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a06_btn'></div><div class='as1 ui-bar vocabPos'>ساحرة ( صفة)</div><audio id='word1201a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120106.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Charming/ Fascinating</p></div></div>
-			<div data-role='collapsible' id='1201a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>استقصى - يستقصي / استقصاء</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a07_btn'></div><div class='as1 ui-bar vocabPos'>استقصى - يستقصي / استقصاء</div><audio id='word1201a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120107.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To investigate/ To examine</p></div></div>
-			<div data-role='collapsible' id='1201a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>فارق (ج) فوارق</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a08_btn'></div><div class='as1 ui-bar vocabPos'>فارق (ج) فوارق</div><audio id='word1201a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120108.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Milestone/ Distinction</p></div></div>
-			<div data-role='collapsible' id='1201a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ميزة (ج) مزايا</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a09_btn'></div><div class='as1 ui-bar vocabPos'>ميزة (ج) مزايا</div><audio id='word1201a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120109.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Feature/ Advantage</p></div></div>
-			<div data-role='collapsible' id='1201a10_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عيب (ج) عيوب</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a10'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a10_btn'></div><div class='as1 ui-bar vocabPos'>عيب (ج) عيوب</div><audio id='word1201a10_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120110.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Disadvantage/ Shortcoming</p></div></div>
-			<div data-role='collapsible' id='1201a11_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مهمّش / ون (اسم مفعول)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a11'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a11_btn'></div><div class='as1 ui-bar vocabPos'>مهمّش / ون (اسم مفعول)</div><audio id='word1201a11_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120111.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective (Passive participle)</p><p class='wordMearning'>Meaning: Marginalized</p></div></div>
-			<div data-role='collapsible' id='1201a12_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>معاصر/ ون</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a12'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a12_btn'></div><div class='as1 ui-bar vocabPos'>معاصر/ ون</div><audio id='word1201a12_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120112.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Contemporary</p></div></div>
-			<div data-role='collapsible' id='1201a13_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>رؤية (ج) رؤى</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a13'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a13_btn'></div><div class='as1 ui-bar vocabPos'>رؤية (ج) رؤى</div><audio id='word1201a13_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120113.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Vision</p></div></div>
-			<div data-role='collapsible' id='1201a14_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>لا شك</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a14'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a14_btn'></div><div class='as1 ui-bar vocabPos'>لا شك</div><audio id='word1201a14_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120114.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: No doubt</p></div></div>
-			<div data-role='collapsible' id='1201a15_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مسلسل /ات</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a15'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a15_btn'></div><div class='as1 ui-bar vocabPos'>مسلسل /ات</div><audio id='word1201a15_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120115.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Series</p></div></div>
-			<div data-role='collapsible' id='1201a16_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>جاذبية</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a16'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a16_btn'></div><div class='as1 ui-bar vocabPos'>جاذبية</div><audio id='word1201a16_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120116.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Attractive</p></div></div>
-			<div data-role='collapsible' id='1201a17_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أتقن - يتقن / إتقان</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a17'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a17_btn'></div><div class='as1 ui-bar vocabPos'>أتقن - يتقن / إتقان</div><audio id='word1201a17_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120117.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To do proficiently or excellently/ To master</p></div></div>
-			<div data-role='collapsible' id='1201a18_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ثراء ( ثري: صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a18'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a18_btn'></div><div class='as1 ui-bar vocabPos'>ثراء ( ثري: صفة)</div><audio id='word1201a18_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120118.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Rich/ Wealth</p></div></div>
-			<div data-role='collapsible' id='1201a19_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>براعة (بارع: صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a19'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a19_btn'></div><div class='as1 ui-bar vocabPos'>براعة (بارع: صفة)</div><audio id='word1201a19_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120119.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Ingenuity/ Excellence</p></div></div>
-			<div data-role='collapsible' id='1201a20_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>عبرة (ج) عبر</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a20'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a20_btn'></div><div class='as1 ui-bar vocabPos'>عبرة (ج) عبر</div><audio id='word1201a20_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120120.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Lesson/ Moral</p></div></div>
-			<div data-role='collapsible' id='1201a21_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>يستوفي شروط</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a21'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a21_btn'></div><div class='as1 ui-bar vocabPos'>يستوفي شروط</div><audio id='word1201a21_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120121.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: Meets the conditions of</p></div></div>
-			<div data-role='collapsible' id='1201a22_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>خجل - يخجل / الخجل</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a22'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a22_btn'></div><div class='as1 ui-bar vocabPos'>خجل - يخجل / الخجل</div><audio id='word1201a22_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120122.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To be ashamed of</p></div></div>
-			<div data-role='collapsible' id='1201a23_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مبدع (صفة)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a23'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a23_btn'></div><div class='as1 ui-bar vocabPos'>مبدع (صفة)</div><audio id='word1201a23_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120123.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Inventor</p></div></div>
-			<div data-role='collapsible' id='1201a24_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>موهوب (صفة)/ موهبة (اسم)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a24'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a24_btn'></div><div class='as1 ui-bar vocabPos'>موهوب (صفة)/ موهبة (اسم)</div><audio id='word1201a24_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120124.mp3' type='audio/mp3'></audio></div><p class='wordType'>Adjective</p><p class='wordMearning'>Meaning: Talented</p></div></div>
-			<div data-role='collapsible' id='1201a25_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>على حد علمي</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a25'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a25_btn'></div><div class='as1 ui-bar vocabPos'>على حد علمي</div><audio id='word1201a25_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120125.mp3' type='audio/mp3'></audio></div><p class='wordType'>Phrase</p><p class='wordMearning'>Meaning: As far as I know</p></div></div>
-			<div data-role='collapsible' id='1201a26_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أفلت - يفلت / الإفلات (من)</h3> <div class='wordMeaningBox'><div class='wordText' id='word1201a26'><div class='audio-play-pause audio-paused ui-block-a' id='word1201a26_btn'></div><div class='as1 ui-bar vocabPos'>أفلت - يفلت / الإفلات (من)</div><audio id='word1201a26_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120126.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To escape</p></div></div>		
-	</div>	
-</section>
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الأول: مفردات النص</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='1201a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>استخلص - يستخلص/ الاستخلاص (من)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>استخلص - يستخلص/ الاستخلاص (من)</div><audio
+							id='word1201a01_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120101.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To extract</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فراغ ( فارغ - صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فراغ ( فارغ - صفة)</div><audio id='word1201a02_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120102.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Vacuum</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>من حيث</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>من حيث</div><audio id='word1201a03_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120103.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Connector</p>
+					<p class='wordMearning'>Meaning: In terms of</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>في غاية الثراء</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>في غاية الثراء</div><audio id='word1201a04_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120104.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Phrase</p>
+					<p class='wordMearning'>Meaning: Enormously/ Very rich</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بلاغة ( بلاغية - صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بلاغة ( بلاغية - صفة)</div><audio id='word1201a05_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120105.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Rhetoric/ Rhetorical</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ساحرة ( صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ساحرة ( صفة)</div><audio id='word1201a06_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120106.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Charming/ Fascinating</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>استقصى - يستقصي / استقصاء</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>استقصى - يستقصي / استقصاء</div><audio id='word1201a07_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120107.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To investigate/ To examine</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>فارق (ج) فوارق</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>فارق (ج) فوارق</div><audio id='word1201a08_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120108.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Milestone/ Distinction</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ميزة (ج) مزايا</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ميزة (ج) مزايا</div><audio id='word1201a09_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120109.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Feature/ Advantage</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a10_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عيب (ج) عيوب</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a10'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a10_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عيب (ج) عيوب</div><audio id='word1201a10_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120110.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Disadvantage/ Shortcoming</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a11_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مهمّش / ون (اسم مفعول)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a11'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a11_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مهمّش / ون (اسم مفعول)</div><audio id='word1201a11_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120111.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective (Passive participle)</p>
+					<p class='wordMearning'>Meaning: Marginalized</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a12_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>معاصر/ ون</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a12'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a12_btn'></div>
+						<div class='as1 ui-bar vocabPos'>معاصر/ ون</div><audio id='word1201a12_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120112.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Contemporary</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a13_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>رؤية (ج) رؤى</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a13'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a13_btn'></div>
+						<div class='as1 ui-bar vocabPos'>رؤية (ج) رؤى</div><audio id='word1201a13_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120113.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Vision</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a14_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>لا شك</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a14'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a14_btn'></div>
+						<div class='as1 ui-bar vocabPos'>لا شك</div><audio id='word1201a14_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120114.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Phrase</p>
+					<p class='wordMearning'>Meaning: No doubt</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a15_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مسلسل /ات</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a15'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a15_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مسلسل /ات</div><audio id='word1201a15_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120115.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Series</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a16_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>جاذبية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a16'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a16_btn'></div>
+						<div class='as1 ui-bar vocabPos'>جاذبية</div><audio id='word1201a16_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120116.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Attractive</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a17_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أتقن - يتقن / إتقان</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a17'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a17_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أتقن - يتقن / إتقان</div><audio id='word1201a17_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120117.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To do proficiently or excellently/ To master</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a18_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ثراء ( ثري: صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a18'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a18_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ثراء ( ثري: صفة)</div><audio id='word1201a18_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120118.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Rich/ Wealth</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a19_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>براعة (بارع: صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a19'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a19_btn'></div>
+						<div class='as1 ui-bar vocabPos'>براعة (بارع: صفة)</div><audio id='word1201a19_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120119.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Ingenuity/ Excellence</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a20_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>عبرة (ج) عبر</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a20'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a20_btn'></div>
+						<div class='as1 ui-bar vocabPos'>عبرة (ج) عبر</div><audio id='word1201a20_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120120.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Lesson/ Moral</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a21_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>يستوفي شروط</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a21'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a21_btn'></div>
+						<div class='as1 ui-bar vocabPos'>يستوفي شروط</div><audio id='word1201a21_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120121.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Phrase</p>
+					<p class='wordMearning'>Meaning: Meets the conditions of</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a22_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>خجل - يخجل / الخجل</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a22'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a22_btn'></div>
+						<div class='as1 ui-bar vocabPos'>خجل - يخجل / الخجل</div><audio id='word1201a22_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120122.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To be ashamed of</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a23_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مبدع (صفة)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a23'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a23_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مبدع (صفة)</div><audio id='word1201a23_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120123.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Inventor</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a24_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>موهوب (صفة)/ موهبة (اسم)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a24'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a24_btn'></div>
+						<div class='as1 ui-bar vocabPos'>موهوب (صفة)/ موهبة (اسم)</div><audio id='word1201a24_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120124.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Adjective</p>
+					<p class='wordMearning'>Meaning: Talented</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a25_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>على حد علمي</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a25'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a25_btn'></div>
+						<div class='as1 ui-bar vocabPos'>على حد علمي</div><audio id='word1201a25_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120125.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Phrase</p>
+					<p class='wordMearning'>Meaning: As far as I know</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1201a26_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أفلت - يفلت / الإفلات (من)</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1201a26'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1201a26_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أفلت - يفلت / الإفلات (من)</div><audio id='word1201a26_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/vocab/01/120126.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To escape</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 </body>
 

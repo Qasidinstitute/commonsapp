@@ -20,6 +20,12 @@
 
 	<section id="chapter0705b" data-role="page">
 		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";			
 			$(function () {
 				var countP = $(".passageAudio").length;
 				$(".passageAudio").each(function (passage_no) {
@@ -42,7 +48,7 @@
 				});
 			});
 		</script>
-		<div class="ui-content mainTitle ch07img" role="main">
+		<div class="ui-content contentTitle" role="main">
 			<h1 class="as1">الدرس الرابع: النص - حول ظاهرة التبني</h1>
 		</div>
 		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">

@@ -1,94 +1,151 @@
 <!DOCTYPE html>
 <html>
 
-    <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/b1.css?id=4" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
 
-<section id="chapter1201b" data-role="page">	
-<script>
-	$(function() {
-		var countP = $(".passageAudio").length;
-		$(".passageAudio").each(function (passage_no) {
-		if (passage_no < countP) {
-			this.addEventListener("play", function () {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-				}
-					currentAudio = $(this).attr('id');			
+<body>
+
+	<section id="chapter1201b" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				var countP = $(".passageAudio").length;
+				$(".passageAudio").each(function (passage_no) {
+					if (passage_no < countP) {
+						this.addEventListener("play", function () {
+							if (currentAudio != "none") {
+								$("#" + currentAudio)[0].pause();
+							}
+							currentAudio = $(this).attr('id');
+						});
+						this.addEventListener("ended", function () {
+							console.log("audio ended");
+							currentAudio = "none";
+						});
+						this.addEventListener("pause", function () {
+							console.log("audio paused");
+							currentAudio = "none";
+						});
+					}
 				});
-			this.addEventListener("ended", function () {
-				console.log("audio ended");
-				currentAudio = "none";
 			});
-			this.addEventListener("pause", function () {
-				console.log("audio paused");
-				currentAudio = "none";
-			});
-			}
-		});	
-	});
-</script>
-   <div class="ui-content mainTitle ch12img" role="main">
-	   <h1 class="as1">الدرس الأول: النص - وليد سيف.. كاتب الدراما التاريخية</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
-    	<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
-    		<audio class="passageAudio" id="chapter1201b01" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120101t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>ولد وليد سيف في طولكرم في الضفة الغربية عام 1948، وحصل على شهادة البكالوريوس في اللغة والأدب العربيين من الجامعة الأردنية؛ كما حصل على شهادة الدكتوراة في اللغويات من مدرسة الدراسات الشرقية والإفريقية في جامعة لندن عام 1975م. وقد عمل بعد هذا التاريخ محاضراً في قسم اللغة العربية في الجامعة الأردنية مدة ثلاث سنوات قبل أن يترك القسم ليعمل كاتباً متفرغاً للدراما التلفزيونية. وقد عمل في الدراما التلفزيونية السورية.</p>	
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الأول: النص - وليد سيف.. كاتب الدراما التاريخية</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+				<audio class="passageAudio" id="chapter1201b01" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120101t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>ولد وليد سيف في طولكرم في الضفة الغربية عام 1948، وحصل على شهادة البكالوريوس في اللغة والأدب
+						العربيين من الجامعة الأردنية؛ كما حصل على شهادة الدكتوراة في اللغويات من مدرسة الدراسات الشرقية
+						والإفريقية في جامعة لندن عام 1975م. وقد عمل بعد هذا التاريخ محاضراً في قسم اللغة العربية في
+						الجامعة الأردنية مدة ثلاث سنوات قبل أن يترك القسم ليعمل كاتباً متفرغاً للدراما التلفزيونية. وقد
+						عمل في الدراما التلفزيونية السورية.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+				<audio class="passageAudio" id="chapter1201b02" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120102t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>كتب عدة مسلسلات شكّلت علامة ستكون فارقة في التأريخ للدراما العربية كلها .. ومما كتبه وليد سيف
+						(صلاح الدين الأيوبي – صقر قريش – التغريبة– ربيع قرطبة - ملوك الطوائف ) .</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+				<audio class="passageAudio" id="chapter1201b03" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120103t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>المزايا التي تجمعت في دراما وليد سيف على خمس مستويات : مستوى اللغة ، مستوى البحث ، مستوى فن
+						الكتابة ، مستوى استخلاص الفكرة ، ومستوى ملء الفراغ التاريخي .</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+				<audio class="passageAudio" id="chapter1201b04" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120104t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>- من حيث اللغة : يمتلك وليد سيف مفردات لغوية في غاية الثراء ، وتركيباته البلاغية للجمل العربية في
+						غاية القوة والجاذبية .. فتبدو عباراته ساحرة يصلح أن تكون وحدها مصدرًا للمتعة داخل كل المسلسل،
+						لاشك طبعا أن أداء الممثلين وحسن إتقانهم للغة يلبس السيناريو ثوبه الأجمل .. لكن مهما كانت براعة
+						الممثل ، فالجملة هي الأساس .</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+				<audio class="passageAudio" id="chapter1201b05" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120105t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>- مستوى البحث : الميزة الكبرى لوليد سيف أنه يستقصي العمل تاريخيا حتى يمكن أن نعتبر عمله تأريخ
+						حقيقي يستوفي شروط البحث العلمي حقا في عرض التاريخ ، وهو لا يخجل أن يذكر عيوب الأبطال فلا يقع في
+						تقديسهم ، ويفسر المشاكل ويشرحها من وجهة نظر أطرافها فيشعر المشاهد بالأزمة الحقيقية التي كانت
+						موجودة ، وبهذا لا يقع في تقديم رؤية محددة أو حكم معين على أي من أطراف المشكلة ، كما لا يخجل أن
+						يذكر محاسن الأعداء في المسلسل.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٦</h3>
+				<audio class="passageAudio" id="chapter1201b06" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120106t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>- مستوى فن الكتابة : إن مسلسلات وليد سيف تبدو مشاهدها واقعية تماما ، الأزمة تعرض من خلال الأسلوب
+						الواقعي ، كما أنه يحب أن يقوم بإظهار أدوار المهمشين تاريخيا ، الذين صنعوا التاريخ ولم يعطهم حقهم
+						من التركيز . </p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٧</h3>
+				<audio class="passageAudio" id="chapter1201b07" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120107t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>- مستوى استخلاص الفكرة : لا أعرف أعمالا تركز على معالجة التاريخ للاستفادة منه في الواقع كأعمال
+						وليد سيف .. هذا المبدع الموهوب هو الوحيد – على حد علمي مما شاهدت – الذي يكتب التاريخ ليستفيد به
+						المعاصرون ، إنه لا يُفلت لحظة تاريخية دون استخلاص معناها وعبرتها. فهو دائم التركيز على أضرار
+						الديكتاتورية والقهر على الشعوب وكيف أنها هي التي تسلم البلاد للأعداء.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٨</h3>
+				<audio class="passageAudio" id="chapter1201b08" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120108t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>- مستوى ملء الفراغ التاريخي : لن تشعر مطلقا – في أعمال وليد سيف - بأن هناك تطويل في السيناريو،
+						وهذه المشكلة قائمة كثيرا في الأعمال التاريخية . </p>
+				</div>
 			</div>
 		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
-    		<audio class="passageAudio" id="chapter1201b02" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120102t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>كتب عدة مسلسلات شكّلت علامة ستكون فارقة في التأريخ للدراما العربية كلها .. ومما كتبه وليد سيف (صلاح الدين الأيوبي – صقر قريش – التغريبة– ربيع قرطبة - ملوك الطوائف ) .</p>	
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
-    		<audio class="passageAudio" id="chapter1201b03" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120103t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>المزايا التي تجمعت في دراما وليد سيف على خمس مستويات : مستوى اللغة ، مستوى البحث ، مستوى فن الكتابة ، مستوى استخلاص الفكرة ، ومستوى ملء الفراغ التاريخي .</p>	
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
-    		<audio class="passageAudio" id="chapter1201b04" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120104t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>- من حيث اللغة : يمتلك وليد سيف مفردات لغوية في غاية الثراء ، وتركيباته البلاغية للجمل العربية في غاية القوة والجاذبية .. فتبدو عباراته ساحرة يصلح أن تكون وحدها مصدرًا للمتعة داخل كل المسلسل، لاشك طبعا أن أداء الممثلين وحسن إتقانهم للغة يلبس السيناريو ثوبه الأجمل .. لكن مهما كانت براعة الممثل ، فالجملة هي الأساس .</p>	
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
-    		<audio class="passageAudio" id="chapter1201b05" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120105t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>-  مستوى البحث :  الميزة الكبرى لوليد سيف أنه يستقصي العمل تاريخيا حتى يمكن أن نعتبر عمله تأريخ حقيقي يستوفي شروط البحث العلمي حقا في عرض التاريخ ، وهو لا يخجل أن يذكر عيوب الأبطال فلا يقع في تقديسهم ، ويفسر المشاكل ويشرحها من وجهة نظر أطرافها فيشعر المشاهد بالأزمة الحقيقية التي كانت موجودة ، وبهذا لا يقع في تقديم رؤية محددة أو حكم معين على أي من أطراف المشكلة ، كما لا يخجل أن يذكر محاسن الأعداء في المسلسل.</p>	
-			</div>
-		</div>	
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٦</h3>
-    		<audio class="passageAudio" id="chapter1201b06" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120106t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>-  مستوى فن الكتابة :  إن مسلسلات وليد سيف تبدو مشاهدها واقعية تماما ، الأزمة تعرض من خلال الأسلوب الواقعي ، كما أنه يحب أن يقوم  بإظهار أدوار المهمشين تاريخيا ، الذين صنعوا التاريخ ولم يعطهم حقهم من التركيز . </p>	
-			</div>
-		</div>	
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٧</h3>
-    		<audio class="passageAudio" id="chapter1201b07" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120107t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>-  مستوى استخلاص الفكرة : لا أعرف أعمالا تركز على معالجة التاريخ للاستفادة منه في الواقع كأعمال وليد سيف .. هذا المبدع الموهوب هو الوحيد – على حد علمي مما شاهدت – الذي يكتب التاريخ ليستفيد به المعاصرون ، إنه لا يُفلت لحظة تاريخية دون استخلاص معناها وعبرتها. فهو دائم التركيز على أضرار الديكتاتورية والقهر على الشعوب وكيف أنها هي التي تسلم البلاد للأعداء.</p>	
-			</div>
-		</div>	
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٨</h3>
-    		<audio class="passageAudio" id="chapter1201b08" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/12/texts/01/B1120108t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>- مستوى ملء الفراغ التاريخي : لن تشعر مطلقا – في أعمال وليد سيف - بأن هناك تطويل في السيناريو، وهذه المشكلة قائمة كثيرا في الأعمال التاريخية . </p>	
-			</div>
-		</div>																										
-	</div>
-</section>
+	</section>
 
 </body>
+
 </html>

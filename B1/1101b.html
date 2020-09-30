@@ -1,73 +1,123 @@
 <!DOCTYPE html>
 <html>
 
-    <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/b1.css?id=4" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
 
-<section id="chapter1101b" data-role="page">	
-<script>
-	$(function() {
-		var countP = $(".passageAudio").length;
-		$(".passageAudio").each(function (passage_no) {
-		if (passage_no < countP) {
-			this.addEventListener("play", function () {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-				}
-					currentAudio = $(this).attr('id');			
+<body>
+
+	<section id="chapter1101b" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				var countP = $(".passageAudio").length;
+				$(".passageAudio").each(function (passage_no) {
+					if (passage_no < countP) {
+						this.addEventListener("play", function () {
+							if (currentAudio != "none") {
+								$("#" + currentAudio)[0].pause();
+							}
+							currentAudio = $(this).attr('id');
+						});
+						this.addEventListener("ended", function () {
+							console.log("audio ended");
+							currentAudio = "none";
+						});
+						this.addEventListener("pause", function () {
+							console.log("audio paused");
+							currentAudio = "none";
+						});
+					}
 				});
-			this.addEventListener("ended", function () {
-				console.log("audio ended");
-				currentAudio = "none";
 			});
-			this.addEventListener("pause", function () {
-				console.log("audio paused");
-				currentAudio = "none";
-			});
-			}
-		});	
-	});
-</script>
-   <div class="ui-content mainTitle ch11img" role="main">
-	   <h1 class="as1">الدرس الأول: النص - تطور وظهور القصة القصيرة</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
-    	<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
-    		<audio class="passageAudio" id="chapter1101b01" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110101t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>يعتبر ظهور القصة القصيرة في الأدب العربي نقطة مثيرة للجدل ليس بين غير العرب فقط ولكن أيضاً بين المثقفين العرب أيضاً. فالعديد من المثقفين يجزمون أن القصة القصيرة كفن قائم بذاته لم تظهر في العالم العربي إلا منذ بداية القرن العشرين وكنتيجة لتأثر العرب بالآداب الغربية بشكل عام وبفن القصة القصيرة بشكل خاص. على الرغم من أن فن القص ليس جديداً على العرب، فهناك عدد كبير من القصص معروفة منذ فترات ما قبل الإسلام وما بعده. كما تُرجمت أثناء الحكم العباسي قصص من ثقافات مختلفة مثل "كليلة ودمنة" و"ألف ليلة وليلة"، ولكن تلك القصص، كما يذكر الدكتور "شوقي ضيف" كانت تروى بلغة عاميّة، والقصص الوحيدة التي انتشرت باللغة الفصحى هي "المقامات"!.</p>
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الأول: النص - تطور وظهور القصة القصيرة</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+				<audio class="passageAudio" id="chapter1101b01" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110101t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>يعتبر ظهور القصة القصيرة في الأدب العربي نقطة مثيرة للجدل ليس بين غير العرب فقط ولكن أيضاً بين
+						المثقفين العرب أيضاً. فالعديد من المثقفين يجزمون أن القصة القصيرة كفن قائم بذاته لم تظهر في
+						العالم العربي إلا منذ بداية القرن العشرين وكنتيجة لتأثر العرب بالآداب الغربية بشكل عام وبفن
+						القصة القصيرة بشكل خاص. على الرغم من أن فن القص ليس جديداً على العرب، فهناك عدد كبير من القصص
+						معروفة منذ فترات ما قبل الإسلام وما بعده. كما تُرجمت أثناء الحكم العباسي قصص من ثقافات مختلفة
+						مثل "كليلة ودمنة" و"ألف ليلة وليلة"، ولكن تلك القصص، كما يذكر الدكتور "شوقي ضيف" كانت تروى بلغة
+						عاميّة، والقصص الوحيدة التي انتشرت باللغة الفصحى هي "المقامات"!.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+				<audio class="passageAudio" id="chapter1101b02" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110102t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>إن القصة القصيرة كانت تشكّل جزءاً لا يتجزأ من الأدب العربي الإسلامي منذ بداية الحضارة الإسلامية
+						تقريباً، فالعرب لم يأخذوا فن القص من الغرب بل العكس هو الصحيح، فتطور فن القصة العربية بالشكل
+						والبناء يدل على ذلك حيث اشتهر العرب قبل الإسلام بالشعر المتطور الذي تناقلوه مشافهة جيلاً بعد
+						جيل.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+				<audio class="passageAudio" id="chapter1101b03" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110103t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p> والقرآن يحوي قصص حضارات قديمة وهذه القصص العديدة والمختلفة والتي تمثل قصصاً قصيرة مكتملة العناصر
+						موجودة قبل الإسلام في كتب سماوية سابقة مثل التوراة والإنجيل. ففي القرآن قصص آدم وحواء، وقصة
+						الطوفان، وقصة يوسف وإخوته، وقصة مولد عيسى، وقصة موسى وفرعون مصر تمثل كلها وحدات كاملة داخل
+						البناء أو الإطار الأكبر وهو القرآن الكريم.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+				<audio class="passageAudio" id="chapter1101b04" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110104t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>ومن جانب آخر يمثل الحديث والسنة النبوية إطاراً متكاملاً آخر غني بقصص أخرى تعزز قصص القرآن وتحمل
+						نفس المعاني الإرشادية. وهذا النوع من البناء استمر منذ عصور ما قبل الإسلام وحتى انحدار الحضارة
+						الإسلامية كأساس قام عليه تطوير قصص أخرى مثل حكايات كليلة ودمنة الهندية الأصل التي قام العرب بوضع
+						إطار عام لها، وألف ليلة وليلة التي وسعها وطورها العرب.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+				<audio class="passageAudio" id="chapter1101b05" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110105t.mp3"
+						type="audio/mp3"></audio>
+				<div class="as2">
+					<p>ومن هذا يبدو أن ما قام به الغرب في القرن التاسع عشر، وأدى إلى ظهور القصة القصيرة كشكل أدبي قائم
+						بذاته هو أنه تأثر بوحدات القصة الصغيرة المعروفة في الأدب العربي من إطارها العام وجعلها وحدات
+						مستقلّة دون الحاجة إلى إطار لها، وأطلاقها كشكل أدبي قائم بذاته. وبعدها استورد العرب القصة
+						القصيرة التي بدت غربيّة الطابع وتبنوها.</p>
+				</div>
 			</div>
 		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
-    		<audio class="passageAudio" id="chapter1101b02" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110102t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>إن القصة القصيرة كانت تشكّل جزءاً لا يتجزأ من الأدب العربي الإسلامي منذ بداية الحضارة الإسلامية تقريباً، فالعرب لم يأخذوا فن القص من الغرب بل العكس هو الصحيح، فتطور فن القصة العربية بالشكل والبناء يدل على ذلك حيث اشتهر العرب قبل الإسلام بالشعر المتطور الذي تناقلوه مشافهة جيلاً بعد جيل.</p>
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
-    		<audio class="passageAudio" id="chapter1101b03" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110103t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p> والقرآن يحوي قصص حضارات قديمة وهذه القصص العديدة والمختلفة والتي تمثل قصصاً قصيرة مكتملة العناصر موجودة قبل الإسلام في كتب سماوية سابقة مثل التوراة والإنجيل. ففي القرآن قصص آدم وحواء، وقصة الطوفان، وقصة يوسف وإخوته، وقصة مولد عيسى، وقصة موسى وفرعون مصر تمثل كلها وحدات كاملة داخل البناء أو الإطار الأكبر وهو القرآن الكريم.</p>	
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
-    		<audio class="passageAudio" id="chapter1101b04" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110104t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>ومن جانب آخر يمثل الحديث والسنة النبوية إطاراً متكاملاً آخر غني بقصص أخرى تعزز قصص القرآن وتحمل نفس المعاني الإرشادية. وهذا النوع من البناء استمر منذ عصور ما قبل الإسلام وحتى انحدار الحضارة الإسلامية كأساس قام عليه تطوير قصص أخرى مثل حكايات كليلة ودمنة الهندية الأصل التي قام العرب بوضع إطار عام لها، وألف ليلة وليلة التي وسعها وطورها العرب.</p>	
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
-    		<audio class="passageAudio" id="chapter1101b05" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/texts/01/B1110105t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-			<p>ومن هذا يبدو أن ما قام به الغرب في القرن التاسع عشر،  وأدى إلى ظهور القصة القصيرة كشكل أدبي قائم بذاته هو أنه تأثر بوحدات القصة الصغيرة المعروفة في الأدب العربي من إطارها العام وجعلها وحدات مستقلّة دون الحاجة إلى إطار لها، وأطلاقها كشكل أدبي قائم بذاته. وبعدها استورد العرب القصة القصيرة التي بدت غربيّة الطابع وتبنوها.</p>	
-			</div>
-		</div>																						
-	</div>
-</section>
+	</section>
 
 </body>
+
 </html>

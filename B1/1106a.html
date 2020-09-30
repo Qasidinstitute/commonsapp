@@ -1,62 +1,200 @@
 <!DOCTYPE html>
 <html>
 
-    <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats B1/1+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css?id=6" />
+	<link rel="stylesheet" href="../css/b1.css?id=4" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
 
-<section id="chapter1106a" data-role="page">
- <script>
-	$(function() {
-		if (currentvocab != "") {
-			$("#"+currentvocab+"_vocab").on( "collapsiblecreate", function( event, ui ) {
-				$(this).collapsible('expand');
-			} );
-		}
+<body>
 
-		var count = $(".vocabAudioSrc").length;
-		$(".vocabAudioSrc").each(function (audio_no) {
-			if (audio_no < count) {
-				this.addEventListener("ended", function () {
-					audioBtn = $( this ).parent().attr('id').toString() + "_btn";
-					$("#"+audioBtn).toggleClass('audio-playing audio-paused');
-					currentAudio = "none";
-				});
-			}
-		});
-		
-		$("#vocabwords").on("click",".audio-play-pause", function() {
-			thisAudio = $( this ).parent().attr('id').toString()+"_audio";
-			if ($(this).hasClass('audio-paused')) {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-					btnName = currentAudio.substring(0,currentAudio.indexOf("_audio"))+"_btn";
-					$("#"+btnName).toggleClass('audio-paused audio-playing');
+	<section id="chapter1106a" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				if (currentvocab != "") {
+					$("#" + currentvocab + "_vocab").on("collapsiblecreate", function (event, ui) {
+						$(this).collapsible('expand');
+					});
 				}
-				currentAudio = thisAudio;	
-				$("#"+thisAudio)[0].play();
-				$(this).toggleClass('audio-playing audio-paused');
-			} else {
-				currentAudio = "none";
-				$("#"+thisAudio)[0].pause();
-				$(this).toggleClass('audio-paused audio-playing');
-			}			
-		});
-	});
-</script>  
-   <div class="ui-content mainTitle ch11img" role="main">
-	   <h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..." id="vocabwords">
-		<div data-role='collapsible' id='1106a01_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>أُضيئت</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a01'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a01_btn'></div><div class='as1 ui-bar vocabPos'>أُضيئت</div><audio id='word1106a01_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110601.mp3' type='audio/mp3'></audio></div><p class='wordType'>Passive</p><p class='wordMearning'>Meaning: Was lit</p></div></div>
-			<div data-role='collapsible' id='1106a02_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>باحة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a02'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a02_btn'></div><div class='as1 ui-bar vocabPos'>باحة</div><audio id='word1106a02_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110602.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Open space</p></div></div>
-			<div data-role='collapsible' id='1106a03_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>بيت لحم</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a03'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a03_btn'></div><div class='as1 ui-bar vocabPos'>بيت لحم</div><audio id='word1106a03_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110603.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Bethlehem</p></div></div>
-			<div data-role='collapsible' id='1106a04_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>قِيَم سامية</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a04'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a04_btn'></div><div class='as1 ui-bar vocabPos'>قِيَم سامية</div><audio id='word1106a04_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110604.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: High values</p></div></div>
-			<div data-role='collapsible' id='1106a05_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>ازدهرت</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a05'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a05_btn'></div><div class='as1 ui-bar vocabPos'>ازدهرت</div><audio id='word1106a05_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110605.mp3' type='audio/mp3'></audio></div><p class='wordType'>Verb </p><p class='wordMearning'>Meaning: To flourish</p></div></div>
-			<div data-role='collapsible' id='1106a06_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>كنيسة المهد</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a06'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a06_btn'></div><div class='as1 ui-bar vocabPos'>كنيسة المهد</div><audio id='word1106a06_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110606.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Church of Nativity</p></div></div>
-			<div data-role='collapsible' id='1106a07_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>مُدرجة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a07'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a07_btn'></div><div class='as1 ui-bar vocabPos'>مُدرجة</div><audio id='word1106a07_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110607.mp3' type='audio/mp3'></audio></div><p class='wordType'></p><p class='wordMearning'>Meaning: Included in</p></div></div>
-			<div data-role='collapsible' id='1106a08_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>تشييدها</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a08'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a08_btn'></div><div class='as1 ui-bar vocabPos'>تشييدها</div><audio id='word1106a08_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110608.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Building</p></div></div>
-			<div data-role='collapsible' id='1106a09_vocab' data-iconpos='right'><h3 class='asList ui-nodisc-icon ui-alt-icon'>المغارة</h3> <div class='wordMeaningBox'><div class='wordText' id='word1106a09'><div class='audio-play-pause audio-paused ui-block-a' id='word1106a09_btn'></div><div class='as1 ui-bar vocabPos'>المغارة</div><audio id='word1106a09_audio' class='vocabAudioSrc'><source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110609.mp3' type='audio/mp3'></audio></div><p class='wordType'>Noun</p><p class='wordMearning'>Meaning: Cave</p></div></div>		
-	</div>	
-</section>
+
+				var count = $(".vocabAudioSrc").length;
+				$(".vocabAudioSrc").each(function (audio_no) {
+					if (audio_no < count) {
+						this.addEventListener("ended", function () {
+							audioBtn = $(this).parent().attr('id').toString() + "_btn";
+							$("#" + audioBtn).toggleClass('audio-playing audio-paused');
+							currentAudio = "none";
+						});
+					}
+				});
+
+				$("#vocabwords").on("click", ".audio-play-pause", function () {
+					thisAudio = $(this).parent().attr('id').toString() + "_audio";
+					if ($(this).hasClass('audio-paused')) {
+						if (currentAudio != "none") {
+							$("#" + currentAudio)[0].pause();
+							btnName = currentAudio.substring(0, currentAudio.indexOf("_audio")) + "_btn";
+							$("#" + btnName).toggleClass('audio-paused audio-playing');
+						}
+						currentAudio = thisAudio;
+						$("#" + thisAudio)[0].play();
+						$(this).toggleClass('audio-playing audio-paused');
+					} else {
+						currentAudio = "none";
+						$("#" + thisAudio)[0].pause();
+						$(this).toggleClass('audio-paused audio-playing');
+					}
+				});
+			});
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الخامس: مفردات الاستماع</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words..."
+			id="vocabwords">
+			<div data-role='collapsible' id='1106a01_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>أُضيئت</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a01'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a01_btn'></div>
+						<div class='as1 ui-bar vocabPos'>أُضيئت</div><audio id='word1106a01_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110601.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Passive</p>
+					<p class='wordMearning'>Meaning: Was lit</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a02_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>باحة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a02'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a02_btn'></div>
+						<div class='as1 ui-bar vocabPos'>باحة</div><audio id='word1106a02_audio' class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110602.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Open space</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a03_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>بيت لحم</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a03'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a03_btn'></div>
+						<div class='as1 ui-bar vocabPos'>بيت لحم</div><audio id='word1106a03_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110603.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Bethlehem</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a04_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>قِيَم سامية</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a04'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a04_btn'></div>
+						<div class='as1 ui-bar vocabPos'>قِيَم سامية</div><audio id='word1106a04_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110604.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: High values</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a05_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>ازدهرت</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a05'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a05_btn'></div>
+						<div class='as1 ui-bar vocabPos'>ازدهرت</div><audio id='word1106a05_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110605.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Verb </p>
+					<p class='wordMearning'>Meaning: To flourish</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a06_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>كنيسة المهد</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a06'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a06_btn'></div>
+						<div class='as1 ui-bar vocabPos'>كنيسة المهد</div><audio id='word1106a06_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110606.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Church of Nativity</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a07_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>مُدرجة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a07'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a07_btn'></div>
+						<div class='as1 ui-bar vocabPos'>مُدرجة</div><audio id='word1106a07_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110607.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'></p>
+					<p class='wordMearning'>Meaning: Included in</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a08_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>تشييدها</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a08'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a08_btn'></div>
+						<div class='as1 ui-bar vocabPos'>تشييدها</div><audio id='word1106a08_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110608.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Building</p>
+				</div>
+			</div>
+			<div data-role='collapsible' id='1106a09_vocab' data-iconpos='right'>
+				<h3 class='asList ui-nodisc-icon ui-alt-icon'>المغارة</h3>
+				<div class='wordMeaningBox'>
+					<div class='wordText' id='word1106a09'>
+						<div class='audio-play-pause audio-paused ui-block-a' id='word1106a09_btn'></div>
+						<div class='as1 ui-bar vocabPos'>المغارة</div><audio id='word1106a09_audio'
+							class='vocabAudioSrc'>
+							<source src='https://qasidrepos.s3.amazonaws.com/commons/B1/audio/11/vocab/06/110609.mp3'
+								type='audio/mp3'></audio>
+					</div>
+					<p class='wordType'>Noun</p>
+					<p class='wordMearning'>Meaning: Cave</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 </body>
 
