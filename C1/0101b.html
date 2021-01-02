@@ -1,96 +1,155 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arabic for Diplomats C1/2+</title>
-    </head>
-    <body>
 
-<section id="chapter0101b" data-role="page">	
-<script>
-	$(function() {
-		var countP = $(".passageAudio").length;
-		$(".passageAudio").each(function (passage_no) {
-		if (passage_no < countP) {
-			this.addEventListener("play", function () {
-				if (currentAudio != "none") {
-					$("#"+currentAudio)[0].pause();
-				}
-					currentAudio = $(this).attr('id');			
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arabic for Diplomats C1/2+</title>
+	<link rel="stylesheet" href="../css/themes/qasid-commons.css" />
+	<link rel="stylesheet" href="../css/themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../css/commons.css" />
+	<link rel="stylesheet" href="../css/c1.css?id=2" />
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="//fast.fonts.net/jsapi/e166b4cc-ae6f-4c05-971e-200b675ed670.js"></script>
+</head>
+
+<body>
+
+	<section id="chapter0101b" data-role="page">
+		<script>
+			var currentvocab = "";
+			var currentAudio = "none";
+			var currenthash = "";
+			var currentpage = "";
+			var htmlpage = "";
+			var backloc = "";
+			$(function () {
+				var countP = $(".passageAudio").length;
+				$(".passageAudio").each(function (passage_no) {
+					if (passage_no < countP) {
+						this.addEventListener("play", function () {
+							if (currentAudio != "none") {
+								$("#" + currentAudio)[0].pause();
+							}
+							currentAudio = $(this).attr('id');
+						});
+						this.addEventListener("ended", function () {
+							console.log("audio ended");
+							currentAudio = "none";
+						});
+						this.addEventListener("pause", function () {
+							console.log("audio paused");
+							currentAudio = "none";
+						});
+					}
 				});
-			this.addEventListener("ended", function () {
-				console.log("audio ended");
-				currentAudio = "none";
 			});
-			this.addEventListener("pause", function () {
-				console.log("audio paused");
-				currentAudio = "none";
-			});
-			}
-		});	
-	});
-</script>
-   <div class="ui-content mainTitle ch01img" role="main">
-	   <h1 class="as1">الدرس الأول: النص - طلبات الحصول على الهجرة إلى أمريكا</h1>
-    </div>
-    <div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
-    	<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
-    		<audio class="passageAudio" id="chapter0101b01" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010101t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>قال السكرتير الأول في قسم القنصلية الأمريكية، إن عدد المتقدمين للهجرة إلى الولايات المتحدة الأمريكية بواسطة سفارة عمان بلغ ٦٣٠٠ شخص، معظمهم يحملون الجنسيات الأردنية، وأضافت أن عدد المتقدمين للحصول على "فيزا" فئة زيارة أو سياحية بلغ حوالي ٣٠٠٠ شخص.
-						ونفى السكرتير ما يعتقده العديد من الأشخاص بأن السفارة الأمريكية لديها عدد محدود من التأشيرات السياحة لمنحها للمواطنين المتقدمين بطلبات، مؤكدة أن هذا الاعتقاد خاطئ ١٠٠٪.
-						وبينت أن السفارة ماضية في توفير عناصر الراحة والمحافظة على إنسانية المتقدمين بطلبات للسفارة سواء كان للهجرة أو للزيارة</p>
+		</script>
+		<div class="ui-content contentTitle" role="main">
+			<h1 class="as1">الدرس الأول: النص - طلبات الحصول على الهجرة إلى أمريكا</h1>
+		</div>
+		<div data-role="collapsibleset" data-filter="true" data-theme="b" data-filter-placeholder="Search Words...">
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ١</h3>
+				<audio class="passageAudio" id="chapter0101b01" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010101t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>قال السكرتير الأول في قسم القنصلية الأمريكية، إن عدد المتقدمين للهجرة إلى الولايات المتحدة
+						الأمريكية بواسطة سفارة عمان بلغ ٦٣٠٠ شخص، معظمهم يحملون الجنسيات الأردنية، وأضافت أن عدد
+						المتقدمين للحصول على "فيزا" فئة زيارة أو سياحية بلغ حوالي ٣٠٠٠ شخص.
+						ونفى السكرتير ما يعتقده العديد من الأشخاص بأن السفارة الأمريكية لديها عدد محدود من التأشيرات
+						السياحة لمنحها للمواطنين المتقدمين بطلبات، مؤكدة أن هذا الاعتقاد خاطئ ١٠٠٪.
+						وبينت أن السفارة ماضية في توفير عناصر الراحة والمحافظة على إنسانية المتقدمين بطلبات للسفارة سواء
+						كان للهجرة أو للزيارة</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
+				<audio class="passageAudio" id="chapter0101b02" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010102t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>وزاد أن السفارة قامت مؤخرا بتقسيم مواعيد المراجعين، من خلال تحديد ساعات معينة للأشخاص المتقدمين
+						لطلبات الهجرة، وساعات أخرى للمتقدمين؛ من أجل طلب فيزا زيارة أو سياحة. مشيرة إلى أن هذه الخطوة
+						ساعدت في توفير الوقت، ومنع الازدحام على بوابة السفارة.
+						وقالت إن السفارة مهتمة في تأمين كافة سبل الراحة للمراجعين، من خلال تأمين ٩ نوافذ للمراجعين داخل
+						قسم القنصلية، فضلا عن تحديد موعد المقابلة بغض النظر عن هدفها، من خلال الإنترنت، ما يسهل على
+						المراجعين القيام بأعمالهم دون مكوثهم وقتا طويلا بالسفارة. ونوَّه السكرتير إلى أن السفارة لا تهتم
+						كثيرًا لمبالغ الأموال التي يمتلكها الشخص الطالب للفيزا، بغض النظر عن نوعها، مشيرًا إلى أن
+						السفارة تحرص على مدى قناعة موظف القنصلية بعودة الشخص الطالب للفيزا.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
+				<audio class="passageAudio" id="chapter0101b03" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010103t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>وأكد على أن السفارة الأمريكية حريصة على تسهيل منح التأشيرات ضمن القانون الأمريكي؛ من أجل إطلاع
+						أكبر قدر ممكن من الأشخاص على المدن الامريكية</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
+				<audio class="passageAudio" id="chapter0101b04" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010104t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>وأضاف أن السفارة تهتم بالأشخاص الراغبين بالسفر لامريكا من خلال التسهيل عليهم منذ تقديم الطلب عبر
+						الإنترنت وتحديد موعد للمقابلة في قسم القنصلية، مشيرًا إلى أن السفارة حريصة على تأمين سبل الراحة
+						للمراجعين من خلال تأمين المقاعد، وعدم بقائهم واقفين، لافتًا إلى ان الإجراءات الأمنية حالت دون
+						تأمين غرف انتظار لمعالجة مشكلة الاكتظاظات التي تحصل بعض الأحيان على بوابة السفارة الخارجية</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
+				<audio class="passageAudio" id="chapter0101b05" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010105t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>وأشارت إلى تعاون السفارة مع شركة" ارامكس" من أجل إيصال جوازات سفرهم بعد منحهم التأشيرة المطلوبة
+						للحيلولة دون تكليفهم مشقة زائدة للعودة إلى استلام جوزاتهم.
+						وألمح إلى أهمية أن يتقدم الشخص لطلب التأشيرة بغض النظر عن نوعها قبل نيته للسفر بنحو ٣ شهور، وليس
+						الانتظار إلى الأيام الأخيرة قبل موعد السفر المقرر.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٦</h3>
+				<audio class="passageAudio" id="chapter0101b06" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010106t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>وبين السكرتير الأول للقنصلية أن السفارة قامت مؤخرا بافتتاح صفحة خاصة على الموقع الاجتماعي "الفيس
+						بوك " لمشاركة المواطنين في آرائهم، والتعرف على المشاكل التي تواجههم للقضاء عليها. مشيرًا إلى أن
+						القنصلية قامت خلال الأسبوع الماضي بالرد مباشرة على استفسارات المواطنين من خلال تخصيص ٣ موظفين
+						فيما أسمته دردشة مباشرة.</p>
+				</div>
+			</div>
+			<div data-role="collapsible" data-iconpos="right">
+				<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٧</h3>
+				<audio class="passageAudio" id="chapter0101b07" controls>
+					<source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010107t.mp3"
+						type="audio/mp3">
+				</audio>
+				<div class="as2">
+					<p>وقال إن السفارة لم تملك معلومات حول أعداد الأردنيين الذين يملكون جنسيات أمريكية. وذلك بسبب أن
+						السفارة الأمريكية لا تهتم بجنسية المتقدم. ومن الممكن أن يتقدم أي شخص يحمل جنسية أجنبية للحصول
+						على طلب الهجرة من خلال سفارة الولايات المتحدة الأمريكية في عمان.</p>
+				</div>
 			</div>
 		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٢</h3>
-    		<audio class="passageAudio" id="chapter0101b02" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010102t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>وزاد أن السفارة قامت مؤخرا بتقسيم مواعيد المراجعين، من خلال تحديد ساعات معينة للأشخاص المتقدمين لطلبات الهجرة، وساعات أخرى للمتقدمين؛ من أجل طلب فيزا زيارة أو سياحة. مشيرة إلى أن هذه الخطوة ساعدت في توفير الوقت، ومنع الازدحام على بوابة السفارة.
-						وقالت إن السفارة مهتمة في تأمين كافة سبل الراحة للمراجعين، من خلال تأمين ٩ نوافذ للمراجعين داخل قسم القنصلية، فضلا عن تحديد موعد المقابلة بغض النظر عن هدفها، من خلال الإنترنت، ما يسهل على المراجعين القيام بأعمالهم دون مكوثهم وقتا طويلا بالسفارة. ونوَّه السكرتير إلى أن السفارة لا تهتم كثيرًا لمبالغ الأموال التي يمتلكها الشخص الطالب للفيزا، بغض النظر عن نوعها، مشيرًا إلى أن السفارة تحرص على مدى قناعة موظف القنصلية بعودة الشخص الطالب للفيزا.</p>			
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٣</h3>
-    		<audio class="passageAudio" id="chapter0101b03" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010103t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>وأكد على أن السفارة الأمريكية حريصة على تسهيل منح التأشيرات ضمن القانون الأمريكي؛ من أجل إطلاع أكبر قدر ممكن من الأشخاص على المدن الامريكية</p>			
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٤</h3>
-    		<audio class="passageAudio" id="chapter0101b04" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010104t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>وأضاف أن السفارة تهتم بالأشخاص الراغبين بالسفر لامريكا من خلال التسهيل عليهم منذ تقديم الطلب عبر الإنترنت وتحديد موعد للمقابلة في قسم القنصلية، مشيرًا إلى أن السفارة حريصة على تأمين سبل الراحة للمراجعين من خلال تأمين المقاعد، وعدم بقائهم واقفين، لافتًا إلى ان الإجراءات الأمنية حالت دون تأمين غرف انتظار لمعالجة مشكلة الاكتظاظات التي تحصل بعض الأحيان على بوابة السفارة الخارجية</p>			
-			</div>
-		</div>
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٥</h3>
-    		<audio class="passageAudio" id="chapter0101b05" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010105t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>وأشارت إلى تعاون السفارة مع شركة" ارامكس" من أجل إيصال جوازات سفرهم بعد منحهم التأشيرة المطلوبة للحيلولة دون تكليفهم مشقة زائدة للعودة إلى استلام جوزاتهم.
-						وألمح إلى أهمية أن يتقدم الشخص لطلب التأشيرة بغض النظر عن نوعها قبل نيته للسفر بنحو ٣ شهور، وليس الانتظار إلى الأيام الأخيرة قبل موعد السفر المقرر.</p>			
-			</div>
-		</div>	
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٦</h3>
-    		<audio class="passageAudio" id="chapter0101b06" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010106t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>وبين السكرتير الأول للقنصلية أن السفارة قامت مؤخرا بافتتاح صفحة خاصة على الموقع الاجتماعي "الفيس بوك " لمشاركة المواطنين في آرائهم، والتعرف على المشاكل التي تواجههم للقضاء عليها. مشيرًا إلى أن القنصلية قامت خلال الأسبوع الماضي بالرد مباشرة على استفسارات المواطنين من خلال تخصيص ٣ موظفين فيما أسمته دردشة مباشرة.</p>			
-			</div>
-		</div>	
-		<div data-role="collapsible" data-iconpos="right">
-    		<h3 class="asList ui-nodisc-icon ui-alt-icon">فقرة ٧</h3>
-    		<audio class="passageAudio" id="chapter0101b07" controls><source src="https://qasidrepos.s3.amazonaws.com/commons/C1/audio/01/texts/01/C1010107t.mp3" type="audio/mp3"></audio>
-    		<div class="as2">
-				<p>وقال إن السفارة لم تملك معلومات حول أعداد الأردنيين الذين يملكون جنسيات أمريكية. وذلك بسبب أن السفارة الأمريكية لا تهتم بجنسية المتقدم. ومن الممكن أن يتقدم أي شخص يحمل جنسية أجنبية للحصول على طلب الهجرة من خلال سفارة الولايات المتحدة الأمريكية في عمان.</p>			
-			</div>
-		</div>			
-	</div>
-</section>
+	</section>
 
 </body>
+
 </html>
